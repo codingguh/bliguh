@@ -1,11 +1,8 @@
 import 'package:ecommerce_firebase_getx/common/styles/spacing_styles.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({
