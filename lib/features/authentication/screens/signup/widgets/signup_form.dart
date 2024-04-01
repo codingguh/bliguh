@@ -1,10 +1,10 @@
-import 'package:ecommerce_firebase_getx/common/widgets.login_signup/form_divider.dart';
-import 'package:ecommerce_firebase_getx/common/widgets.login_signup/social_buttons.dart';
+import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/verify_email.dart';
+import 'package:flutter/material.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/widgets/signup_terms_and_conditions.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignUpForm extends StatelessWidget {
@@ -85,22 +85,10 @@ class SignUpForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Get.to(() => const VerifyEmailScreen()),
             child: Text(TTexts.createAccount),
           ),
         ),
-        const SizedBox(
-          height: TSizes.spaceBtwSections,
-        ),
-
-        ///Divider
-        FormDivider(textDivider: TTexts.orSignUpWith),
-        const SizedBox(
-          height: TSizes.spaceBtwSections,
-        ),
-
-        ///Social Buttons
-        SocialButton()
       ],
     ));
   }
