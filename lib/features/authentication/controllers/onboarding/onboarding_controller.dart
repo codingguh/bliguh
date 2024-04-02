@@ -25,7 +25,12 @@ class OnBoardingController extends GetxController {
       Get.offAll(const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
-      pageController.jumpToPage(page);
+      pageController.animateToPage(
+        page,
+        duration: const Duration(
+            milliseconds: 300), // Adjust animation duration as needed
+        curve: Curves.ease, // Adjust animation curve as needed
+      );
     }
   }
 

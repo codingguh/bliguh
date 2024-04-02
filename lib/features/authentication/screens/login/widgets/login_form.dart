@@ -1,4 +1,5 @@
-import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/widgets/signup.dart';
+import 'package:ecommerce_firebase_getx/features/authentication/screens/password/configuration/forget_password.dart';
+import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/signup.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -39,8 +40,17 @@ class LoginForm extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Checkbox(value: true, onChanged: (value) {}),
-                Text(TTexts.rememberMe)
+                Row(
+                  children: [
+                    Checkbox(value: true, onChanged: (value) {}),
+                    Text(TTexts.rememberMe)
+                  ],
+                ),
+
+                ///Forget Password
+                TextButton(
+                    onPressed: () => Get.to(() => const ForgetPassword()),
+                    child: const Text(TTexts.forgetPassword))
               ],
             ),
             const SizedBox(height: TSizes.spaceBtwSections),

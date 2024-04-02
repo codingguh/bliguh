@@ -1,4 +1,4 @@
-import 'package:ecommerce_firebase_getx/features/authentication/controllers.onboarding/onboarding_controller.dart';
+import 'package:ecommerce_firebase_getx/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/device/device_utility.dart';
