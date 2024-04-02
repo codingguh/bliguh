@@ -22,7 +22,13 @@ class OnBoardingController extends GetxController {
   void nextPage() {
     if (currentPageIndex.value == 2) {
       //get.toLoginScreen
-      Get.offAll(const LoginScreen());
+      Get.offAll(
+        const LoginScreen(),
+        transition: Transition.rightToLeft,
+        curve: Curves.ease, // Example of transition animation
+        duration: const Duration(
+            milliseconds: 500), // Adjust animation duration as needed
+      );
     } else {
       int page = currentPageIndex.value + 1;
       pageController.animateToPage(
