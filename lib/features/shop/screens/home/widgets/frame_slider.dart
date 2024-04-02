@@ -56,17 +56,6 @@ class FrameSlider extends StatelessWidget {
                               ? TColors.primary
                               : TColors.grey,
                     ),
-                  // for (int i = 3; i < 4; i++)
-                  //   CircularContainer(
-                  //     width:
-                  //         controller.carouselCurrentIndex.value == i ? 11 : 5,
-                  //     height: 5,
-                  //     margin: EdgeInsets.only(right: 3),
-                  //     backgroundColor:
-                  //         controller.carouselCurrentIndex.value == i
-                  //             ? TColors.primary
-                  //             : TColors.grey,
-                  //   ),
                 ],
               ),
             ))

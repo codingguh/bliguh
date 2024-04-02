@@ -13,6 +13,26 @@ import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:flutter/widgets.dart';
 
+final List<Map<String, dynamic>> categories = [
+  {'image': TImages.jeweleryIcon, 'title': 'Jewelry'},
+  {'image': TImages.sportIcon, 'title': 'Sports'},
+  {'image': TImages.electronicsIcon, 'title': 'Electronics'},
+  {'image': TImages.furnitureIcon, 'title': 'Furniture'},
+  {'image': TImages.shoeIcon, 'title': 'Shoes'},
+  {'image': TImages.clothIcon, 'title': 'Clothes'},
+  {'image': TImages.cosmeticsIcon, 'title': 'Cosmetics'},
+  {'image': TImages.toyIcon, 'title': 'Toys'},
+  {'image': TImages.animalIcon, 'title': 'Animals'},
+  // Add more categories as needed
+];
+
+final List<String> banners = [
+  TImages.banner1,
+  TImages.banner3,
+  TImages.banner4,
+  TImages.banner2,
+];
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -44,12 +64,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: TSizes.defaultSpace),
                     child: FrameSlider(
-                      banners: [
-                        TImages.banner1,
-                        TImages.banner3,
-                        TImages.banner4,
-                        TImages.banner2,
-                      ],
+                      banners: banners,
                     ),
                   ),
 
@@ -71,7 +86,9 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(
                           height: TSizes.spaceBtwItems,
                         ),
-                        HomeCategories()
+                        HomeCategories(
+                          categories: categories,
+                        )
                       ],
                     ),
                   ),
