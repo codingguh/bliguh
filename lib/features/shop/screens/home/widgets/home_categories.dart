@@ -10,18 +10,21 @@ class HomeCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
-      child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: 6,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (_, index) {
-            return VerticalImageText(
-              image: TImages.shoeIcon,
-              title: 'Shows',
-              onTap: () {},
-            );
-          }),
+      height: 75,
+      child: ClipRect(
+        clipBehavior: Clip.hardEdge, // Clip content that overflows
+        child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: 6,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (_, index) {
+              return VerticalImageText(
+                image: TImages.shoeIcon,
+                title: 'Shows',
+                onTap: () {},
+              );
+            }),
+      ),
     );
   }
 }

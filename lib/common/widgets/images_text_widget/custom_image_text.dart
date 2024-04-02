@@ -23,12 +23,12 @@ class VerticalImageText extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
+        padding: const EdgeInsets.only(right: TSizes.spaceBtwItems + 2.5),
         child: Column(
           children: [
             Container(
-              width: 56,
-              height: 56,
+              width: 54,
+              height: 54,
               padding: const EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
                   color: backgroundColor ??
@@ -50,7 +50,10 @@ class VerticalImageText extends StatelessWidget {
               width: TSizes.spaceBtwItems / 2,
             ),
             SizedBox(
-              width: 56,
+              height: 4,
+            ),
+            SizedBox(
+              width: 54.1,
               child: Text(
                 title,
                 style: Theme.of(context)
@@ -59,6 +62,7 @@ class VerticalImageText extends StatelessWidget {
                     .apply(color: textColor),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
               ),
             )
           ],

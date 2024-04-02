@@ -29,7 +29,8 @@ class SearchContainer extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
         child: Container(
           width: TDeviceUtils.getScreenWidth(context),
-          padding: const EdgeInsets.all(TSizes.md),
+          height: 45,
+          padding: const EdgeInsets.all(TSizes.sm),
           decoration: BoxDecoration(
               color: showBackground
                   ? darkMode
@@ -40,7 +41,11 @@ class SearchContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(TSizes.cardRadiusLg)),
           child: Row(
             children: [
+              const SizedBox(
+                width: 5,
+              ),
               Icon(
+                size: 16,
                 icon,
                 color: TColors.darkGrey,
               ),
@@ -49,7 +54,10 @@ class SearchContainer extends StatelessWidget {
               ),
               Text(
                 'Search in Store',
-                style: Theme.of(context).textTheme.bodySmall,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(fontSize: 16),
               )
             ],
           ),
