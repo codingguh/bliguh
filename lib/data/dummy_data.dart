@@ -19,7 +19,17 @@ final List<Map<String, dynamic>> categories = [
   {'image': TImages.animalIcon, 'title': 'Animals'},
   // Add more categories as needed
 ];
-
+final List<Map<String, dynamic>> whishlists = [
+  {
+    'image': TImages.productImage1,
+    'price': 2000000,
+    'title': 'Nike Zoom Air Green',
+    'brand': 'Nike',
+    'isDiscount': true,
+    'isFavourite': true,
+    'discount': 25
+  },
+];
 final List<Map<String, dynamic>> products = [
   {
     'image': TImages.productImage1,
@@ -54,7 +64,7 @@ final List<Map<String, dynamic>> products = [
     'title': 'Puma Shoes R2212',
     'brand': 'Puma',
     'isDiscount': false,
-    'isFavourite': false,
+    'isFavourite': true,
     'discount': 0
   },
   {

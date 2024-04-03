@@ -1,6 +1,5 @@
 import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';

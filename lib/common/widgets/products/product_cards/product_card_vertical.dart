@@ -4,10 +4,12 @@ import 'package:ecommerce_firebase_getx/common/widgets/icons/circular_icon.dart'
 import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/brand_icon_verify.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/controllers/favourite_controller.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:intl/intl.dart';
 
@@ -20,16 +22,20 @@ class ProductCardVertical extends StatelessWidget {
       required this.brand,
       this.isDiscount = false,
       this.isFavourite = false,
-      required this.discount});
+      required this.discount,
+      this.onPressed});
 
   final String title, imageUrl, brand;
   final bool isDiscount, isFavourite;
   // final double price;
   final int discount, price;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     double discountPrice = price - (price * discount / 100);
+    final FavouriteController controller =
+        Get.put<FavouriteController>(FavouriteController());
 
     String formattedDiscountPrice =
         NumberFormat.currency(locale: 'id_ID', symbol: 'Rp.', decimalDigits: 0)
@@ -39,6 +45,7 @@ class ProductCardVertical extends StatelessWidget {
             .format(price);
 
     final dark = THelperFunctions.isDarkMode(context);
+
     return GestureDetector(
       onTap: () {},
       child: Container(
@@ -93,17 +100,19 @@ class ProductCardVertical extends StatelessWidget {
                         : SizedBox(),
                   ),
 
-                  ///Favorite card widget
+                  ///Favorite icon button
                   Positioned(
                     top: 0,
                     right: 0,
                     child: isFavourite
                         ? CircularIcon(
                             icon: Iconsax.heart5,
-                            color: Colors.red,
+                            overlayColor: Colors.red,
+                            onPressed: onPressed,
                           )
                         : CircularIcon(
                             icon: Iconsax.heart,
+                            onPressed: onPressed,
                           ),
                   )
                 ],
@@ -169,6 +178,7 @@ class ProductCardVertical extends StatelessWidget {
                                   .labelLarge!
                                   .copyWith(fontWeight: FontWeight.bold),
                             ),
+                      //Add to cart button
                       Container(
                         decoration: BoxDecoration(
                             color: TColors.dark,

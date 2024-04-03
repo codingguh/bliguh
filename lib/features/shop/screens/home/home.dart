@@ -1,26 +1,14 @@
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/layouts/grid_layout.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/products/cart/cart_menu_icon.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/frame_slider.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_recommendation_products.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_recommendation_text.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

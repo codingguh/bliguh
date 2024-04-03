@@ -2,23 +2,22 @@ import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class CircularIcon extends StatelessWidget {
-  const CircularIcon({
-    super.key,
-    this.width,
-    this.height,
-    this.size = TSizes.lg,
-    required this.icon,
-    this.color,
-    this.backgroundColor,
-    this.onPressed,
-  });
+  const CircularIcon(
+      {super.key,
+      this.width,
+      this.height,
+      this.size = TSizes.lg,
+      required this.icon,
+      this.color,
+      this.backgroundColor,
+      this.onPressed,
+      this.overlayColor});
 
   final double? width, height, size;
   final IconData icon;
-  final Color? color, backgroundColor;
+  final Color? color, backgroundColor, overlayColor;
   final VoidCallback? onPressed;
 
   @override
@@ -35,8 +34,11 @@ class CircularIcon extends StatelessWidget {
                 : TColors.white.withOpacity(0.9),
       ),
       child: IconButton(
-        onPressed: () {},
-        icon: Icon(icon),
+        onPressed: onPressed,
+        icon: Icon(
+          icon,
+          color: overlayColor,
+        ),
         color: color,
         iconSize: size,
       ),

@@ -1,3 +1,4 @@
+import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/favourite.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/home.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/store/store.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
@@ -51,9 +52,7 @@ class NavigationController extends GetxController {
   final screens = [
     HomeScreen(),
     StoreScreen(),
-    Container(
-      color: TColors.primary,
-    ),
+    FavouriteScreen(),
     Container(
       color: Colors.orange,
     ),

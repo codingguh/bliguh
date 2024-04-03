@@ -1,26 +1,16 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/tabbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/brands/brand_showcase.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/images/ciruclar_image.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/products/cart/cart_menu_icon.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/brand_icon_verify.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/store/widgets/featured_brands.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/store/widgets/top_products_images.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/enums.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
-import 'package:ecommerce_firebase_getx/utils/http/http_client.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
