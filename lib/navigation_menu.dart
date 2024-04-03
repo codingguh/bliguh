@@ -1,4 +1,7 @@
+import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/favourite.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/home.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/store/store.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -15,25 +18,20 @@ class NavigationMenu extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-          height: 80,
+          height: 45,
           elevation: 0,
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
-          backgroundColor: dark ? TColors.black : Colors.white,
+          backgroundColor: dark ? TColors.black : TColors.white,
           indicatorColor: dark
               ? TColors.white.withOpacity(0.1)
-              : TColors.black.withOpacity(0.1),
-          destinations: [
-            const NavigationDestination(
-                icon: Icon(Iconsax.home), label: 'Home'),
-            const NavigationDestination(
-                icon: Icon(Iconsax.shop), label: 'Store'),
-            const NavigationDestination(
-                icon: Icon(Iconsax.heart), label: 'Whishlist'),
-            const NavigationDestination(
-                icon: Icon(Iconsax.user), label: 'Profile'),
-          ],
+              : TColors.primary.withOpacity(0.175),
+          destinations: controller.destinations.map((destination) {
+            return NavigationDestination(
+                icon: destination.icon, label: destination.label);
+          }).toList(),
         ),
       ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
@@ -44,19 +42,23 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
+  // Define your NavigationDestination class
+  final destinations = [
+    const NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+    const NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
+    const NavigationDestination(icon: Icon(Iconsax.heart), label: 'Whishlist'),
+    const NavigationDestination(
+        icon: Icon(Iconsax.notification), label: 'Notification'),
+    const NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+  ];
+
   final screens = [
     HomeScreen(),
-    Container(
-      color: Colors.purple,
-    ),
-    Container(
-      color: TColors.primary,
-    ),
+    StoreScreen(),
     Container(
       color: Colors.orange,
     ),
-    Container(
-      color: Colors.blue,
-    )
+    FavouriteScreen(),
+    SettingsScreen()
   ];
 }
