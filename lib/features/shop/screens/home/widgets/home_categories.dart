@@ -11,7 +11,7 @@ class HomeCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 75,
+      height: 77,
       child: ClipRect(
         clipBehavior: Clip.hardEdge, // Clip content that overflows
         child: ListView.builder(

@@ -27,8 +27,8 @@ class VerticalImageText extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              width: 54,
-              height: 54,
+              width: 44,
+              height: 44,
               padding: const EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
                   color: backgroundColor ??
@@ -46,14 +46,11 @@ class VerticalImageText extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              width: TSizes.spaceBtwItems / 2,
+            SizedBox(
+              height: TSizes.spaceBtwItems / 2,
             ),
             SizedBox(
-              height: 4,
-            ),
-            SizedBox(
-              width: 54.1,
+              width: 72,
               child: Text(
                 title,
                 style: Theme.of(context)

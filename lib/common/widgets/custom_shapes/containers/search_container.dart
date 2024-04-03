@@ -6,19 +6,20 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SearchContainer extends StatelessWidget {
-  const SearchContainer({
-    super.key,
-    required this.text,
-    this.icon = Iconsax.search_normal,
-    this.showBackground = true,
-    this.showBorder = true,
-    this.onTap,
-  });
+  const SearchContainer(
+      {super.key,
+      required this.text,
+      this.icon = Iconsax.search_normal,
+      this.showBackground = true,
+      this.showBorder = true,
+      this.onTap,
+      this.height = 45});
 
   final String text;
   final IconData? icon;
   final bool showBackground, showBorder;
   final VoidCallback? onTap;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class SearchContainer extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
         child: Container(
           width: TDeviceUtils.getScreenWidth(context),
-          height: 45,
+          height: height,
           padding: const EdgeInsets.all(TSizes.sm),
           decoration: BoxDecoration(
               color: showBackground

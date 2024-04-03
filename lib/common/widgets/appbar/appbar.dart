@@ -1,3 +1,5 @@
+import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/circular_container.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
@@ -21,21 +23,36 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: TSizes.md,
-      ),
-      child: AppBar(
-        automaticallyImplyLeading: false,
-        leading: showBackArrow
-            ? IconButton(
-                onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left))
-            : leadingIcon != null
-                ? IconButton(
-                    onPressed: leadingOnPressed, icon: Icon(leadingIcon))
-                : null,
-        title: title,
-        actions: actions,
+    return Container(
+      color: TColors.primary,
+      child: Stack(
+        children: [
+          Positioned(
+            top: -20,
+            right: -150,
+            child: CircularContainer(
+              backgroundColor: TColors.textWhite.withOpacity(0.1),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: TSizes.md,
+            ),
+            child: AppBar(
+              automaticallyImplyLeading: false,
+              leading: showBackArrow
+                  ? IconButton(
+                      onPressed: () => Get.back(),
+                      icon: Icon(Iconsax.arrow_left))
+                  : leadingIcon != null
+                      ? IconButton(
+                          onPressed: leadingOnPressed, icon: Icon(leadingIcon))
+                      : null,
+              title: title,
+              actions: actions,
+            ),
+          ),
+        ],
       ),
     );
   }

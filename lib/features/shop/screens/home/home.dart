@@ -1,37 +1,24 @@
+import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/layouts/grid_layout.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/products/cart/cart_menu_icon.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/frame_slider.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:flutter/widgets.dart';
-
-final List<Map<String, dynamic>> categories = [
-  {'image': TImages.jeweleryIcon, 'title': 'Jewelry'},
-  {'image': TImages.sportIcon, 'title': 'Sports'},
-  {'image': TImages.electronicsIcon, 'title': 'Electronics'},
-  {'image': TImages.furnitureIcon, 'title': 'Furniture'},
-  {'image': TImages.shoeIcon, 'title': 'Shoes'},
-  {'image': TImages.clothIcon, 'title': 'Clothes'},
-  {'image': TImages.cosmeticsIcon, 'title': 'Cosmetics'},
-  {'image': TImages.toyIcon, 'title': 'Toys'},
-  {'image': TImages.animalIcon, 'title': 'Animals'},
-  // Add more categories as needed
-];
-
-final List<String> banners = [
-  TImages.banner1,
-  TImages.banner3,
-  TImages.banner4,
-  TImages.banner2,
-];
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -39,6 +26,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: HomeAppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -46,17 +34,17 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ///Header -- Tutorial [Section#3 Video #2]
-                  const HomeAppBar(),
                   const SizedBox(
-                    height: TSizes.spaceBtwSections,
+                    height: TSizes.spaceBtwItems,
                   ),
 
                   ///Searchbar -- Tutorial [Section#3 Video #2]
                   SearchContainer(
                     text: 'Search in Store ',
+                    height: 41,
                   ),
                   const SizedBox(
-                    height: TSizes.spaceBtwSections - 9,
+                    height: TSizes.spaceBtwItems + 5,
                   ),
 
                   ///Banner
@@ -69,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(
-                    height: TSizes.spaceBtwSections,
+                    height: TSizes.spaceBtwSections - 13,
                   ),
 
                   ///Categories -- Tutorial [Section#3 Video #2]
@@ -84,13 +72,39 @@ class HomeScreen extends StatelessWidget {
                           textColor: Colors.white,
                         ),
                         const SizedBox(
-                          height: TSizes.spaceBtwItems,
+                          height: TSizes.spaceBtwItems - 5,
                         ),
                         HomeCategories(
                           categories: categories,
                         )
                       ],
                     ),
+                  ),
+                ],
+              ),
+            ),
+            // Text('dfsdfdsfsdf'),
+
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: Column(
+                children: [
+                  GridLayout(
+                    itemCount: products.length,
+                    itemBuilder: (_, index) {
+                      final product = products[index];
+                      return ProductCardVertical(
+                        imageUrl: product['image'],
+                        title: product['title'],
+                        price: product['price'],
+                        brand: product['brand'],
+                        isDiscount: product['isDiscount'],
+                        isFavourite: product['isFavourite'],
+                        discount: product['discount'],
+                      );
+                    },
                   ),
                 ],
               ),

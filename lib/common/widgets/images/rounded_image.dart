@@ -1,4 +1,4 @@
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class RoundedImage extends StatelessWidget {
@@ -13,7 +13,7 @@ class RoundedImage extends StatelessWidget {
     this.padding,
     this.isNetworkImage = false,
     this.onPressed,
-    required this.radius,
+    this.radius = TSizes.cardRadiusMd,
   }) : super(key: key);
 
   final String imageUrl;
@@ -36,7 +36,7 @@ class RoundedImage extends StatelessWidget {
         margin: EdgeInsets.only(right: 0),
         width: double.infinity,
         decoration: BoxDecoration(
-          color: TColors.primary,
+          color: backgroundColor,
           borderRadius: BorderRadius.circular(radius),
         ),
         child: ClipRRect(

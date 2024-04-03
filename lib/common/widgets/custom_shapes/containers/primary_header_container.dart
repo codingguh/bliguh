@@ -19,19 +19,19 @@ class PrimaryHeaderContainer extends StatelessWidget {
       color: TColors.primary,
       padding: EdgeInsets.all(0),
       child: SizedBox(
-        height: 555,
+        height: 380,
         child: Stack(
           children: [
             Positioned(
-              top: -150,
-              right: -250,
+              top: -135,
+              right: -150,
               child: CircularContainer(
                 backgroundColor: TColors.textWhite.withOpacity(0.1),
               ),
             ),
             Positioned(
-              top: 100,
-              right: -300,
+              top: 150,
+              right: -200,
               child: CircularContainer(
                 backgroundColor: TColors.textWhite.withOpacity(0.1),
               ),
