@@ -4,7 +4,6 @@ import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/controllers/favourite_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 
 class ProdukRekomendasi extends StatelessWidget {
   const ProdukRekomendasi({

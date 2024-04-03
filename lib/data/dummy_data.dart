@@ -1,4 +1,7 @@
+import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
+import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 final List<String> banners = [
   TImages.banner1,
@@ -119,4 +122,135 @@ final List<Map<String, dynamic>> featuredBrands = [
     'brand': 'Apple',
     'total': 89,
   }
+];
+
+List<Map<String, dynamic>> settingsList = [
+  {
+    'id': 1,
+    'icon': Iconsax.safe_home,
+    'title': 'My Account',
+    'subTitle': 'Set shopping delivery address',
+    'onPressed': () {
+      // Add your logic for My Account onPressed
+    },
+  },
+  {
+    'id': 2,
+    'icon': Iconsax.shopping_cart,
+    'title': 'My Cart',
+    'subTitle': 'Add remove product and move to checkout',
+    'onPressed': () {
+      // Add your logic for Notifications onPressed
+    },
+  },
+  {
+    'id': 3,
+    'icon': Iconsax.bag_tick,
+    'title': 'My Orders',
+    'subTitle': 'In-progress and completed orders',
+    'onPressed': () {
+      // Add your logic for Privacy onPressed
+    },
+  },
+  {
+    'id': 4,
+    'icon': Iconsax.bank,
+    'title': 'Bank Account',
+    'subTitle': 'Withdraw balance to registered bank account',
+    'onPressed': () {
+      // Add your logic for Privacy onPressed
+    },
+  },
+  {
+    'id': 4,
+    'icon': Iconsax.discount_shape,
+    'title': 'My Coupons',
+    'subTitle': 'List of all the coupon discount',
+    'onPressed': () {
+      // Add your logic for Privacy onPressed
+    },
+  },
+  {
+    'id': 3,
+    'icon': Iconsax.bag_tick,
+    'title': 'My Orders',
+    'subTitle': 'In-progress and completed orders',
+    'onPressed': () {
+      // Add your logic for Privacy onPressed
+    },
+  },
+  {
+    'id': 5,
+    'icon': Iconsax.notification,
+    'title': 'Notification',
+    'subTitle': 'Get any kind of notification message',
+    'onPressed': () {
+      // Add your logic for Privacy onPressed
+    },
+  },
+  {
+    'id': 6,
+    'icon': Iconsax.security_card,
+    'title': 'Account Privacey',
+    'subTitle': 'Manage data usage and connects',
+    'onPressed': () {
+      // Add your logic for Privacy onPressed
+    },
+  },
+  // Add more items as needed
+];
+
+List<Map<String, dynamic>> settingsAppMenu = [
+  {
+    'id': 1,
+    'icon': Iconsax.document_upload,
+    'title': 'Load Data',
+    'subTitle': 'Upload your document',
+    'onPressed': () {
+      // Add your logic for My Account onPressed
+    },
+  },
+  {
+    'id': 2,
+    'icon': Iconsax.location,
+    'title': 'Geolocation',
+    'subTitle': 'Set recommendation based on location',
+    'onPressed': () {
+      // Add your logic for Notifications onPressed
+    },
+    'trailing': Switch(
+      value: true,
+      onChanged: (value) {},
+      activeColor: TColors.primary,
+    )
+  },
+  {
+    'id': 3,
+    'icon': Iconsax.security_user,
+    'title': 'Safe Mode',
+    'subTitle': 'Set result is safe for all ages',
+    'onPressed': () {
+      // Add your logic for Notifications onPressed
+    },
+    'trailing': Switch(
+      value: false,
+      onChanged: (value) {},
+      activeColor: TColors.primary,
+    )
+  },
+  {
+    'id': 4,
+    'icon': Iconsax.image,
+    'title': 'HD Image Quality',
+    'subTitle': 'Set image quality to be seen',
+    'onPressed': () {
+      // Add your logic for Notifications onPressed
+    },
+    'trailing': Switch(
+      value: false,
+      onChanged: (value) {},
+      activeColor: TColors.primary,
+    )
+  },
+  // Add more items as needed
 ];

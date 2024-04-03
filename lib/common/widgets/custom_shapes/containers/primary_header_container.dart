@@ -18,27 +18,24 @@ class PrimaryHeaderContainer extends StatelessWidget {
         child: Container(
       color: TColors.primary,
       padding: EdgeInsets.all(0),
-      child: SizedBox(
-        height: 380,
-        child: Stack(
-          children: [
-            Positioned(
-              top: -135,
-              right: -150,
-              child: CircularContainer(
-                backgroundColor: TColors.textWhite.withOpacity(0.1),
-              ),
+      child: Stack(
+        children: [
+          Positioned(
+            top: -135,
+            right: -150,
+            child: CircularContainer(
+              backgroundColor: TColors.textWhite.withOpacity(0.1),
             ),
-            Positioned(
-              top: 150,
-              right: -200,
-              child: CircularContainer(
-                backgroundColor: TColors.textWhite.withOpacity(0.1),
-              ),
+          ),
+          Positioned(
+            top: 150,
+            right: -200,
+            child: CircularContainer(
+              backgroundColor: TColors.textWhite.withOpacity(0.1),
             ),
-            child
-          ],
-        ),
+          ),
+          child
+        ],
       ),
     ));
   }

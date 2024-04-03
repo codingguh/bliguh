@@ -1,3 +1,4 @@
+import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/favourite.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/home.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/store/store.dart';
@@ -46,18 +47,18 @@ class NavigationController extends GetxController {
     const NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
     const NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
     const NavigationDestination(icon: Icon(Iconsax.heart), label: 'Whishlist'),
+    const NavigationDestination(
+        icon: Icon(Iconsax.notification), label: 'Notification'),
     const NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
   ];
 
   final screens = [
     HomeScreen(),
     StoreScreen(),
-    FavouriteScreen(),
     Container(
       color: Colors.orange,
     ),
-    Container(
-      color: Colors.blue,
-    )
+    FavouriteScreen(),
+    SettingsScreen()
   ];
 }

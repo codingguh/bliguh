@@ -1,4 +1,3 @@
-import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 
