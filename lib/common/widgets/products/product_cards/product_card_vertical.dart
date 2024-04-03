@@ -2,6 +2,7 @@ import 'package:ecommerce_firebase_getx/common/styles/shadows.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/icons/circular_icon.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/texts/brand_icon_verify.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
@@ -125,24 +126,7 @@ class ProductCardVertical extends StatelessWidget {
                     title: title,
                     smallSize: true,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        brand,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(
-                        height: TSizes.xs,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: TColors.primary,
-                        size: TSizes.iconXs,
-                      )
-                    ],
-                  ),
+                  BrandIconWithVerifyIcon(brand: brand),
                   const SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),

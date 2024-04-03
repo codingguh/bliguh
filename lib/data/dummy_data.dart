@@ -87,3 +87,26 @@ final List<Map<String, dynamic>> products = [
 
   // Add more categories as needed
 ];
+
+final List<Map<String, dynamic>> featuredBrands = [
+  {
+    'image': TImages.adidasLogo,
+    'brand': 'Adidas',
+    'total': 256,
+  },
+  {
+    'image': TImages.nikeLogo,
+    'brand': 'Nike',
+    'total': 121,
+  },
+  {
+    'image': TImages.pumaLogo,
+    'brand': 'Puma',
+    'total': 34,
+  },
+  {
+    'image': TImages.appleLogo,
+    'brand': 'Apple',
+    'total': 89,
+  }
+];

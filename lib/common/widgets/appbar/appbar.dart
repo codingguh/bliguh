@@ -11,12 +11,13 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
       {super.key,
       this.title,
       this.showBackArrow = false,
+      this.showBackground = false,
       this.leadingIcon,
       this.actions,
       this.leadingOnPressed});
 
   final Widget? title;
-  final bool showBackArrow;
+  final bool showBackArrow, showBackground;
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
@@ -24,16 +25,18 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: TColors.primary,
+      color: showBackground ? TColors.primary : Colors.transparent,
       child: Stack(
         children: [
-          Positioned(
-            top: -20,
-            right: -150,
-            child: CircularContainer(
-              backgroundColor: TColors.textWhite.withOpacity(0.1),
-            ),
-          ),
+          showBackground
+              ? Positioned(
+                  top: -20,
+                  right: -150,
+                  child: CircularContainer(
+                    backgroundColor: TColors.textWhite.withOpacity(0.1),
+                  ),
+                )
+              : SizedBox(),
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: TSizes.md,

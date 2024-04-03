@@ -9,6 +9,8 @@ import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dar
 import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/frame_slider.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_recommendation_products.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_recommendation_text.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
@@ -85,27 +87,18 @@ class HomeScreen extends StatelessWidget {
             ),
             // Text('dfsdfdsfsdf'),
 
+            ///view all products
             Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 10,
               ),
               child: Column(
                 children: [
-                  GridLayout(
-                    itemCount: products.length,
-                    itemBuilder: (_, index) {
-                      final product = products[index];
-                      return ProductCardVertical(
-                        imageUrl: product['image'],
-                        title: product['title'],
-                        price: product['price'],
-                        brand: product['brand'],
-                        isDiscount: product['isDiscount'],
-                        isFavourite: product['isFavourite'],
-                        discount: product['discount'],
-                      );
-                    },
+                  Rekomendasi(),
+                  const SizedBox(
+                    height: TSizes.xs,
                   ),
+                  ProdukRekomendasi(),
                 ],
               ),
             )

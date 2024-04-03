@@ -16,6 +16,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       child: TAppBar(
+        showBackground: true,
         title: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

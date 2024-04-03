@@ -1,4 +1,6 @@
+import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class SectionHeading extends StatelessWidget {
   const SectionHeading({
@@ -18,9 +20,10 @@ class SectionHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Popular Categories',
+          title,
           style: Theme.of(context)
               .textTheme
               .headlineSmall!
@@ -28,8 +31,31 @@ class SectionHeading extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
+
         if (showActionButton)
-          TextButton(onPressed: onPressed, child: Text(buttonTittle))
+          Row(
+            children: [
+              InkWell(
+                  onTap: () {},
+                  child: Text(
+                    buttonTittle,
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelMedium!
+                        .copyWith(fontWeight: FontWeight.w600),
+                  )),
+              const SizedBox(
+                width: 3,
+              ),
+              Icon(
+                Iconsax.arrow_right_3,
+                color: TColors.darkGrey,
+                size: 12,
+                weight: 2,
+              )
+            ],
+          )
+        // TextButton(onPressed: onPressed, child: Text(buttonTittle))
       ],
     );
   }

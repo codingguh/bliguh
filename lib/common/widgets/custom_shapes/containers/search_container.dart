@@ -10,16 +10,21 @@ class SearchContainer extends StatelessWidget {
       {super.key,
       required this.text,
       this.icon = Iconsax.search_normal,
+      this.prefixIcon = Iconsax.camera,
       this.showBackground = true,
       this.showBorder = true,
+      this.showPrefixIcon = false,
       this.onTap,
-      this.height = 45});
+      this.height = 45,
+      this.padding =
+          const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace)});
 
   final String text;
-  final IconData? icon;
-  final bool showBackground, showBorder;
+  final IconData? icon, prefixIcon;
+  final bool showBackground, showBorder, showPrefixIcon;
   final VoidCallback? onTap;
   final double height;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,7 @@ class SearchContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+        padding: padding,
         child: Container(
           width: TDeviceUtils.getScreenWidth(context),
           height: height,
@@ -54,12 +59,24 @@ class SearchContainer extends StatelessWidget {
                 width: TSizes.spaceBtwItems,
               ),
               Text(
-                'Search in Store',
+                text,
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!
                     .copyWith(fontSize: 16),
-              )
+              ),
+              Spacer(),
+              InkWell(
+                onTap: () {},
+                child: Icon(
+                  size: 19,
+                  prefixIcon,
+                  color: TColors.darkGrey,
+                ),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
             ],
           ),
         ),
