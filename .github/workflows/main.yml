@@ -36,9 +36,13 @@ jobs:
           flutter pub get
           pod repo update
           flutter build ios --release --no-codesign
+          ls -la build/ios/iphoneos/  # Check contents of the directory
           mkdir Payload
+          ls -la  # Check current directory contents
           mv build/ios/iphoneos/Runner.app Payload
+          ls -la Payload  # Check contents of the Payload directory
           zip -qq -r -9 FlutterIpaExport.ipa Payload
+          ls -la  # Check current directory contents
           mv FlutterIpaExport.ipa ../
           cd ..
 
