@@ -35,3 +35,10 @@ jobs:
         uses: android-actions/setup-android@v2
         with:
           components: "platform-tools,build-tools;30.0.3"
+
+      - name: Package and Release APK
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/release/*"
+          tag: v0.3.3
+          token: ${{ secrets.TOKEN }}

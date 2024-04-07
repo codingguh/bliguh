@@ -1,23 +1,62 @@
-# Filename: main_workflow.yml
+name: Build and Release My Apps
 
 on:
   push:
     branches:
       - release-ui
 
-name: Build My Apps
-
 jobs:
   build:
-    name: Build and Release new apk
+    name: Build and Release APK and IPA
     runs-on: macos-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
 
-      - name: Build APK
-        uses: ./build_apk.yml
+      # - name: Set up Java
+      #   uses: actions/setup-java@v2
+      #   with:
+      #     distribution: "zulu"
+      #     java-version: "17.0.10+7"
 
-      - name: Build iOS IPA
-        uses: ./build_ios.yml
+      # - name: Set up Flutter
+      #   uses: subosito/flutter-action@v2
+      #   with:
+      #     channel: "stable"
+
+      # - name: Install dependencies
+      #   run: flutter pub get
+
+      # - name: Build Android APK
+      #   run: flutter build apk --release --split-per-abi
+
+      # - name: Build iOS IPA
+      #   run: |
+      #     flutter pub get
+      #     pod repo update
+      #     flutter build ios --release --no-codesign
+      #     mkdir Payload
+      #     mv build/ios/iphoneos/Runner.app Payload
+      #     zip -qq -r -9 FlutterIpaExport.ipa Payload
+
+      # - name: Install Android SDK
+      #   uses: android-actions/setup-android@v2
+      #   with:
+      #     components: "platform-tools,build-tools;30.0.3"
+
+      - name: Package and Release APK
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/release/*"
+          tag: v0.3.3
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload iOS IPA
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN}}
+          file: build/ios/iphoneos/FlutterIpaExport.ipa
+          tag: v0.3.5
+          overwrite: true
+          body: "iOS IPA Release again"
