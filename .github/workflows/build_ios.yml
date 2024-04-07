@@ -1,0 +1,49 @@
+# Filename: build_ios.yml
+
+name: Build iOS IPA
+
+on:
+  push:
+    branches:
+      - release-ui
+
+jobs:
+  build_ios:
+    name: Build and Release IPA
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: "17.0.10+7"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build iOS IPA
+        run: |
+          flutter pub get
+          pod repo update
+          flutter build ios --release --no-codesign
+          mkdir Payload
+          mv build/ios/iphoneos/Runner.app Payload
+          zip -qq -r -9 FlutterIpaExport.ipa Payload
+
+      - name: Upload iOS IPA
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.bliguh }}
+          file: build/ios/iphoneos/FlutterIpaExport.ipa
+          tag: v0.3.5
+          overwrite: true
+          body: "iOS IPA Release again"

@@ -1,20 +1,37 @@
-# Filename: main_workflow.yml
+name: Build APK
 
 on:
   push:
     branches:
       - release-ui
 
-name: Build My Apps
-
 jobs:
   build:
-    name: Build and Release new apk
+    name: Build and Release APK
     runs-on: macos-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: "17.0.10+7"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      - name: Install dependencies
+        run: flutter pub get
+
       - name: Build APK
-        uses: ./build_apk.yml
+        run: flutter build apk --release --split-per-abi
+
+      - name: Install Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          components: "platform-tools,build-tools;30.0.3"
