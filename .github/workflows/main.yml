@@ -55,7 +55,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/release/*"
-          tag: v0.3.15
+          tag: v0.3.19
           token: ${{ secrets.TOKEN }}
           overwrite: true
 
@@ -64,6 +64,6 @@ jobs:
         with:
           repo_token: ${{ secrets.TOKEN }}
           file: build/ios/iphoneos/FlutterIpaExport.ipa
-          tag: v0.3.17
+          tag: v0.3.21
           overwrite: true
           body: "iOS IPA Release again"
