@@ -6,6 +6,7 @@ class RoundedImage extends StatelessWidget {
     Key? key,
     required this.imageUrl,
     this.height = 100,
+    this.width = double.infinity,
     this.applyImageRadius = true,
     this.border,
     this.backgroundColor = Colors.white,
@@ -17,7 +18,7 @@ class RoundedImage extends StatelessWidget {
   }) : super(key: key);
 
   final String imageUrl;
-  final double? height;
+  final double? height, width;
   final bool applyImageRadius;
   final BoxBorder? border;
   final Color backgroundColor;
@@ -33,8 +34,8 @@ class RoundedImage extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         height: height,
+        width: width,
         margin: EdgeInsets.only(right: 0),
-        width: double.infinity,
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(radius),
