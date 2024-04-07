@@ -29,17 +29,17 @@ jobs:
       - name: Build APK
         run: flutter build apk --release --split-per-abi
 
-      - name: Build IPA
-        run: flutter build ios
+      # - name: Build IPA
+      #   run: flutter build ios
 
-      - name: Install Xcode command line tools
-        run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+      # - name: Install Xcode command line tools
+      #   run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
-      - name: Install CocoaPods
-        run: sudo gem install cocoapods
+      # - name: Install CocoaPods
+      #   run: sudo gem install cocoapods
 
-      - name: Install iOS dependencies
-        run: cd ios && pod install && cd ..
+      # - name: Install iOS dependencies
+      #   run: cd ios && pod install && cd ..
 
       - name: Package and Release APK
         uses: ncipollo/release-action@v1
@@ -48,9 +48,9 @@ jobs:
           tag: v0.2.2
           token: ${{ secrets.TOKEN }}
 
-      - name: Package and Release IPA
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build/ios/iphoneos/*.ipa"
-          tag: v0.2.2
-          token: ${{ secrets.TOKEN }}
+      # - name: Package and Release IPA
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "build/ios/iphoneos/*.ipa"
+      #     tag: v0.2.2
+      #     token: ${{ secrets.TOKEN }}
