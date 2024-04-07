@@ -52,4 +52,4 @@ jobs:
           file: build/ios/iphoneos/FlutterIpaExport.ipa
           tag: v0.3.2
           overwrite: true
-          body: "iOS IPA Release
+          body: "iOS IPA Release"
