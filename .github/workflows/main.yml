@@ -32,10 +32,8 @@ jobs:
       - name: Build IPA
         run: flutter build ios --release --no-codesign
 
-      - name: Set up Xcode
-        uses: actions/setup-xcode@v2
-        with:
-          xcode-version: "13.x" # Set your Xcode version here
+      - name: Install Xcode command line tools
+        run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
       - name: Install CocoaPods
         run: sudo gem install cocoapods
