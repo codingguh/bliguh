@@ -1,0 +1,20 @@
+# Filename: main_workflow.yml
+
+on:
+  push:
+    branches:
+      - release-ui
+
+name: Build My Apps
+
+jobs:
+  build:
+    name: Build and Release new apk
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build APK
+        uses: ./build_apk.yml
