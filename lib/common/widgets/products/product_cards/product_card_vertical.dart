@@ -1,17 +1,21 @@
 import 'package:ecommerce_firebase_getx/common/styles/shadows.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/badge/badge.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/icons/circular_icon.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/brand_icon_verify.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text_discount.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/controllers/favourite_controller.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/product_details/product_detail.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:ecommerce_firebase_getx/utils/formatters/idr_formatter.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:intl/intl.dart';
 
 class ProductCardVertical extends StatelessWidget {
   const ProductCardVertical(
@@ -37,17 +41,15 @@ class ProductCardVertical extends StatelessWidget {
     final FavouriteController controller =
         Get.put<FavouriteController>(FavouriteController());
 
-    String formattedDiscountPrice =
-        NumberFormat.currency(locale: 'id_ID', symbol: 'Rp.', decimalDigits: 0)
-            .format(discountPrice);
-    String formattedPrice =
-        NumberFormat.currency(locale: 'id_ID', symbol: 'Rp.', decimalDigits: 0)
-            .format(price);
+    String formattedDiscountPrice = formatPriceIDR(discountPrice);
+    String formattedPrice = formatPriceIDR(price);
 
     final dark = THelperFunctions.isDarkMode(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.to(() => const ProductDetailScreen());
+      },
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -59,6 +61,7 @@ class ProductCardVertical extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            ///Thumbnail
             RoundedContainer(
               height: 188,
               padding: EdgeInsets.all(TSizes.sm),
@@ -77,27 +80,7 @@ class ProductCardVertical extends StatelessWidget {
                   ///Sale Tag
                   Positioned(
                     top: 12,
-                    child: isDiscount
-                        ? RoundedContainer(
-                            radius: TSizes.sm,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: TSizes.xs, horizontal: TSizes.xs),
-                            backgroundColor: TColors.secondary.withOpacity(0.8),
-                            child: SizedBox(
-                              width: 30,
-                              child: Center(
-                                child: Text(
-                                  '$discount%',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelMedium!
-                                      .apply(
-                                        color: TColors.black,
-                                      ),
-                                ),
-                              ),
-                            ))
-                        : SizedBox(),
+                    child: isDiscount ? TBadge(label: discount) : SizedBox(),
                   ),
 
                   ///Favorite icon button
@@ -145,39 +128,13 @@ class ProductCardVertical extends StatelessWidget {
                       isDiscount
                           ? Column(
                               children: [
-                                Text(
-                                  '$formattedPrice',
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall!
-                                      .copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          decoration:
-                                              TextDecoration.lineThrough,
-                                          color: Colors.grey),
-                                ),
-                                Text(
-                                  '$formattedDiscountPrice',
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelLarge!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                )
+                                PriceTextDiscount(
+                                    formattedPrice: formattedPrice),
+                                PriceText(
+                                    formattedPrice: formattedDiscountPrice)
                               ],
                             )
-                          : Text(
-                              '$formattedPrice',
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(fontWeight: FontWeight.bold),
-                            ),
+                          : PriceText(formattedPrice: formattedPrice),
                       //Add to cart button
                       Container(
                         decoration: BoxDecoration(

@@ -28,11 +28,7 @@ class ProdukRekomendasi extends StatelessWidget {
             isFavourite: controller.isFavorite(product),
             discount: product['discount'],
             onPressed: () {
-              // var data = controller.favoriteProducts;
-
-              print(controller.favoriteProducts);
               controller.toggleFavorite(product);
-              print(controller.favoriteProducts.length);
             },
           ),
         );

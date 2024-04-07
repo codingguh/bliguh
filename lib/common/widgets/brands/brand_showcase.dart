@@ -4,7 +4,6 @@ import 'package:ecommerce_firebase_getx/features/shop/screens/store/widgets/top_
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class BrandsShowCase extends StatelessWidget {
@@ -17,7 +16,6 @@ class BrandsShowCase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool dark = THelperFunctions.isDarkMode(context);
     return RoundedContainer(
       showBorder: true,
       borderColor: TColors.darkGrey,
