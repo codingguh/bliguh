@@ -1,3 +1,4 @@
+import 'package:ecommerce_firebase_getx/common/widgets/chips/choice_chip.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text_discount.dart';
@@ -74,6 +75,79 @@ class ProductAttributes extends StatelessWidget {
               ///Stock
             ],
           ),
+        ),
+        SizedBox(
+          height: TSizes.spaceBtwItems,
+        ),
+
+        /// -- Attributes
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SectionHeading(
+              title: 'Colors',
+              showActionButton: false,
+            ),
+            SizedBox(
+              height: TSizes.spaceBtwItems / 2,
+            ),
+            Wrap(
+              spacing: 8,
+              children: [
+                TChoiceChip(
+                  text: 'Green',
+                  selected: false,
+                  onSelected: (value) {
+                    print(value);
+                  },
+                ),
+                TChoiceChip(
+                  text: 'Blue',
+                  selected: true,
+                  onSelected: (value) {},
+                ),
+                TChoiceChip(
+                  text: 'Yellow',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
+              ],
+            )
+          ],
+        ),
+
+        /// -- Attributes
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SectionHeading(
+              title: 'Size',
+              showActionButton: false,
+            ),
+            SizedBox(
+              height: TSizes.spaceBtwItems / 2,
+            ),
+            Wrap(
+              spacing: 8,
+              children: [
+                TChoiceChip(
+                  text: 'EU 34',
+                  selected: true,
+                  onSelected: (value) {},
+                ),
+                TChoiceChip(
+                  text: 'EU 36',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
+                TChoiceChip(
+                  text: 'EU 38',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
+              ],
+            ),
+          ],
         )
       ],
     );

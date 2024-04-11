@@ -8,7 +8,7 @@ class TChipTheme {
     disabledColor: TColors.grey.withOpacity(0.4),
     labelStyle: const TextStyle(color: TColors.black),
     selectedColor: TColors.primary,
-    padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
+    padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 14),
     checkmarkColor: TColors.white,
   );
 
