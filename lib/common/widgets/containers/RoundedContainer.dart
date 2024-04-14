@@ -7,6 +7,7 @@ class RoundedContainer extends StatelessWidget {
   const RoundedContainer(
       {super.key,
       this.width,
+      this.widthBorder = 1,
       this.height,
       this.radius = TSizes.cardRadiusMd,
       this.child,
@@ -17,10 +18,11 @@ class RoundedContainer extends StatelessWidget {
       this.margin});
 
   final double? width, height;
-  final double radius;
+  final double radius, widthBorder;
   final Widget? child;
   final Color borderColor, backgroundColor;
   final bool showBorder;
+
   final EdgeInsetsGeometry? padding, margin;
 
   @override
@@ -33,7 +35,9 @@ class RoundedContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(radius),
-        border: showBorder ? Border.all(color: borderColor) : null,
+        border: showBorder
+            ? Border.all(color: borderColor, width: widthBorder)
+            : null,
       ),
       child: child,
     );

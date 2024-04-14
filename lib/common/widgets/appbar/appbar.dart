@@ -8,19 +8,22 @@ import 'package:iconsax/iconsax.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TAppBar(
-      {super.key,
+      {Key? key,
       this.title,
       this.showBackArrow = false,
       this.showBackground = false,
       this.leadingIcon,
       this.actions,
-      this.leadingOnPressed});
+      this.isCenter = false,
+      this.leadingOnPressed,
+      this.onTap})
+      : super(key: key);
 
   final Widget? title;
-  final bool showBackArrow, showBackground;
+  final bool showBackArrow, showBackground, isCenter;
   final IconData? leadingIcon;
   final List<Widget>? actions;
-  final VoidCallback? leadingOnPressed;
+  final VoidCallback? leadingOnPressed, onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -37,23 +40,27 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 )
               : SizedBox(),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: TSizes.md,
-            ),
-            child: AppBar(
-              automaticallyImplyLeading: false,
-              leading: showBackArrow
-                  ? IconButton(
-                      onPressed: () => Get.back(),
-                      icon: Icon(Iconsax.arrow_left))
-                  : leadingIcon != null
-                      ? IconButton(
-                          onPressed: leadingOnPressed, icon: Icon(leadingIcon))
-                      : null,
-              title: title,
-              actions: actions,
-            ),
+          AppBar(
+            titleSpacing: isCenter ? 0 : 10,
+            automaticallyImplyLeading: false,
+            centerTitle: isCenter ? true : false,
+            leading: showBackArrow
+                ? IconButton(
+                    onPressed: onTap,
+                    icon: Icon(
+                      Iconsax.arrow_left,
+                      color: const Color.fromARGB(255, 38, 69, 225),
+                    ),
+                  )
+                : leadingIcon != null
+                    ? IconButton(
+                        onPressed: leadingOnPressed,
+                        icon: Icon(leadingIcon),
+                      )
+                    : null,
+            title:
+                title, // Jika isCenter bernilai false, title akan ditampilkan sesuai posisi awalnya
+            actions: actions,
           ),
         ],
       ),

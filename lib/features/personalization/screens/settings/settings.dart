@@ -4,6 +4,7 @@ import 'package:ecommerce_firebase_getx/common/widgets/list_tile/settings_menu_t
 import 'package:ecommerce_firebase_getx/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
+import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
@@ -102,7 +103,10 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {}, child: const Text('Logout')),
+                        onPressed: () {
+                          Get.to(() => LoginScreen());
+                        },
+                        child: const Text('Logout')),
                   ),
                   SizedBox(
                     height: TSizes.spaceBtwSections * 2.5,

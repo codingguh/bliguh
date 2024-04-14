@@ -1,6 +1,8 @@
+import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/addresses.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 final List<String> banners = [
@@ -128,10 +130,11 @@ List<Map<String, dynamic>> settingsList = [
   {
     'id': 1,
     'icon': Iconsax.safe_home,
-    'title': 'My Account',
+    'title': 'My Addresses',
     'subTitle': 'Set shopping delivery address',
     'onPressed': () {
       // Add your logic for My Account onPressed
+      Get.to(() => const UserAddressScreen());
     },
   },
   {

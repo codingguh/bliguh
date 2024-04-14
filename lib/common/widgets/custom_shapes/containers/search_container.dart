@@ -16,12 +16,13 @@ class SearchContainer extends StatelessWidget {
       this.showPrefixIcon = false,
       this.onTap,
       this.height = 45,
+      this.fullWidth = false,
       this.padding =
           const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace)});
 
   final String text;
   final IconData? icon, prefixIcon;
-  final bool showBackground, showBorder, showPrefixIcon;
+  final bool showBackground, showBorder, showPrefixIcon, fullWidth;
   final VoidCallback? onTap;
   final double height;
   final EdgeInsetsGeometry padding;
@@ -34,7 +35,9 @@ class SearchContainer extends StatelessWidget {
       child: Padding(
         padding: padding,
         child: Container(
-          width: TDeviceUtils.getScreenWidth(context),
+          width: fullWidth
+              ? double.infinity
+              : TDeviceUtils.getScreenWidth(context),
           height: height,
           padding: const EdgeInsets.all(TSizes.sm),
           decoration: BoxDecoration(
