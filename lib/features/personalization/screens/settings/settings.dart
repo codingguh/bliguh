@@ -26,12 +26,13 @@ class SettingsScreen extends StatelessWidget {
                 child: Column(
               children: [
                 TAppBar(
+                    isCenter: true,
                     title: Text(
-                  'My Account',
-                  style: Theme.of(context).textTheme.headlineMedium!.apply(
-                        color: TColors.white,
-                      ),
-                )),
+                      'My Account',
+                      style: Theme.of(context).textTheme.headlineMedium!.apply(
+                            color: TColors.white,
+                          ),
+                    )),
                 const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),

@@ -11,6 +11,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
@@ -22,6 +23,9 @@ class ProductReviewsScreen extends StatelessWidget {
       appBar: TAppBar(
         showBackArrow: true,
         title: Text('Reviews & Ratings'),
+        onTap: () {
+          Get.back();
+        },
       ),
       body: SingleChildScrollView(
         child: Padding(

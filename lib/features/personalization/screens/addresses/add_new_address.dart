@@ -5,6 +5,8 @@ import 'package:ecommerce_firebase_getx/features/personalization/controllers/reg
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/streename_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/select_province.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_province_widgets.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/profile.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/theme/custom_themes/text_field_theme.dart';
@@ -35,9 +37,12 @@ class AddNewAddresses extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
+        onTap: () {
+          Get.to(() => const SettingsScreen());
+        },
         isCenter: true,
         title: Text(
-          'New Address',
+          'New Addresss',
         ),
       ),
       bottomNavigationBar: Container(

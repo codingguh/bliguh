@@ -2,9 +2,11 @@ import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/images/ciruclar_image.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/widgets/profile_menu.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -15,6 +17,10 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
+        isCenter: true,
+        onTap: () {
+          Get.to(() => const SettingsScreen());
+        },
         title: Text('Profile'),
       ),
 
