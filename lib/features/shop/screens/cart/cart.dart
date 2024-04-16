@@ -1,7 +1,6 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/products/cart/button_checkout_all_list.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/checkout/checkout_screen.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

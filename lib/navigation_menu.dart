@@ -1,5 +1,4 @@
 import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/coupon/coupon_screen.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/favourite.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/home.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/store/store.dart';

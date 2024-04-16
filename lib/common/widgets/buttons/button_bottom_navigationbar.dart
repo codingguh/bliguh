@@ -7,9 +7,10 @@ class ButtonBottomNavigationbar extends StatelessWidget {
       {super.key,
       this.showDescription = false,
       this.containerHeight = 125,
+      this.isLeft = true,
       this.description = const Text('description')});
 
-  final bool showDescription;
+  final bool showDescription, isLeft;
   final double containerHeight;
   final Widget description;
 
@@ -28,11 +29,12 @@ class ButtonBottomNavigationbar extends StatelessWidget {
           ),
           child: CustomButton(
             fontSize: 18,
+            isLeft: false,
             fontWeight: FontWeight.w500,
             showDescription: showDescription,
             description: description,
             onTap: () {
-              print('hello');
+              print('Handling fee Rp1.000');
             },
           ),
         ));

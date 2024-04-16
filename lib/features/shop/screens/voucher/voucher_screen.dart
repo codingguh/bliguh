@@ -1,11 +1,8 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_bottom_navigationbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/controller/coupon_controller.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/coupon.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/coupon/widgets/coupon_code.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/coupon/widgets/title_voucher_desc.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

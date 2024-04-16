@@ -27,9 +27,10 @@ class ProductTitleText extends StatelessWidget {
       title,
       style: isBold
           ? TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 71, 96, 219),
-              fontSize: 14)
+              fontWeight: FontWeight.w700,
+              color: Colors.black,
+              // color: Color.fromARGB(255, 71, 96, 219),
+            )
           : brandTextSizes == TextSizes.small
               ? Theme.of(context).textTheme.labelMedium!.apply(color: color)
               : brandTextSizes == TextSizes.medium

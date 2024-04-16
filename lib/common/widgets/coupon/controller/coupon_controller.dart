@@ -1,6 +1,5 @@
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/model/coupon_model.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CouponController extends GetxController {

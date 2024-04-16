@@ -1,4 +1,5 @@
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/addresses.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/purchases/order_screen.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
@@ -152,6 +153,7 @@ List<Map<String, dynamic>> settingsList = [
     'title': 'My Orders',
     'subTitle': 'In-progress and completed orders',
     'onPressed': () {
+      Get.to(() => const OrderScreen());
       // Add your logic for Privacy onPressed
     },
   },
@@ -173,15 +175,7 @@ List<Map<String, dynamic>> settingsList = [
       // Add your logic for Privacy onPressed
     },
   },
-  {
-    'id': 3,
-    'icon': Iconsax.bag_tick,
-    'title': 'My Orders',
-    'subTitle': 'In-progress and completed orders',
-    'onPressed': () {
-      // Add your logic for Privacy onPressed
-    },
-  },
+
   {
     'id': 5,
     'icon': Iconsax.notification,

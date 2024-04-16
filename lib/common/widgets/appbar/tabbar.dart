@@ -13,12 +13,17 @@ class TTabBar extends StatelessWidget implements PreferredSizeWidget {
     final bool dark = THelperFunctions.isDarkMode(context);
     return Material(
       color: dark ? TColors.black : TColors.white,
-      child: TabBar(
-        tabs: tabs,
-        isScrollable: true,
-        indicatorColor: TColors.primary,
-        unselectedLabelColor: TColors.darkGrey,
-        labelColor: dark ? TColors.white : TColors.primary,
+      child: Container(
+        width: double.infinity, // Take full width
+        child: TabBar(
+          tabs: tabs,
+          padding: EdgeInsets.zero,
+          isScrollable: true,
+          indicatorColor: TColors.primary,
+          unselectedLabelColor: TColors.darkGrey,
+          labelColor: dark ? TColors.white : TColors.primary,
+          tabAlignment: TabAlignment.start,
+        ),
       ),
     );
   }

@@ -2,15 +2,23 @@ import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart
 import 'package:ecommerce_firebase_getx/common/widgets/texts/brand_icon_verify.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({
-    super.key,
-  });
+  const CartItem(
+      {super.key,
+      required this.width,
+      required this.height,
+      this.showBrand = true,
+      required this.title,
+      required this.image,
+      required this.isBold});
+
+  final double width, height;
+  final bool showBrand, isBold;
+  final String title, image;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +26,10 @@ class CartItem extends StatelessWidget {
       children: [
         ///Image
         RoundedImage(
-          imageUrl: TImages.productImage1,
+          imageUrl: image,
           width: 40,
           height: 40,
+          fit: BoxFit.fitWidth,
           padding: EdgeInsets.all(TSizes.md),
           backgroundColor: THelperFunctions.isDarkMode(context)
               ? TColors.darkGrey
@@ -36,11 +45,12 @@ class CartItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BrandIconWithVerifyIcon(brand: 'Nike'),
+              if (showBrand) BrandIconWithVerifyIcon(brand: 'Nike'),
               Flexible(
                 child: ProductTitleText(
-                  title: 'Black Sports Shoes',
+                  title: title,
                   maxLines: 1,
+                  isBold: isBold,
                 ),
               ),
 

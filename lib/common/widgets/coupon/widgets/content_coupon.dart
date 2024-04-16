@@ -3,9 +3,7 @@ import 'package:ecommerce_firebase_getx/common/widgets/coupon/controller/coupon_
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/model/coupon_model.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class ContentCoupon extends StatelessWidget {

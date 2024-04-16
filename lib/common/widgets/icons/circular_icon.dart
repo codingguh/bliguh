@@ -1,6 +1,4 @@
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class CircularIcon extends StatelessWidget {
@@ -37,8 +35,7 @@ class CircularIcon extends StatelessWidget {
         child: Icon(
           icon,
           color: overlayColor,
-          // fill: 1.5,
-          weight: 9,
+          weight: 39,
           size: size,
         ),
       ),

@@ -1,9 +1,4 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_bottom_navigationbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/controller/coupon_controller.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/coupon.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/coupon_painter.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/model/coupon_model.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/products/cart/button_checkout_all_list.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/success_screen/success_screen.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/cart/widgets/cart_items.dart';
@@ -11,12 +6,12 @@ import 'package:ecommerce_firebase_getx/features/shop/screens/checkout/widgets/l
 import 'package:ecommerce_firebase_getx/features/shop/screens/checkout/widgets/label_shop_voucher.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/coupon/coupon_screen.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/coupon/widgets/coupon_badge_label.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/payment/payment_screen.dart';
 import 'package:ecommerce_firebase_getx/navigation_menu.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -81,7 +76,7 @@ class CheckoutScreen extends StatelessWidget {
               LabeShopVoucher(
                 title: 'Payment Option',
                 onTap: () {
-                  print('options');
+                  Get.to(() => PaymentScreen());
                 },
                 iconTitle: Icon(
                   Iconsax.wallet_search,
@@ -111,9 +106,7 @@ class CheckoutScreen extends StatelessWidget {
               ),
               LabeShopVoucher(
                 title: 'Payment Details',
-                onTap: () {
-                  print('options');
-                },
+                onTap: () {},
                 iconTitle: Icon(
                   Iconsax.receipt,
                   size: 21,

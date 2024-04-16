@@ -1,4 +1,5 @@
 import 'package:ecommerce_firebase_getx/common/widgets/products/cart/cart_item.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -8,15 +9,22 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/enums.dart';
 
 class CartItems extends StatelessWidget {
-  const CartItems({
-    super.key,
-    this.showAddRemoveButtons = true,
-    this.showGap = false,
-    required this.total,
-  });
+  const CartItems(
+      {super.key,
+      this.showAddRemoveButtons = true,
+      this.showGap = false,
+      this.showBrand = true,
+      required this.total,
+      this.width = 40,
+      this.isBold = false,
+      this.title = 'Black Sports Shoes',
+      this.image = TImages.productImage1,
+      this.height = 40});
 
-  final bool showAddRemoveButtons, showGap;
+  final bool showAddRemoveButtons, showGap, showBrand, isBold;
   final int total;
+  final double width, height;
+  final String title, image;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +45,14 @@ class CartItems extends StatelessWidget {
                     horizontal: TSizes.defaultSpace, vertical: TSizes.md),
                 child: Column(
                   children: [
-                    CartItem(),
+                    CartItem(
+                      width: width,
+                      height: height,
+                      showBrand: showBrand,
+                      title: title,
+                      image: image,
+                      isBold: isBold,
+                    ),
                     if (showAddRemoveButtons)
                       SizedBox(
                         height: TSizes.spaceBtwItems,

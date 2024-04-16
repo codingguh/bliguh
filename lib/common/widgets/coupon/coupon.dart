@@ -1,14 +1,9 @@
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/controller/coupon_controller.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/coupon_painter.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/model/coupon_model.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/widgets/content_coupon.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/coupon/widgets/image_coupon.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Coupon extends StatelessWidget {
   const Coupon({

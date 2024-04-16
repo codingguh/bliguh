@@ -11,11 +11,12 @@ class CustomButton extends StatelessWidget {
       this.showDescription = false,
       this.description = const Text('Your description is here'),
       this.fontWeight = FontWeight.normal,
+      this.isLeft = true,
       this.onTap});
 
   final String text;
   final double fontSize, height;
-  final bool showDescription;
+  final bool showDescription, isLeft;
   final Widget description;
   final FontWeight fontWeight;
   final Function()? onTap;
@@ -25,7 +26,8 @@ class CustomButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment:
+            isLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
         children: [
           if (showDescription)
             Column(

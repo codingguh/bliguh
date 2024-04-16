@@ -1,11 +1,7 @@
 import 'package:ecommerce_firebase_getx/features/shop/screens/checkout/widgets/show_body_items.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/coupon/coupon_screen.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/coupon/widgets/coupon_badge_label.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 class LabeShopVoucher extends StatelessWidget {
   const LabeShopVoucher(
