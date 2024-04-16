@@ -1,18 +1,11 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/products/ratings/rating_indicator.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/product_reviews/widgets/overall_product_ratings.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/product_reviews/widgets/user_review_card.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/device/device_utility.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});

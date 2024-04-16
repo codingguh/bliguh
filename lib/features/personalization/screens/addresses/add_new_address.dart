@@ -1,20 +1,17 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_bottom_navigationbar.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/buttons/custom_button.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/text_form_fields/text_field_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/address_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/streename_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/select_province.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_province_widgets.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/theme/custom_themes/text_field_theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:iconsax/iconsax.dart';
 
 class AddNewAddresses extends StatelessWidget {
   final InputDecoration decoration2 = const InputDecoration(
@@ -38,29 +35,14 @@ class AddNewAddresses extends StatelessWidget {
       appBar: TAppBar(
         showBackArrow: true,
         onTap: () {
-          Get.to(() => const SettingsScreen());
+          Get.back();
         },
         isCenter: true,
         title: Text(
           'New Addresss',
         ),
       ),
-      bottomNavigationBar: Container(
-          width: MediaQuery.of(context).size.width,
-          height: 115,
-          color: Colors.white,
-          child: Padding(
-            padding: EdgeInsets.only(
-              bottom: TSizes.defaultSpace * 1.5,
-              left: TSizes.lg * 1.25,
-              top: TSizes.lg,
-              right: TSizes.lg * 1.25,
-            ),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('Submit'),
-            ),
-          )),
+      bottomNavigationBar: ButtonBottomNavigationbar(),
       body: SingleChildScrollView(
         child: Column(
           children: [

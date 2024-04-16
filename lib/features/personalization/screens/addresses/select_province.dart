@@ -1,15 +1,11 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/timelines/vertical_timeline.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/province_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/current_location.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/listtile_render_regions.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/region_timeline_select.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/regions_widget.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

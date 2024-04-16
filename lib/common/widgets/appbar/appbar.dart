@@ -1,9 +1,7 @@
 import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -16,11 +14,13 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.actions,
       this.isCenter = false,
       this.leadingOnPressed,
+      this.bgColor = TColors.primary,
       this.onTap})
       : super(key: key);
 
   final Widget? title;
   final bool showBackArrow, showBackground, isCenter;
+  final Color bgColor;
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed, onTap;
@@ -28,7 +28,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: showBackground ? TColors.primary : Colors.transparent,
+      color: showBackground ? bgColor : Colors.transparent,
       child: Stack(
         children: [
           showBackground

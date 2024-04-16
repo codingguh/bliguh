@@ -4,6 +4,9 @@ class TColors {
   // App theme colors
   static const Color primary = Color(0xFF4b68ff);
   static const Color secondary = Color(0xFFFFE24B);
+  static const Color third = Color(0xFF26ab99);
+  static const Color thirdLight = Color.fromARGB(255, 68, 224, 203);
+  static const Color thirdDark = Color.fromARGB(255, 25, 116, 104);
   static const Color accent = Color(0xFFb0c7ff);
 
   // Text colors

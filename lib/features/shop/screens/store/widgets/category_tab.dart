@@ -2,7 +2,6 @@ import 'package:ecommerce_firebase_getx/common/widgets/brands/brand_showcase.dar
 import 'package:ecommerce_firebase_getx/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/controllers/favourite_controller.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';

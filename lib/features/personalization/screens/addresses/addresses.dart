@@ -1,5 +1,4 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_card.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
@@ -24,6 +23,9 @@ class UserAddressScreen extends StatelessWidget {
       ),
       appBar: TAppBar(
         showBackArrow: true,
+        onTap: () {
+          Get.back();
+        },
         isCenter: true,
         title: Text(
           'Addresses',

@@ -1,8 +1,10 @@
+import 'package:ecommerce_firebase_getx/features/shop/screens/cart/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
+import 'package:get/get.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -40,7 +42,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         actions: [
           CartCounterIcon(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => CartScreen());
+            },
             iconColor: TColors.white,
           )
         ],

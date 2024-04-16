@@ -11,11 +11,13 @@ class CircularIcon extends StatelessWidget {
       this.size = TSizes.lg,
       required this.icon,
       this.color,
+      this.padding = 0,
       this.backgroundColor,
       this.onPressed,
       this.overlayColor});
 
   final double? width, height, size;
+  final double padding;
   final IconData icon;
   final Color? color, backgroundColor, overlayColor;
   final VoidCallback? onPressed;
@@ -25,27 +27,19 @@ class CircularIcon extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      padding: padding != 0 ? EdgeInsets.all(padding) : EdgeInsets.zero,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(80),
-        color: backgroundColor != null
-            ? backgroundColor!
-            : THelperFunctions.isDarkMode(context)
-                ? TColors.black.withOpacity(0.9)
-                : TColors.white.withOpacity(0.9),
+        color: backgroundColor,
       ),
-      child: Center(
-        child: IconButton(
-          onPressed: onPressed,
-          icon: Center(
-            child: Icon(
-              icon,
-              color: overlayColor,
-              fill: 1,
-              weight: 2,
-            ),
-          ),
-          color: color,
-          iconSize: size,
+      child: InkWell(
+        onTap: onPressed,
+        child: Icon(
+          icon,
+          color: overlayColor,
+          // fill: 1.5,
+          weight: 9,
+          size: size,
         ),
       ),
     );

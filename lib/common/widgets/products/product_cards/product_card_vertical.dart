@@ -7,6 +7,7 @@ import 'package:ecommerce_firebase_getx/common/widgets/texts/brand_icon_verify.d
 import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text_discount.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/cart/cart.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/controllers/favourite_controller.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/product_details/product_detail.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
@@ -46,23 +47,23 @@ class ProductCardVertical extends StatelessWidget {
 
     final dark = THelperFunctions.isDarkMode(context);
 
-    return GestureDetector(
-      onTap: () {
-        Get.to(() => const ProductDetailScreen());
-      },
-      child: Container(
-        width: 180,
-        padding: const EdgeInsets.all(1),
-        decoration: BoxDecoration(
-            boxShadow: [ShadowStyle.verticalProductShadow],
-            borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-            color: dark ? TColors.darkGrey : TColors.white),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ///Thumbnail
-            RoundedContainer(
+    return Container(
+      width: 180,
+      padding: const EdgeInsets.all(1),
+      decoration: BoxDecoration(
+          boxShadow: [ShadowStyle.verticalProductShadow],
+          borderRadius: BorderRadius.circular(TSizes.productImageRadius),
+          color: dark ? TColors.darkGrey : TColors.white),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ///Thumbnail
+          GestureDetector(
+            onTap: () {
+              Get.to(() => const ProductDetailScreen());
+            },
+            child: RoundedContainer(
               height: 188,
               padding: EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
@@ -91,52 +92,60 @@ class ProductCardVertical extends StatelessWidget {
                         ? CircularIcon(
                             icon: Iconsax.heart5,
                             overlayColor: Colors.red,
+                            backgroundColor: Colors.white,
                             onPressed: onPressed,
+                            size: TSizes.lg,
+                            padding: 6,
                           )
                         : CircularIcon(
                             icon: Iconsax.heart,
                             onPressed: onPressed,
+                            padding: 6,
+                            backgroundColor: Colors.white,
                           ),
                   )
                 ],
               ),
             ),
-            // const SizedBox(
-            //   height: TSizes.spaceBtwItems / 2,
-            // ),
+          ),
+          // const SizedBox(
+          //   height: TSizes.spaceBtwItems / 2,
+          // ),
 
-            ///Details
-            Container(
-              padding: EdgeInsets.only(left: TSizes.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          ///Details
+          Container(
+            padding: EdgeInsets.only(left: TSizes.sm),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                // mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ProductTitleText(
-                    title: title,
-                    smallSize: true,
-                  ),
-                  BrandIconWithVerifyIcon(brand: brand),
-                  const SizedBox(
-                    height: TSizes.spaceBtwItems / 2,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      isDiscount
-                          ? Column(
-                              children: [
-                                PriceTextDiscount(
-                                    formattedPrice: formattedPrice),
-                                PriceText(
-                                    formattedPrice: formattedDiscountPrice)
-                              ],
-                            )
-                          : PriceText(formattedPrice: formattedPrice),
-                      //Add to cart button
-                      Container(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ProductTitleText(
+                  title: title,
+                  smallSize: true,
+                ),
+                BrandIconWithVerifyIcon(brand: brand),
+                const SizedBox(
+                  height: TSizes.spaceBtwItems / 2,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    isDiscount
+                        ? Column(
+                            children: [
+                              PriceTextDiscount(formattedPrice: formattedPrice),
+                              PriceText(formattedPrice: formattedDiscountPrice)
+                            ],
+                          )
+                        : PriceText(formattedPrice: formattedPrice),
+                    //Add to cart button
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => const CartScreen());
+                      },
+                      child: Container(
                         decoration: BoxDecoration(
                             color: TColors.dark,
                             borderRadius: BorderRadius.only(
@@ -153,14 +162,14 @@ class ProductCardVertical extends StatelessWidget {
                             ),
                           ),
                         ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

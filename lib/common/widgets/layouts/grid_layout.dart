@@ -25,7 +25,7 @@ class GridLayout extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: TSizes.md,
-            crossAxisSpacing: TSizes.md,
+            crossAxisSpacing: 12,
             mainAxisExtent: mainAxisExtent),
         itemBuilder: (context, index) {
           return itemBuilder(context, index);

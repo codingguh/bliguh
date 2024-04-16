@@ -1,7 +1,9 @@
 import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/coupon/coupon_screen.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/favourite.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/home/home.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/store/store.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/voucher/voucher_screen.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -46,18 +48,16 @@ class NavigationController extends GetxController {
   final destinations = [
     const NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
     const NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-    const NavigationDestination(icon: Icon(Iconsax.heart), label: 'Whishlist'),
+    const NavigationDestination(icon: Icon(Iconsax.ticket), label: 'Whishlist'),
     const NavigationDestination(
-        icon: Icon(Iconsax.notification), label: 'Notification'),
+        icon: Icon(Iconsax.heart), label: 'Notification'),
     const NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
   ];
 
   final screens = [
     HomeScreen(),
     StoreScreen(),
-    Container(
-      color: Colors.orange,
-    ),
+    VoucherScreen(),
     FavouriteScreen(),
     SettingsScreen()
   ];
