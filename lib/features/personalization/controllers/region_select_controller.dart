@@ -11,8 +11,8 @@ class SelectionController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    activeIndex.value = isSelectedList.length -
-        1; // Set the default active index to the last index
+    activeIndex.value =
+        isSelectedList.length; // Set the default active index to the last index
   }
 
   void setActiveIndex(int index) {

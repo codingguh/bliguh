@@ -7,28 +7,28 @@ import 'package:get/get.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 class VerticalTimeline extends StatelessWidget {
+  // RxBool isSelected = false.obs;
   final bool isFirst, isLast, isPass, isSelected;
   final String text;
   final int index;
   final Function()? onTap;
 
-  const VerticalTimeline(
+  VerticalTimeline(
       {super.key,
       this.isFirst = false,
       this.isLast = false,
       this.isPass = false,
-      this.isSelected = false,
+      required this.isSelected,
       this.onTap,
       required this.index,
       required this.text});
 
   @override
   Widget build(BuildContext context) {
-    final SelectionController selectionController = Get.find();
-
     return isSelected
         ? SelectedTimeline(
             text: text,
+            onTap: onTap,
           )
         : GestureDetector(
             onTap: onTap,
@@ -53,7 +53,7 @@ class VerticalTimeline extends StatelessWidget {
                       endChild: Container(
                         margin: EdgeInsets.only(left: TSizes.md),
                         child: Text(
-                          text,
+                          '$text',
                           style: TextStyle(
                             fontSize: 14,
                           ),

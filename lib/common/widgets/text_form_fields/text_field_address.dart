@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class TextFieldAddress extends StatefulWidget {
+class TextFieldAddress extends StatelessWidget {
   const TextFieldAddress(
       {super.key,
       required this.textController,
@@ -23,17 +23,6 @@ class TextFieldAddress extends StatefulWidget {
   final Function()? onTap;
 
   @override
-  State<TextFieldAddress> createState() => _TextFieldAddressState();
-}
-
-class _TextFieldAddressState extends State<TextFieldAddress> {
-  @override
-  void dispose() {
-    widget.focuesNode.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Column(
       // crossAxisAlignment: CrossAxisAlignment.end,
@@ -41,12 +30,12 @@ class _TextFieldAddressState extends State<TextFieldAddress> {
       children: [
         TextFormField(
           cursorHeight: 15,
-          controller: widget.textController,
-          focusNode: widget.focuesNode,
+          controller: textController,
+          focusNode: focuesNode,
           autofocus: true,
-          readOnly: widget.readOnly,
+          readOnly: readOnly,
           decoration: InputDecoration(
-            hintText: widget.hintText,
+            hintText: hintText,
             counterText: '',
             hintStyle: TextStyle(color: TColors.darkGrey),
             // contentPadding: EdgeInsets.only(top: 5, bottom: 0),
@@ -56,14 +45,14 @@ class _TextFieldAddressState extends State<TextFieldAddress> {
             border: InputBorder.none,
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,
-            suffixIcon: widget.readOnly
+            suffixIcon: readOnly
                 ? IconButton(onPressed: () {}, icon: Icon(Iconsax.arrow_right))
                 : Obx(
-                    () => widget.showClearIcon.value
+                    () => showClearIcon.value
                         ? IconButton(
                             icon: Icon(Iconsax.close_circle5),
                             onPressed: () {
-                              widget.textController.clear();
+                              textController.clear();
                             },
                           )
                         : SizedBox(),

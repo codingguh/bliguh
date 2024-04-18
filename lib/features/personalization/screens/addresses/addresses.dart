@@ -15,7 +15,9 @@ class UserAddressScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: TColors.primary,
-        onPressed: () => Get.to(() => AddNewAddresses()),
+        onPressed: () {
+          Get.to(AddNewAddresses());
+        },
         child: Icon(
           Iconsax.add,
           color: TColors.white,
@@ -38,84 +40,6 @@ class UserAddressScreen extends StatelessWidget {
           padding: EdgeInsets.all(TSizes.defaultSpace - 10),
           child: Column(
             children: [
-              AddressCard(
-                selectedAddress: true,
-                text: 'Rumah Teh Ipok',
-                phoneNo: '(+62)827381281',
-              ),
-              AddressCard(
-                selectedAddress: false,
-                text: 'Teguh Muhammad Harits',
-                phoneNo: '(+62)85156852190',
-                address:
-                    'Perumahan Gardenia Residencem Jalan Bojong Baru,Bojong Gede block G7',
-                subAddress: 'BOJONG GEDE, KAB.BOGOR, JAWABARAT, ID 16920',
-              ),
-              AddressCard(
-                selectedAddress: true,
-                text: 'Rumah Teh Ipok',
-                phoneNo: '(+62)827381281',
-              ),
-              AddressCard(
-                selectedAddress: false,
-                text: 'Teguh Muhammad Harits',
-                phoneNo: '(+62)85156852190',
-                address:
-                    'Perumahan Gardenia Residencem Jalan Bojong Baru,Bojong Gede block G7',
-                subAddress: 'BOJONG GEDE, KAB.BOGOR, JAWABARAT, ID 16920',
-              ),
-              AddressCard(
-                selectedAddress: true,
-                text: 'Rumah Teh Ipok',
-                phoneNo: '(+62)827381281',
-              ),
-              AddressCard(
-                selectedAddress: false,
-                text: 'Teguh Muhammad Harits',
-                phoneNo: '(+62)85156852190',
-                address:
-                    'Perumahan Gardenia Residencem Jalan Bojong Baru,Bojong Gede block G7',
-                subAddress: 'BOJONG GEDE, KAB.BOGOR, JAWABARAT, ID 16920',
-              ),
-              AddressCard(
-                selectedAddress: true,
-                text: 'Rumah Teh Ipok',
-                phoneNo: '(+62)827381281',
-              ),
-              AddressCard(
-                selectedAddress: false,
-                text: 'Teguh Muhammad Harits',
-                phoneNo: '(+62)85156852190',
-                address:
-                    'Perumahan Gardenia Residencem Jalan Bojong Baru,Bojong Gede block G7',
-                subAddress: 'BOJONG GEDE, KAB.BOGOR, JAWABARAT, ID 16920',
-              ),
-              AddressCard(
-                selectedAddress: true,
-                text: 'Rumah Teh Ipok',
-                phoneNo: '(+62)827381281',
-              ),
-              AddressCard(
-                selectedAddress: false,
-                text: 'Teguh Muhammad Harits',
-                phoneNo: '(+62)85156852190',
-                address:
-                    'Perumahan Gardenia Residencem Jalan Bojong Baru,Bojong Gede block G7',
-                subAddress: 'BOJONG GEDE, KAB.BOGOR, JAWABARAT, ID 16920',
-              ),
-              AddressCard(
-                selectedAddress: true,
-                text: 'Rumah Teh Ipok',
-                phoneNo: '(+62)827381281',
-              ),
-              AddressCard(
-                selectedAddress: false,
-                text: 'Teguh Muhammad Harits',
-                phoneNo: '(+62)85156852190',
-                address:
-                    'Perumahan Gardenia Residencem Jalan Bojong Baru,Bojong Gede block G7',
-                subAddress: 'BOJONG GEDE, KAB.BOGOR, JAWABARAT, ID 16920',
-              ),
               AddressCard(
                 selectedAddress: true,
                 text: 'Rumah Teh Ipok',
