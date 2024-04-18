@@ -1,10 +1,8 @@
 import 'package:ecommerce_firebase_getx/common/widgets/buttons/custom_button.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/checkout/widgets/label_shipping_option.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/orders/widgets/header_card_order.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/orders/widgets/label_image_desc.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/orders/widgets/label_shipping_order.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
