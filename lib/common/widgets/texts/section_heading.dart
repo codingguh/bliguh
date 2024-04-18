@@ -36,7 +36,7 @@ class SectionHeading extends StatelessWidget {
           Row(
             children: [
               InkWell(
-                  onTap: () {},
+                  onTap: onPressed,
                   child: Text(
                     buttonTittle,
                     style: Theme.of(context)

@@ -12,6 +12,9 @@ class CustomButton extends StatelessWidget {
       this.description = const Text('Your description is here'),
       this.fontWeight = FontWeight.normal,
       this.isLeft = true,
+      this.radius = const BorderRadius.all(Radius.circular(9)),
+      this.padding = const EdgeInsets.only(
+          top: TSizes.sm, bottom: TSizes.sm, right: TSizes.md, left: TSizes.md),
       this.onTap});
 
   final String text;
@@ -19,6 +22,8 @@ class CustomButton extends StatelessWidget {
   final bool showDescription, isLeft;
   final Widget description;
   final FontWeight fontWeight;
+  final EdgeInsetsGeometry padding;
+  final BorderRadius radius;
   final Function()? onTap;
 
   @override
@@ -40,14 +45,10 @@ class CustomButton extends StatelessWidget {
             ),
           Container(
             height: height,
-            padding: EdgeInsets.only(
-                top: TSizes.sm,
-                bottom: TSizes.sm,
-                right: TSizes.md,
-                left: TSizes.md),
+            padding: padding,
             decoration: BoxDecoration(
               color: TColors.primary,
-              borderRadius: BorderRadius.all(Radius.circular(9)),
+              borderRadius: radius,
             ),
             child: Center(
               child: Text(

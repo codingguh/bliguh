@@ -3,7 +3,22 @@ import 'package:flutter/material.dart';
 
 class FormDivider extends StatelessWidget {
   final String textDivider;
-  const FormDivider({super.key, required this.textDivider});
+  final double firstIndent, firstEndIndent, secondIndent, secondEndIndent;
+  final bool customTextStyle;
+  final TextStyle textStyle;
+  final Color colorDivider;
+
+  const FormDivider({
+    super.key,
+    required this.textDivider,
+    this.firstIndent = 60,
+    this.firstEndIndent = 5,
+    this.secondIndent = 5,
+    this.customTextStyle = false,
+    this.secondEndIndent = 60,
+    this.colorDivider = TColors.grey,
+    this.textStyle = const TextStyle(),
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +27,24 @@ class FormDivider extends StatelessWidget {
       children: [
         Flexible(
           child: Divider(
-            color: TColors.grey,
+            color: colorDivider,
             thickness: 0.7,
-            indent: 60,
-            endIndent: 5,
+            indent: firstEndIndent,
+            endIndent: firstEndIndent,
           ),
         ),
         Text(
           textDivider,
-          style: Theme.of(context).textTheme.labelMedium,
+          style: customTextStyle
+              ? textStyle
+              : Theme.of(context).textTheme.labelMedium,
         ),
         Flexible(
           child: Divider(
-            color: TColors.grey,
+            color: colorDivider,
             thickness: 0.7,
-            indent: 5,
-            endIndent: 60,
+            indent: secondIndent,
+            endIndent: secondEndIndent,
           ),
         )
       ],

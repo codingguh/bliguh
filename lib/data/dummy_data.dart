@@ -1,5 +1,5 @@
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/addresses.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/purchases/order_screen.dart';
+import 'package:ecommerce_firebase_getx/features/shop/screens/orders/order_screen.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';

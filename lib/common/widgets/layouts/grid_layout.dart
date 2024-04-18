@@ -7,11 +7,12 @@ class GridLayout extends StatelessWidget {
       {super.key,
       required this.itemCount,
       this.mainAxisExtent = 280,
+      this.mainAxisSpacing = 16,
       required this.itemBuilder,
       this.padding = EdgeInsets.zero});
 
   final int itemCount;
-  final double mainAxisExtent;
+  final double mainAxisExtent, mainAxisSpacing;
   final Widget? Function(BuildContext, int) itemBuilder;
   final EdgeInsetsGeometry? padding;
 

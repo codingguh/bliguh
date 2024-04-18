@@ -1,5 +1,6 @@
 import 'package:ecommerce_firebase_getx/common/styles/shadows.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/badge/badge.dart';
+import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_add_to_cart.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/icons/circular_icon.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
@@ -11,6 +12,7 @@ import 'package:ecommerce_firebase_getx/features/shop/screens/cart/cart.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/controllers/favourite_controller.dart';
 import 'package:ecommerce_firebase_getx/features/shop/screens/product_details/product_detail.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:ecommerce_firebase_getx/utils/formatters/idr_formatter.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
@@ -21,17 +23,18 @@ import 'package:iconsax/iconsax.dart';
 class ProductCardVertical extends StatelessWidget {
   const ProductCardVertical(
       {super.key,
-      required this.title,
-      required this.imageUrl,
-      required this.price,
+      this.title = 'Product 1',
+      this.imageUrl = TImages.acerlogo,
+      this.price = 2000,
       required this.brand,
       this.isDiscount = false,
       this.isFavourite = false,
-      required this.discount,
+      this.showButtonCart = true,
+      this.discount = 0,
       this.onPressed});
 
   final String title, imageUrl, brand;
-  final bool isDiscount, isFavourite;
+  final bool isDiscount, isFavourite, showButtonCart;
   // final double price;
   final int discount, price;
   final VoidCallback? onPressed;
@@ -141,29 +144,12 @@ class ProductCardVertical extends StatelessWidget {
                           )
                         : PriceText(formattedPrice: formattedPrice),
                     //Add to cart button
-                    GestureDetector(
-                      onTap: () {
-                        Get.to(() => const CartScreen());
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: TColors.dark,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(TSizes.cardRadiusMd),
-                              bottomRight: Radius.circular(TSizes.cardRadiusMd),
-                            )),
-                        child: SizedBox(
-                          width: TSizes.iconLg * 1.2,
-                          height: TSizes.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(
-                              Iconsax.add,
-                              color: TColors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
+                    if (showButtonCart)
+                      ButtonAddToCart(
+                        onTap: () {
+                          Get.to(() => const CartScreen());
+                        },
+                      )
                   ],
                 )
               ],

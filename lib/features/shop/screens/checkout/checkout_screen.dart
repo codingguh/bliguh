@@ -21,7 +21,7 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 242, 242, 242),
+        backgroundColor: TColors.secondGrey,
         appBar: TAppBar(
           showBackArrow: true,
           showBackground: true,
