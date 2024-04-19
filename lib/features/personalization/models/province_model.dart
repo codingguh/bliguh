@@ -60,6 +60,28 @@ class Districts {
       'name': name,
     };
   }
+}
+
+class SubDistricts {
+  final String id;
+  final String name;
+
+  SubDistricts({required this.id, required this.name});
+
+  factory SubDistricts.fromJson(Map<String, dynamic> json) {
+    return SubDistricts(
+      id: json['id'] ?? '',
+      name: json['name'] ?? '',
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+    };
+  }
+}
 
 //RAJA ONGKIR
 // class Province {
@@ -102,4 +124,4 @@ class Districts {
 //       'city': city,
 //     };
 //   }
-}
+//}

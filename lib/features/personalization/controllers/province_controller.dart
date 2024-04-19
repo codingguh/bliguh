@@ -8,9 +8,11 @@ class ProvinceController extends GetxController {
   var provinces = <Province>[].obs;
   var regencies = <Regencies>[].obs;
   var districts = <Districts>[].obs;
+  var subDistricts = <SubDistricts>[].obs;
   // var cities = <Cities>[].obs;
   var provinceId = '31'.obs;
   var regencyId = '31.75'.obs;
+  final isLoading = false.obs;
 
   @override
   void onInit() {
@@ -24,52 +26,97 @@ class ProvinceController extends GetxController {
       'f1c259fb2e4208d3daf69d39cc0b27a0ac94890c802262488f617c7d457b8f45';
   final String URL_BYNDER = 'https://api.binderbyte.com/wilayah';
   //Bynder Bytes
-  void fetchData() async {
-    final url = '${URL_BYNDER}/provinsi?api_key=${API_KEY_BINDER}';
-    final response = await http.get(Uri.parse(url));
+  Future<void> fetchData() async {
+    try {
+      isLoading.value = true;
+      final url = '${URL_BYNDER}/provinsi?api_key=${API_KEY_BINDER}';
+      final response = await http.get(Uri.parse(url));
 
-    if (response.statusCode == 200) {
-      final jsonResponse = json.decode(response.body);
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
 
-      final results = jsonResponse['value'] as List;
+        final results = jsonResponse['value'] as List;
 
-      provinces.value = results.map((data) => Province.fromJson(data)).toList();
+        provinces.value =
+            results.map((data) => Province.fromJson(data)).toList();
+      } else {
+        throw Exception('Failed to load data');
+      }
+    } catch (e) {
+      throw Exception('Failed to load data $e');
+    } finally {
+      isLoading.value = false;
     }
   }
 
-  void getRegencies(String provinceId) async {
-    final url =
-        '${URL_BYNDER}/kabupaten?api_key=${API_KEY_BINDER}&id_provinsi=$provinceId';
-    final response = await http.get(Uri.parse(url));
+  Future<void> getRegencies(String provinceId) async {
+    try {
+      isLoading.value = true;
+      final url =
+          '${URL_BYNDER}/kabupaten?api_key=${API_KEY_BINDER}&id_provinsi=$provinceId';
+      final response = await http.get(Uri.parse(url));
 
-    if (response.statusCode == 200) {
-      final jsonResponse = json.decode(response.body);
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
 
-      final results = jsonResponse['value'] as List;
-      regencies.value =
-          results.map((data) => Regencies.fromJson(data)).toList();
-    } else {
-      throw Exception('Failed to load data');
+        final results = jsonResponse['value'] as List;
+        regencies.value =
+            results.map((data) => Regencies.fromJson(data)).toList();
+      } else {
+        throw Exception('Failed to load data');
+      }
+    } catch (e) {
+      throw Exception('Failed to load data $e');
+    } finally {
+      isLoading.value = false;
     }
   }
 
-  void getDistrict(String regencyId) async {
-    print('Regensi id $regencyId');
-    final url =
-        "https://api.binderbyte.com/wilayah/kecamatan?api_key=f1c259fb2e4208d3daf69d39cc0b27a0ac94890c802262488f617c7d457b8f45&id_kabupaten=31.75";
-    final response = await http.get(Uri.parse(url));
+  Future<void> getDistrict(String regencyId) async {
+    try {
+      isLoading.value = true;
+      final url =
+          "${URL_BYNDER}/kecamatan?api_key=${API_KEY_BINDER}&id_kabupaten=$regencyId";
+      final response = await http.get(Uri.parse(url));
 
-    print(response);
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
 
-    if (response.statusCode == 200) {
-      final jsonResponse = json.decode(response.body);
+        final results = jsonResponse['value'] as List;
+        districts.value =
+            results.map((data) => Districts.fromJson(data)).toList();
+      } else {
+        throw Exception('Failed to load data');
+      }
+    } catch (e) {
+      throw Exception('Failed to load data $e');
+    } finally {
+      isLoading.value = false;
+    }
+  }
 
-      final results = jsonResponse['value'] as List;
-      districts.value =
-          results.map((data) => Districts.fromJson(data)).toList();
-      print(districts);
-    } else {
-      throw Exception('Failed to load data');
+  Future<void> getSubDistrict(String districtId) async {
+    try {
+      isLoading.value = true;
+      final url =
+          "${URL_BYNDER}/kelurahan?api_key=${API_KEY_BINDER}&id_kecamatan=$districtId";
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
+
+        final results = jsonResponse['value'] as List;
+        subDistricts.value =
+            results.map((data) => SubDistricts.fromJson(data)).toList();
+
+        print(subDistricts);
+      } else {
+        throw Exception('Failed to load data');
+      }
+    } catch (e) {
+      throw Exception('Failed to load data $e');
+    } finally {
+      isLoading.value = false;
     }
   }
 

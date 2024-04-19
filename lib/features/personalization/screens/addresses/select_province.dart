@@ -21,15 +21,6 @@ class SelectProvinceScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: TAppBar(
-        showBackArrow: true,
-        onTap: () {
-          Get.offAll(() => AddNewAddresses(),
-              transition: Transition.upToDown,
-              duration: Duration(milliseconds: 400),
-              curve: Curves.ease
-              // curve: Curves.easeInOut
-              );
-        },
         title: SearchContainer(
           text: 'Search City ',
           fullWidth: true,
@@ -62,8 +53,14 @@ class SelectProvinceScreen extends StatelessWidget {
                 } else if (provinceController.renderList.value == 'districts') {
                   return renderDistrictList(
                       provinceController, regionController);
+                } else if (provinceController.renderList.value ==
+                    'subdistricts') {
+                  return renderSubDistrictList(
+                      provinceController, regionController);
                 } else {
-                  return SizedBox();
+                  return SizedBox(
+                    child: Text(provinceController.renderList.value),
+                  );
                 }
               }
             },
