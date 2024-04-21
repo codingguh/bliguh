@@ -8,7 +8,7 @@ Bliguh is opensource ecommerce ui using getx, mapbox autocomplete, and googlemap
 
 ### Products
 
-![Image](flutter_ecommerce_firebase_getx/assets/screenshots/bliguh_auth.png)
+![Image](/assets/screenshots/bliguh_auth.png)
 
 ### Carts
 
