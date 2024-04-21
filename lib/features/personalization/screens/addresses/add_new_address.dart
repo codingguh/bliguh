@@ -1,15 +1,11 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_bottom_navigationbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/text_form_fields/text_field_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/address_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/streename_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/addresses.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/select_province.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_input_card.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_province_widgets.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/checkbox_address.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,6 +24,9 @@ class AddNewAddresses extends StatelessWidget {
   Widget build(BuildContext context) {
     final AddressController addressController = Get.put(AddressController());
     final PhoneNoController phoneNoController = Get.put(PhoneNoController());
+    final StreetNoController streetNoController = Get.put(StreetNoController());
+    final OtherDetailController otherDetailController =
+        Get.put(OtherDetailController());
     final SelectionController regionController = Get.put(SelectionController());
     final StreetNameController streetNameController =
         Get.put(StreetNameController());
@@ -51,10 +50,13 @@ class AddNewAddresses extends StatelessWidget {
         child: Column(
           children: [
             AddressInputCard(
-                addressController: addressController,
-                phoneNoController: phoneNoController,
-                regionController: regionController,
-                streetNameController: streetNameController),
+              addressController: addressController,
+              phoneNoController: phoneNoController,
+              regionController: regionController,
+              streetNameController: streetNameController,
+              streetNoController: streetNoController,
+              otherDetailController: otherDetailController,
+            ),
             Form(
               child: Container(
                 color: Colors.white,

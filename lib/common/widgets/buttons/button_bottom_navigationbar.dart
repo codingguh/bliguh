@@ -5,14 +5,19 @@ import 'package:flutter/material.dart';
 class ButtonBottomNavigationbar extends StatelessWidget {
   const ButtonBottomNavigationbar(
       {super.key,
+      this.text = 'Submit',
       this.showDescription = false,
       this.containerHeight = 125,
       this.isLeft = true,
+      this.buttonHeight = 55,
+      this.onTap,
       this.description = const Text('description')});
 
+  final String text;
   final bool showDescription, isLeft;
-  final double containerHeight;
+  final double containerHeight, buttonHeight;
   final Widget description;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +33,14 @@ class ButtonBottomNavigationbar extends StatelessWidget {
             right: TSizes.md,
           ),
           child: CustomButton(
+            text: text,
             fontSize: 18,
             isLeft: false,
+            height: buttonHeight,
             fontWeight: FontWeight.w500,
             showDescription: showDescription,
             description: description,
-            onTap: () {
-              print('Handling fee Rp1.000');
-            },
+            onTap: onTap,
           ),
         ));
   }

@@ -4,7 +4,6 @@ import 'package:ecommerce_firebase_getx/features/personalization/screens/address
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/province_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/routes/default_transitions.dart';
 
 class ListRenderRegions extends StatelessWidget {
   const ListRenderRegions({

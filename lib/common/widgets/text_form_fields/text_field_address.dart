@@ -4,22 +4,24 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TextFieldAddress extends StatelessWidget {
-  const TextFieldAddress(
-      {super.key,
-      required this.textController,
-      required this.showClearIcon,
-      required this.isFocused,
-      required this.hintText,
-      required this.focuesNode,
-      this.readOnly = false,
-      this.onTap});
+  const TextFieldAddress({
+    super.key,
+    required this.textController,
+    required this.showClearIcon,
+    required this.isFocused,
+    required this.hintText,
+    required this.focuesNode,
+    this.readOnly = false,
+    this.showDivider = true,
+    this.onTap,
+  });
 
   final TextEditingController textController;
   final RxBool showClearIcon;
   final RxBool isFocused;
   final String hintText;
   final FocusNode focuesNode;
-  final bool readOnly;
+  final bool readOnly, showDivider;
   final Function()? onTap;
 
   @override
@@ -60,9 +62,10 @@ class TextFieldAddress extends StatelessWidget {
           ),
           maxLength: 15,
         ),
-        Divider(
-          height: 0,
-        )
+        if (showDivider)
+          Divider(
+            height: 0,
+          )
       ],
     );
   }
