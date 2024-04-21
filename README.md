@@ -1,21 +1,23 @@
-# ecommerce_firebase_getx
+# Bliguh
 
-A new Flutter project.
+Bliguh is opensource ecommerce ui using getx, mapbox autocomplete, and googlemap .
 
-## Getting Started
+### Authentication
 
-This project is a starting point for a Flutter application.
+![Image](/assets/screenshots/bliguh_auth.png)
 
-A few resources to get you started if this is your first Flutter project:
+### Products
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Image](/assets/screenshots/bliguh_auth.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Carts
 
-dart fix --dry-run && dart fix --apply
+![Image](/assets/screenshots/bliguh_auth.png)
 
-flutter pub run flutter_native_splash:create --path=splash.yaml
-flutter pub run flutter_native_splash:remove
+### Settings
+
+![Image](/assets/screenshots/bliguh_auth.png)
+
+### Addresses
+
+![Image](/assets/screenshots/bliguh_auth.png)
