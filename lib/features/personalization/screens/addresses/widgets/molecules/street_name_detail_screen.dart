@@ -2,6 +2,7 @@ import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_bottom_navigationbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/text_form_fields/text_field_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/address_controller.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +18,10 @@ class StreetNameDetailScreen extends StatelessWidget {
       required this.otherDetailController});
   final StreetNoController streetNoController;
   final OtherDetailController otherDetailController;
+
   @override
   Widget build(BuildContext context) {
+    final SelectionController regionController = Get.put(SelectionController());
     return Scaffold(
       appBar: TAppBar(
         isCenter: true,
@@ -44,55 +47,70 @@ class StreetNameDetailScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(streetNoController.isFocused.toString()),
+                  Text(otherDetailController.isFocused.toString()),
                   TextFieldAddress(
-                      textController: streetNoController.streetNoController,
-                      showClearIcon: streetNoController.isFocused,
-                      hintText: 'Street name, building house no.',
-                      isFocused: streetNoController.isFocused,
-                      focuesNode: streetNoController.streetNoFocusNode),
+                    textController: streetNoController.streetNoController,
+                    showClearIcon: streetNoController.isFocused,
+                    hintText: 'Street name, building house no.',
+                    isFocused: streetNoController.isFocused,
+                    focuesNode: streetNoController.streetNoFocusNode,
+                    onTap: () {
+                      streetNoController.setFocus(true);
+                      otherDetailController.setFocus(false);
+                    },
+                  ),
                   TextFieldAddress(
-                      showDivider: false,
-                      textController:
-                          otherDetailController.otherDetailController,
-                      showClearIcon: otherDetailController.isFocused,
-                      hintText: 'Other Details',
-                      isFocused: otherDetailController.isFocused,
-                      focuesNode: otherDetailController.otherDetailFocusNode),
+                    showDivider: false,
+                    textController: otherDetailController.otherDetailController,
+                    showClearIcon: otherDetailController.isFocused,
+                    hintText: 'Other Details',
+                    isFocused: otherDetailController.isFocused,
+                    focuesNode: otherDetailController.otherDetailFocusNode,
+                    onTap: () {
+                      otherDetailController.setFocus(true);
+                      streetNoController.setFocus(false);
+                    },
+                  ),
                 ],
               ),
               if (streetNoController.isFocused.value)
-                Expanded(
-                  child: FutureBuilder<List<String>>(
-                    future: fetchPlaceName(),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Center(
-                          child: LoadingAnimationWidget.prograssiveDots(
-                              color: TColors.primary, size: 90),
-                        );
-                      } else if (snapshot.hasError) {
-                        return Text('Error: ${snapshot.error}');
-                      } else if (snapshot.hasData) {
-                        final placeNames = snapshot.data!;
-                        return ListView.builder(
-                          itemCount: placeNames.length,
-                          itemBuilder: (context, index) {
-                            return InkWell(
-                              onTap: () {
-                                print('sddsdasd ${placeNames[index]}');
-                                // streetNoController.isFocused.value = false;
-                                // otherDetailController.isFocused.value = true;
-                              },
-                              child: ListTile(
-                                title: Text(placeNames[index]),
-                              ),
-                            );
-                          },
-                        );
-                      } else {
-                        return Text('No place names available');
-                      }
-                    },
+                Obx(
+                  () => Expanded(
+                    child: FutureBuilder<List<String>>(
+                      future: fetchPlaceName(regionController),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: LoadingAnimationWidget.prograssiveDots(
+                                color: TColors.primary, size: 90),
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('Error: ${snapshot.error}');
+                        } else if (snapshot.hasData) {
+                          final placeNames = snapshot.data!;
+                          return ListView.builder(
+                            itemCount: placeNames.length,
+                            itemBuilder: (context, index) {
+                              return InkWell(
+                                onTap: () {
+                                  streetNoController.streetNoController.text =
+                                      placeNames[index];
+                                  otherDetailController.setFocus(true);
+                                  streetNoController.setFocus(false);
+                                },
+                                child: ListTile(
+                                  title: Text(placeNames[index]),
+                                ),
+                              );
+                            },
+                          );
+                        } else {
+                          return Text('No place names available');
+                        }
+                      },
+                    ),
                   ),
                 ),
             ],
@@ -102,11 +120,17 @@ class StreetNameDetailScreen extends StatelessWidget {
     );
   }
 
-  Future<List<String>> fetchPlaceName() async {
-    final String place = 'Masjid Parung Sentul, Pandegelang, Banten.json';
-    final String modifiedText = place.replaceAll(' ', '%20');
+  Future<List<String>> fetchPlaceName(
+      SelectionController regionController) async {
+    final String place = regionController.listRegion.length > 1
+        ? regionController.listRegion
+            .take(regionController.listRegion.length - 1)
+            .join(', ')
+        : 'Jakarta';
+    final String ACCESS_TOKEN =
+        'pk.eyJ1IjoidGVndWhhcml0cyIsImEiOiJjbHV2cDNwNGswNDZkMmlsM2dkbjYxemJxIn0.WC7d8ULnuefDTmpF0Gc13A';
     final String url =
-        'https://api.mapbox.com/geocoding/v5/mapbox.places/ciekek%20karathon%20Pandegelang.json?access_token=pk.eyJ1IjoidGVndWhhcml0cyIsImEiOiJjbHV2cDNwNGswNDZkMmlsM2dkbjYxemJxIn0.WC7d8ULnuefDTmpF0Gc13A';
+        'https://api.mapbox.com/geocoding/v5/mapbox.places/$place.json?access_token=${ACCESS_TOKEN}';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {

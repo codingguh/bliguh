@@ -1,5 +1,6 @@
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/province_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/atoms/active_list_tile_district%20copy.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/atoms/active_list_tile_district.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/atoms/active_list_tile_province.dart';
@@ -379,6 +380,7 @@ Widget renderSubDistrictList(ProvinceController provinceController,
                 provinceController.updateRenderList('subdistricts');
 
                 print(provinceController.districts);
+                Get.to(() => AddNewAddresses());
               } else {
                 // listTiles.clear();
                 regionController.listRegion[3] = subdistrict.name;
@@ -388,6 +390,7 @@ Widget renderSubDistrictList(ProvinceController provinceController,
                 // regionController.listRegion.removeLast();
                 provinceController.updateRenderList('subdistricts');
                 regionController.setActiveIndex(3);
+                Get.to(() => AddNewAddresses());
               }
             },
             child: Obx(
@@ -426,12 +429,14 @@ Widget renderSubDistrictList(ProvinceController provinceController,
                 provinceController
                     .getSubDistrict(subdistrict.id); // Fetch cities
                 provinceController.updateRenderList('subdistricts');
+                Get.to(() => AddNewAddresses());
               } else {
                 regionController.listRegion[3] = subdistrict.name;
                 // regionController.listRegion[3] = 'Select SubDistrict coek';
                 provinceController.updateRenderList('subdistricts');
 
                 regionController.setActiveIndex(3);
+                Get.to(() => AddNewAddresses());
               }
             },
             child: Obx(

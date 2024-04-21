@@ -40,7 +40,7 @@ class AddressSelectProvince extends StatelessWidget {
                 IconButton(
                     onPressed: onTap,
                     icon: Icon(
-                      Iconsax.arrow_right,
+                      Icons.chevron_right_rounded,
                       color: TColors.darkGrey,
                     ))
               ],

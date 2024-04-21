@@ -13,10 +13,6 @@ class AddressController extends GetxController {
       isFocused.value =
           addressFocusNode.hasFocus && addressController.text.length > 0;
     });
-    addressFocusNode.addListener(() {
-      isFocused.value =
-          addressFocusNode.hasFocus && addressController.text.length > 0;
-    });
   }
 
   @override
@@ -58,16 +54,16 @@ class StreetNoController extends GetxController {
   final streetNoFocusNode = FocusNode();
   final RxBool isFocused = false.obs;
 
+  void setFocus(bool focused) {
+    this.isFocused.value = focused;
+  }
+
   @override
   void onInit() {
     super.onInit();
+
     streetNoController.addListener(() {
-      isFocused.value =
-          streetNoFocusNode.hasFocus && streetNoController.text.isNotEmpty;
-    });
-    streetNoFocusNode.addListener(() {
-      isFocused.value =
-          streetNoFocusNode.hasFocus && streetNoController.text.isNotEmpty;
+      isFocused.value = streetNoFocusNode.hasFocus;
     });
   }
 
@@ -84,16 +80,15 @@ class OtherDetailController extends GetxController {
   final otherDetailFocusNode = FocusNode();
   final RxBool isFocused = false.obs;
 
+  void setFocus(bool focused) {
+    this.isFocused.value = focused;
+  }
+
   @override
   void onInit() {
     super.onInit();
     otherDetailController.addListener(() {
-      isFocused.value = otherDetailFocusNode.hasFocus &&
-          otherDetailController.text.isNotEmpty;
-    });
-    otherDetailFocusNode.addListener(() {
-      isFocused.value = otherDetailFocusNode.hasFocus &&
-          otherDetailController.text.isNotEmpty;
+      isFocused.value = otherDetailFocusNode.hasFocus;
     });
   }
 

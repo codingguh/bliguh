@@ -31,7 +31,9 @@ class TextFieldAddress extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextFormField(
+          onTap: onTap,
           cursorHeight: 15,
+          showCursor: isFocused.value,
           controller: textController,
           focusNode: focuesNode,
           autofocus: true,
@@ -39,6 +41,7 @@ class TextFieldAddress extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText,
             counterText: '',
+            labelText: isFocused.value ? hintText : null,
             hintStyle: TextStyle(color: TColors.darkGrey),
             // contentPadding: EdgeInsets.only(top: 5, bottom: 0),
             // contentPadding: EdgeInsets.zero,
