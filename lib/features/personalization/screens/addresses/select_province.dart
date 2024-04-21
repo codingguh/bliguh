@@ -21,6 +21,13 @@ class SelectProvinceScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: TAppBar(
+        showBackArrow: true,
+        onTap: () {
+          Get.to(
+            () => AddNewAddresses(),
+            transition: Transition.leftToRight,
+          );
+        },
         title: SearchContainer(
           text: 'Search City ',
           fullWidth: true,

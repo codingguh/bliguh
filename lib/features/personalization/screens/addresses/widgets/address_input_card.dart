@@ -4,6 +4,7 @@ import 'package:ecommerce_firebase_getx/features/personalization/controllers/reg
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/streename_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/select_province.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_province_widgets.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/autocomplete_streename.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -16,12 +17,16 @@ class AddressInputCard extends StatelessWidget {
     required this.phoneNoController,
     required this.regionController,
     required this.streetNameController,
+    required this.streetNoController,
+    required this.otherDetailController,
   });
 
   final AddressController addressController;
+  final StreetNoController streetNoController;
   final PhoneNoController phoneNoController;
   final SelectionController regionController;
   final StreetNameController streetNameController;
+  final OtherDetailController otherDetailController;
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +78,14 @@ class AddressInputCard extends StatelessWidget {
                               .take(regionController.listRegion.length)
                               .join(', '),
                 ),
+                InkWell(
+                    onTap: () {
+                      Get.to(() => StreetNameDetailScreen(
+                            streetNoController: streetNoController,
+                            otherDetailController: otherDetailController,
+                          ));
+                    },
+                    child: Text('Street Name , Building , House No.')),
                 // TextFieldAddress(
                 //     textController: streetNameController.controller,
                 //     showClearIcon: streetNameController.isFocused,

@@ -28,6 +28,9 @@ class AddNewAddresses extends StatelessWidget {
   Widget build(BuildContext context) {
     final AddressController addressController = Get.put(AddressController());
     final PhoneNoController phoneNoController = Get.put(PhoneNoController());
+    final StreetNoController streetNoController = Get.put(StreetNoController());
+    final OtherDetailController otherDetailController =
+        Get.put(OtherDetailController());
     final SelectionController regionController = Get.put(SelectionController());
     final StreetNameController streetNameController =
         Get.put(StreetNameController());
@@ -51,10 +54,13 @@ class AddNewAddresses extends StatelessWidget {
         child: Column(
           children: [
             AddressInputCard(
-                addressController: addressController,
-                phoneNoController: phoneNoController,
-                regionController: regionController,
-                streetNameController: streetNameController),
+              addressController: addressController,
+              phoneNoController: phoneNoController,
+              regionController: regionController,
+              streetNameController: streetNameController,
+              streetNoController: streetNoController,
+              otherDetailController: otherDetailController,
+            ),
             Form(
               child: Container(
                 color: Colors.white,

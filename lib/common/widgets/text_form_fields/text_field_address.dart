@@ -12,6 +12,7 @@ class TextFieldAddress extends StatelessWidget {
       required this.hintText,
       required this.focuesNode,
       this.readOnly = false,
+      this.showDivider = true,
       this.onTap});
 
   final TextEditingController textController;
@@ -19,7 +20,7 @@ class TextFieldAddress extends StatelessWidget {
   final RxBool isFocused;
   final String hintText;
   final FocusNode focuesNode;
-  final bool readOnly;
+  final bool readOnly, showDivider;
   final Function()? onTap;
 
   @override
@@ -60,9 +61,10 @@ class TextFieldAddress extends StatelessWidget {
           ),
           maxLength: 15,
         ),
-        Divider(
-          height: 0,
-        )
+        if (showDivider)
+          Divider(
+            height: 0,
+          )
       ],
     );
   }

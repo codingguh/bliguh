@@ -52,3 +52,55 @@ class PhoneNoController extends GetxController {
     super.onClose();
   }
 }
+
+class StreetNoController extends GetxController {
+  final streetNoController = TextEditingController();
+  final streetNoFocusNode = FocusNode();
+  final RxBool isFocused = false.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    streetNoController.addListener(() {
+      isFocused.value =
+          streetNoFocusNode.hasFocus && streetNoController.text.isNotEmpty;
+    });
+    streetNoFocusNode.addListener(() {
+      isFocused.value =
+          streetNoFocusNode.hasFocus && streetNoController.text.isNotEmpty;
+    });
+  }
+
+  @override
+  void onClose() {
+    streetNoController.dispose();
+    streetNoFocusNode.dispose();
+    super.onClose();
+  }
+}
+
+class OtherDetailController extends GetxController {
+  final otherDetailController = TextEditingController();
+  final otherDetailFocusNode = FocusNode();
+  final RxBool isFocused = false.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    otherDetailController.addListener(() {
+      isFocused.value = otherDetailFocusNode.hasFocus &&
+          otherDetailController.text.isNotEmpty;
+    });
+    otherDetailFocusNode.addListener(() {
+      isFocused.value = otherDetailFocusNode.hasFocus &&
+          otherDetailController.text.isNotEmpty;
+    });
+  }
+
+  @override
+  void onClose() {
+    otherDetailController.dispose();
+    otherDetailFocusNode.dispose();
+    super.onClose();
+  }
+}
