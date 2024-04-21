@@ -13,7 +13,9 @@ class TextFieldAddress extends StatelessWidget {
     required this.focuesNode,
     this.readOnly = false,
     this.showDivider = true,
+    this.maxLength = 19,
     this.onTap,
+    this.onChanged,
   });
 
   final TextEditingController textController;
@@ -22,7 +24,9 @@ class TextFieldAddress extends StatelessWidget {
   final String hintText;
   final FocusNode focuesNode;
   final bool readOnly, showDivider;
+  final int maxLength;
   final Function()? onTap;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +36,7 @@ class TextFieldAddress extends StatelessWidget {
       children: [
         TextFormField(
           onTap: onTap,
+          onChanged: onChanged,
           cursorHeight: 15,
           showCursor: isFocused.value,
           controller: textController,
@@ -63,7 +68,7 @@ class TextFieldAddress extends StatelessWidget {
                         : SizedBox(),
                   ),
           ),
-          maxLength: 15,
+          maxLength: maxLength,
         ),
         if (showDivider)
           Divider(

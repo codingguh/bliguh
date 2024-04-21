@@ -58,6 +58,13 @@ class StreetNoController extends GetxController {
     this.isFocused.value = focused;
   }
 
+  String changeText(String text) {
+    streetNoController.text = text;
+    // final modifiedText = text.replaceAll(' ', '%20');
+    update();
+    return streetNoController.text;
+  }
+
   @override
   void onInit() {
     super.onInit();

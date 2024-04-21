@@ -36,6 +36,7 @@ dependencies:
   timeline_tile: ^2.0.0
   shared_preferences: ^2.2.3
   loading_animation_widget: ^1.2.1
+  google_maps_flutter: ^2.5.3
 
 flutter:
   uses-material-design: true

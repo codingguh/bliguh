@@ -4,11 +4,11 @@ import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:iconsax/iconsax.dart';
-
 class AddressSelectProvince extends StatelessWidget {
-  const AddressSelectProvince({super.key, required this.title, this.onTap});
+  const AddressSelectProvince(
+      {super.key, required this.title, this.onTap, this.showBold = false});
   final String title;
+  final bool showBold;
   final Function()? onTap;
 
   @override
@@ -30,9 +30,7 @@ class AddressSelectProvince extends StatelessWidget {
                     title,
                     // softWrap: true,
                     style: TextStyle(
-                        color: regionController.listRegion.isEmpty
-                            ? TColors.darkGrey
-                            : TColors.black,
+                        color: showBold ? TColors.black : TColors.darkGrey,
                         fontSize: TSizes.fontSizeMd,
                         fontWeight: FontWeight.w500),
                   ),

@@ -5,6 +5,7 @@ class SelectionController extends GetxController {
   RxList<bool> isSelectedList = <bool>[].obs;
   RxList<String> listRegion = <String>[].obs;
   RxBool isLastIndexActiveInitially = true.obs;
+  RxBool isLoading = false.obs;
 
   RxInt activeIndex = RxInt(0); // Initialize with 0 as the default active index
 

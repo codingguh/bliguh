@@ -1,5 +1,6 @@
 import 'package:ecommerce_firebase_getx/common/widgets/text_form_fields/text_field_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/address_controller.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/controllers/googlemap_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/streename_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/select_province.dart';
@@ -30,6 +31,7 @@ class AddressInputCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CustomMapController mapController = Get.put(CustomMapController());
     return Container(
       color: TColors.grey,
       child: Padding(
@@ -60,6 +62,8 @@ class AddressInputCard extends StatelessWidget {
                   focuesNode: phoneNoController.phoneNoFocusNode,
                 ),
                 AddressSelectProvince(
+                  showBold:
+                      regionController.listRegion.length > 1 ? true : false,
                   onTap: () {
                     Get.offAll(() => SelectProvinceScreen(),
                         transition: Transition.downToUp,
@@ -80,12 +84,15 @@ class AddressInputCard extends StatelessWidget {
                 ),
                 InkWell(
                     onTap: () {
-                      Get.to(() => StreetNameDetailScreen(
-                            streetNoController: streetNoController,
-                            otherDetailController: otherDetailController,
-                          ));
+                      Get.to(() => StreetNameDetailScreen());
                     },
-                    child: Text('Street Name , Building , House No.')),
+                    child: mapController.addressText != ''
+                        ? AddressSelectProvince(
+                            showBold: true,
+                            title: streetNoController.streetNoController.text)
+                        : AddressSelectProvince(
+                            showBold: false,
+                            title: 'Street Name , Building , House No.')),
               ],
             ),
           ),

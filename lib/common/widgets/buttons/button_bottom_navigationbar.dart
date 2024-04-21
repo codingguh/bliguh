@@ -9,11 +9,13 @@ class ButtonBottomNavigationbar extends StatelessWidget {
       this.showDescription = false,
       this.containerHeight = 125,
       this.isLeft = true,
+      this.color = Colors.white,
       this.buttonHeight = 55,
       this.onTap,
       this.description = const Text('description')});
 
   final String text;
+  final Color color;
   final bool showDescription, isLeft;
   final double containerHeight, buttonHeight;
   final Widget description;
@@ -24,7 +26,7 @@ class ButtonBottomNavigationbar extends StatelessWidget {
     return Container(
         width: MediaQuery.of(context).size.width,
         height: containerHeight,
-        color: Colors.white,
+        color: color,
         child: Padding(
           padding: EdgeInsets.only(
             bottom: TSizes.sm,
