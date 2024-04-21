@@ -1,7 +1,3 @@
-# Bliguh
-
-Bliguh is opensource ecommerce ui using getx, mapbox autocomplete, and googlemap.
-
 ### Authentication
 
 ![Image](best_flutter_ui_templates/assets/introduction_animation/introduction_animation.png)
