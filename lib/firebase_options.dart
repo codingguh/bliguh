@@ -50,21 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB_KMxPgt4QW44repTVoQ993DGgLruk5ao',
-    appId: '1:1034567334569:android:58719c94de6d3718a347b8',
-    messagingSenderId: '1034567334569',
-    projectId: 'courseguh-5ee3d',
-    storageBucket: 'courseguh-5ee3d.appspot.com',
+    apiKey: 'AIzaSyDJwocnnAw6eVUOY85qjqNGdx0lc04ArR8',
+    appId: '1:791611370306:android:2298165d8f19cb049e36db',
+    messagingSenderId: '791611370306',
+    projectId: 'steel-signifier-416218',
+    storageBucket: 'steel-signifier-416218.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC4dP-jSZIrzCIhMGbNFlegSFFvEcM1LpA',
-    appId: '1:1034567334569:ios:8e8810bf76956dbea347b8',
-    messagingSenderId: '1034567334569',
-    projectId: 'courseguh-5ee3d',
-    storageBucket: 'courseguh-5ee3d.appspot.com',
-    androidClientId: '1034567334569-fpp7h2qt5999legka07d9372spb0u249.apps.googleusercontent.com',
-    iosClientId: '1034567334569-mjvfcemgck7dq97agioeqqfe9829bl3j.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDUZ_8qRaMWsX3nJc6Z2aNyR3vNXC3OYY4',
+    appId: '1:791611370306:ios:ed562a576be4505e9e36db',
+    messagingSenderId: '791611370306',
+    projectId: 'steel-signifier-416218',
+    storageBucket: 'steel-signifier-416218.appspot.com',
+    androidClientId: '791611370306-ut957n92vqfcgtrvadpstafoegpjp5ta.apps.googleusercontent.com',
+    iosClientId: '791611370306-c2skac8q52e9ep1uc6pts25cq1lpg4u8.apps.googleusercontent.com',
     iosBundleId: 'com.teguhharits.ecommerceFirebaseGetx',
   );
 }
