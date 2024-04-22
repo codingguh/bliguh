@@ -50,21 +50,22 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDJwocnnAw6eVUOY85qjqNGdx0lc04ArR8',
-    appId: '1:791611370306:android:2298165d8f19cb049e36db',
-    messagingSenderId: '791611370306',
-    projectId: 'steel-signifier-416218',
-    storageBucket: 'steel-signifier-416218.appspot.com',
+    apiKey: 'AIzaSyAgIWrSEOX_6fuZezZUyTWxGiq24J-Fgic',
+    appId: '1:666503216611:android:b077b026283a21cce634d6',
+    messagingSenderId: '666503216611',
+    projectId: 'modular-robot-416001',
+    databaseURL: 'https://modular-robot-416001-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'modular-robot-416001.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDUZ_8qRaMWsX3nJc6Z2aNyR3vNXC3OYY4',
-    appId: '1:791611370306:ios:ed562a576be4505e9e36db',
-    messagingSenderId: '791611370306',
-    projectId: 'steel-signifier-416218',
-    storageBucket: 'steel-signifier-416218.appspot.com',
-    androidClientId: '791611370306-ut957n92vqfcgtrvadpstafoegpjp5ta.apps.googleusercontent.com',
-    iosClientId: '791611370306-c2skac8q52e9ep1uc6pts25cq1lpg4u8.apps.googleusercontent.com',
+    apiKey: 'AIzaSyB9q9pe3c27w5qEU9cdqKMURacF8ZxEFr0',
+    appId: '1:666503216611:ios:fb9c3bbba119db85e634d6',
+    messagingSenderId: '666503216611',
+    projectId: 'modular-robot-416001',
+    databaseURL: 'https://modular-robot-416001-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'modular-robot-416001.appspot.com',
+    iosClientId: '666503216611-i7g3hboiesihci92u614ilhcn8dasanb.apps.googleusercontent.com',
     iosBundleId: 'com.teguhharits.ecommerceFirebaseGetx',
   );
 }

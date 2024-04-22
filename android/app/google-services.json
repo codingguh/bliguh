@@ -1,45 +1,38 @@
 {
   "project_info": {
-    "project_number": "791611370306",
-    "project_id": "steel-signifier-416218",
-    "storage_bucket": "steel-signifier-416218.appspot.com"
+    "project_number": "666503216611",
+    "firebase_url": "https://modular-robot-416001-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "modular-robot-416001",
+    "storage_bucket": "modular-robot-416001.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:791611370306:android:2298165d8f19cb049e36db",
+        "mobilesdk_app_id": "1:666503216611:android:b077b026283a21cce634d6",
         "android_client_info": {
           "package_name": "com.teguhharits.ecommerce_firebase_getx"
         }
       },
       "oauth_client": [
         {
-          "client_id": "791611370306-ut957n92vqfcgtrvadpstafoegpjp5ta.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.teguhharits.ecommerce_firebase_getx",
-            "certificate_hash": "76cb8fbd5e0f9e67cf1595ed01bfa3ba528d74da"
-          }
-        },
-        {
-          "client_id": "791611370306-d6p7qnq08nmsgj4a5rputspdmhufrhcr.apps.googleusercontent.com",
+          "client_id": "666503216611-gq6ribqclqtiisjnk6he23j69kdm6ur1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDJwocnnAw6eVUOY85qjqNGdx0lc04ArR8"
+          "current_key": "AIzaSyAgIWrSEOX_6fuZezZUyTWxGiq24J-Fgic"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "791611370306-d6p7qnq08nmsgj4a5rputspdmhufrhcr.apps.googleusercontent.com",
+              "client_id": "666503216611-e334mfchg6n6gt63psa5k28ctgfir1jn.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "791611370306-c2skac8q52e9ep1uc6pts25cq1lpg4u8.apps.googleusercontent.com",
+              "client_id": "666503216611-i7g3hboiesihci92u614ilhcn8dasanb.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.teguhharits.ecommerceFirebaseGetx"

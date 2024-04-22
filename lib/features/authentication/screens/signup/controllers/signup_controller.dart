@@ -66,6 +66,7 @@ class SignupController extends GetxController {
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
 
+      FullScreenLoader.stopLoading();
       //show success message
       Loaders.successSnackBar(
           title: 'Congrulatulations',
