@@ -6,11 +6,8 @@ import 'package:ecommerce_firebase_getx/features/personalization/screens/address
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/google_map_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/street_name_detail_screen.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class GoogleMapAddress extends StatelessWidget {
@@ -23,7 +20,7 @@ class GoogleMapAddress extends StatelessWidget {
   Widget build(BuildContext context) {
     final CustomMapController controller = Get.put(CustomMapController());
     // Call refreshMap when the screen is first opened
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       controller.refreshMap();
     });
 

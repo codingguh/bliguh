@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/address_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/api_constants.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';

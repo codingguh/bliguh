@@ -58,6 +58,9 @@ class TImages {
   static const String verifyIllustration =
       "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
 
+  static const String loaderAnimation =
+      "assets/images/animations/loader-animation.json";
+
   // -- Payments
   static const String bri = "assets/images/payments/bri.png";
   static const String mandiri = "assets/images/payments/mandiri.png";
