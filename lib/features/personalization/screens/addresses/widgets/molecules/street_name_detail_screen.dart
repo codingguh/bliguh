@@ -7,9 +7,11 @@ import 'package:ecommerce_firebase_getx/features/personalization/controllers/reg
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/googlemaps_address.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'dart:convert';
@@ -29,7 +31,7 @@ class StreetNameDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         isCenter: true,
-        title: Text('${streetNoController.streetNoController.text}'),
+        title: Text('Street Name&Other Detail'),
         showBackArrow: true,
         onTap: () {
           Get.to(() => AddNewAddresses(),
@@ -91,8 +93,10 @@ class StreetNameDetailScreen extends StatelessWidget {
               if (streetNoController.isFocused.value)
                 Obx(
                   () => regionController.isLoading.value
-                      ? LoadingAnimationWidget.prograssiveDots(
-                          color: TColors.primary, size: 90)
+                      ? Lottie.asset(TImages.loadingAnimation,
+                          repeat: true,
+                          animate: true,
+                          alignment: Alignment.center)
                       : Expanded(
                           child: FutureBuilder<List<String>>(
                             future: fetchPlaceName(
@@ -101,8 +105,12 @@ class StreetNameDetailScreen extends StatelessWidget {
                               if (snapshot.connectionState ==
                                   ConnectionState.waiting) {
                                 return Center(
-                                  child: LoadingAnimationWidget.prograssiveDots(
-                                      color: TColors.primary, size: 90),
+                                  child: Lottie.asset(TImages.loadingAnimation,
+                                      width: 120,
+                                      height: 120,
+                                      repeat: true,
+                                      animate: true,
+                                      alignment: Alignment.center),
                                 );
                               } else if (snapshot.hasError) {
                                 return Text('Error: ${snapshot.error}');
