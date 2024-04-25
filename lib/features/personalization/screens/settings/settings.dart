@@ -4,6 +4,7 @@ import 'package:ecommerce_firebase_getx/common/widgets/list_tile/settings_menu_t
 import 'package:ecommerce_firebase_getx/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
+import 'package:ecommerce_firebase_getx/data/repositories/authentications/authentication_repository.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
@@ -61,15 +62,6 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
-                  // ListView.builder(
-                  //     itemCount: settingsList.length,
-                  //     itemBuilder: (context, index) {
-                  //       final menuSetting = settingsList[index];
-                  //       return SettingsMenuTile(
-                  //           icon: menuSetting['icon'],
-                  //           title: menuSetting['icon'],
-                  //           subTitle: menuSetting['icon']);
-                  //     }),
 
                   for (int i = 0; i < settingsList.length; i++)
                     SettingsMenuTile(
@@ -104,8 +96,8 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {
-                          Get.to(() => LoginScreen());
+                        onPressed: () async {
+                          await AuhenticationRepository.instance.logout();
                         },
                         child: const Text('Logout')),
                   ),

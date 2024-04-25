@@ -9,16 +9,17 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
-  // Todo: Add Widgets Binding
+  //  Widgets Binding
   final WidgetsBinding widgetsBinding =
       WidgetsFlutterBinding.ensureInitialized();
+
   // await SharedPreferences.getInstance();
-  // Todo: Init Local Storage
   await GetStorage.init();
-  // Todo: Await Native Splash
+
+  /// Await Native Splash until other items load
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  // Todo: Initialize Firebase
+  ///-- Initialize Firebase & Authentication Repository
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   ).then((FirebaseApp value) => Get.put(AuhenticationRepository()));

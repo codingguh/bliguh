@@ -49,6 +49,31 @@ class AuhenticationRepository extends GetxController {
   /*============ Email & Password Signin =================*/
 
   ///[EmailAuthentication] SIGNIN
+  Future<UserCredential> loginWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on FirebaseException catch (e) {
+      print(e.message);
+      throw "exeption ${e.message.toString()}";
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on FormatException catch (e) {
+      print(e.message);
+      throw "format exeption ${e.message.toString()}";
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on PlatformException catch (e) {
+      print(e.message);
+      throw "platform exeption ${e.message.toString()}";
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } catch (e) {
+      throw "something went wrong ${e.toString()}";
+    }
+  }
+
   ///[EmailAuthentication] REGISTER
   Future<UserCredential> registerWithEmailAndPassword(
       String email, String password) async {
@@ -108,7 +133,7 @@ class AuhenticationRepository extends GetxController {
   ///   /*============ End of Federated identity & Social Login  =================*/
 
   ///[LogoutUser] Valid for authentication
-  Future<void> logoutUs() async {
+  Future<void> logout() async {
     try {
       await FirebaseAuth.instance.signOut();
       Get.offAll(() => const LoginScreen());

@@ -19,7 +19,7 @@ class NavigationMenu extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-          height: 45,
+          height: 80,
           elevation: 0,
           labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
           selectedIndex: controller.selectedIndex.value,

@@ -25,16 +25,19 @@ class FrameSlider extends StatelessWidget {
           child: Container(
             width: double.infinity, // Set the width to full width
 
-            height: 150, // Set the desired height
-            child: CarouselSlider(
-              options: CarouselOptions(
-                  viewportFraction: 1.0, // Ensure each child takes full width
-                  autoPlay: true,
-                  onPageChanged: (index, _) =>
-                      controller.updatePageIndicator(index)),
-              items: banners
-                  .map((url) => RoundedImage(imageUrl: url, radius: 0))
-                  .toList(),
+            height: 120, // Set the desired height
+            child: SizedBox(
+              height: 110,
+              child: CarouselSlider(
+                options: CarouselOptions(
+                    viewportFraction: 1.0, // Ensure each child takes full width
+                    autoPlay: true,
+                    onPageChanged: (index, _) =>
+                        controller.updatePageIndicator(index)),
+                items: banners
+                    .map((url) => RoundedImage(imageUrl: url, radius: 0))
+                    .toList(),
+              ),
             ),
           ),
         ),
@@ -49,7 +52,7 @@ class FrameSlider extends StatelessWidget {
                     CircularContainer(
                       width:
                           controller.carouselCurrentIndex.value == i ? 17 : 6,
-                      height: 6,
+                      height: 3,
                       margin: EdgeInsets.only(right: 3),
                       backgroundColor:
                           controller.carouselCurrentIndex.value == i

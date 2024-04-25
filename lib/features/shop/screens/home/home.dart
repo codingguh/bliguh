@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                   ///Searchbar -- Tutorial [Section#3 Video #2]
                   SearchContainer(
                     text: 'Search in Store ',
-                    height: 41,
+                    height: 40,
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwItems + 5,
@@ -53,7 +53,9 @@ class HomeScreen extends StatelessWidget {
                   ///Categories -- Tutorial [Section#3 Video #2]
                   Padding(
                     padding: EdgeInsets.only(
-                        left: TSizes.defaultSpace, right: TSizes.defaultSpace),
+                        left: TSizes.defaultSpace,
+                        right: TSizes.defaultSpace,
+                        bottom: TSizes.sm),
                     child: Column(
                       children: [
                         SectionHeading(
