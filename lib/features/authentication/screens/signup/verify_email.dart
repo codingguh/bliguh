@@ -1,4 +1,3 @@
-import 'package:ecommerce_firebase_getx/common/widgets/success_screen/success_screen.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';

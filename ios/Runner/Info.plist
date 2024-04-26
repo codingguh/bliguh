@@ -6,6 +6,8 @@
 		<false />
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
+		<key>GIDClientID</key>
+		<string>666503216611-i7g3hboiesihci92u614ilhcn8dasanb.apps.googleusercontent.com</string>
 		<key>CFBundleDisplayName</key>
 		<string>Ecommerce Firebase Getx</string>
 		<key>CFBundleExecutable</key>
@@ -49,5 +51,21 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
-	</dict>
+		<!-- Put me in the [my_project]/ios/Runner/Info.plist file -->
+	<!-- Google Sign-in Section -->
+		<key>CFBundleURLTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleTypeRole</key>
+				<string>Editor</string>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<!-- TODO Replace this value: -->
+					<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+					<string>com.googleusercontent.apps.666503216611-i7g3hboiesihci92u614ilhcn8dasanb</string>
+				</array>
+			</dict>
+		</array>
+		<!-- End of the Google Sign-in Section -->
+		</dict>
 </plist>

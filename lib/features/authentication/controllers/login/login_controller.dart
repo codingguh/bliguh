@@ -1,6 +1,7 @@
 import 'package:ecommerce_firebase_getx/common/widgets/loaders/loaders.dart';
 import 'package:ecommerce_firebase_getx/data/repositories/authentications/authentication_repository.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/controllers/network_manager.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/controllers/user_controller.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -60,6 +62,37 @@ class LoginController extends GetxController {
 
       //Redirect
       AuhenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      FullScreenLoader.stopLoading();
+      Loaders.errorSnackBar(title: 'Oh snap', message: e.toString());
+    }
+  }
+
+  Future<void> googleSignIn() async {
+    try {
+      //start loading
+      FullScreenLoader.openLoadingDialog(
+          'Loggin you in', TImages.docerAnimation);
+
+      //check internet connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
+
+      //Google Authentication
+      final userCredentials =
+          await AuhenticationRepository.instance.signInWithGoogle();
+
+      //save user record
+      await userController.saveUserRecord(userCredentials);
+
+      //Redirect
+      AuhenticationRepository.instance.screenRedirect();
+
+      //Remove loaders
+      FullScreenLoader.stopLoading();
     } catch (e) {
       FullScreenLoader.stopLoading();
       Loaders.errorSnackBar(title: 'Oh snap', message: e.toString());

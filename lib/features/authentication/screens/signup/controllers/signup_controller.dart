@@ -6,11 +6,9 @@ import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/c
 import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/loader/fullscreen_loader.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
@@ -38,7 +36,11 @@ class SignupController extends GetxController {
       if (!isConnected) return;
 
       //Form validation
-      if (!signUpFormKey.currentState!.validate()) return;
+      if (!signUpFormKey.currentState!.validate()) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
+      ;
 
       //privacy ploicy check
       if (!privacyPolicy.value) {
@@ -46,6 +48,7 @@ class SignupController extends GetxController {
             title: 'Accept Privacy Policy',
             message:
                 'In order to create account, you must to read and accept the privacy policy');
+        return;
       }
 
       //register user in the firebase authentication & save user data in the firebase
@@ -81,9 +84,6 @@ class SignupController extends GetxController {
       FullScreenLoader.stopLoading();
       //Show some Generic error to the user
       Loaders.errorSnackBar(title: 'Oh Snap !', message: e.toString());
-    } finally {
-      //remove the loader
-      FullScreenLoader.stopLoading();
     }
   }
 }

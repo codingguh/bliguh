@@ -6,14 +6,12 @@ import 'package:ecommerce_firebase_getx/features/personalization/controllers/goo
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/googlemaps_address.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'dart:convert';
 
 class StreetNameDetailScreen extends StatelessWidget {

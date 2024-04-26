@@ -5,7 +5,6 @@ import 'package:ecommerce_firebase_getx/common/widgets/list_tile/user_profile_ti
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
 import 'package:ecommerce_firebase_getx/data/repositories/authentications/authentication_repository.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/profile.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
