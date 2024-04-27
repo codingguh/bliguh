@@ -4,9 +4,11 @@ import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/c
 import 'package:ecommerce_firebase_getx/features/personalization/controllers/user_controller.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/helpers/loader/fullscreen_loader.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController {
   /// Variables
@@ -22,7 +24,13 @@ class LoginController extends GetxController {
   void onInit() {
     email.text = localStorage.read('REMEMBER_ME_EMAIL') ?? '';
     password.text = localStorage.read('REMEMBER_ME_PASSWORD') ?? '';
+    _checkLoggedIn();
     super.onInit();
+  }
+
+  void _checkLoggedIn() async {
+    localStorage.read('GITHUB_IS_LOGIN') ?? false;
+    localStorage.read('GITHUB_USERNAME') ?? '';
   }
 
   /// -- Email and Password SignIn
@@ -30,18 +38,20 @@ class LoginController extends GetxController {
     try {
       // Start Loading
       FullScreenLoader.openLoadingDialog(
-          'Logging you in... ', TImages.docerAnimation);
+          'Logging you in... ', TImages.bliguhloader);
 
       //Check internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         FullScreenLoader.stopLoading();
+
         return;
       }
 
       //Form Validation
       if (!loginFormKey.currentState!.validate()) {
         FullScreenLoader.stopLoading();
+
         return;
       }
 
@@ -54,6 +64,9 @@ class LoginController extends GetxController {
       //Login user using Email & Password Authenticaation
       final userCredential = await AuhenticationRepository.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+
+      //save user record
+      await userController.saveUserRecord(userCredential);
 
       //Save user records
 
@@ -71,14 +84,16 @@ class LoginController extends GetxController {
   Future<void> googleSignIn() async {
     try {
       //start loading
-      FullScreenLoader.openLoadingDialog(
-          'Loggin you in', TImages.docerAnimation);
+      FullScreenLoader.openLoadingDialog('Loggin you in', TImages.bliguhloader);
 
       //check internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         FullScreenLoader.stopLoading();
         return;
+        // Future.delayed(Duration(milliseconds: 800), () {
+
+        // });
       }
 
       //Google Authentication
@@ -93,6 +108,69 @@ class LoginController extends GetxController {
 
       //Remove loaders
       FullScreenLoader.stopLoading();
+    } catch (e) {
+      Future.delayed(Duration(microseconds: 900), () {
+        FullScreenLoader.stopLoading();
+        Loaders.errorSnackBar(title: 'Oh snap', message: e.toString());
+      });
+    }
+  }
+
+  Future<void> facebookSignIn() async {
+    try {
+      //start loading
+      FullScreenLoader.openLoadingDialog('Loggin you in', TImages.bliguhloader);
+
+      //check internet connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
+
+      //Google Authentication
+      final userCredentials =
+          await AuhenticationRepository.instance.signInWithFacebook();
+
+      //save user record
+      await userController.saveUserRecord(userCredentials);
+
+      //Redirect
+      AuhenticationRepository.instance.screenRedirect();
+
+      //Remove loaders
+      FullScreenLoader.stopLoading();
+    } catch (e) {
+      FullScreenLoader.stopLoading();
+      Loaders.errorSnackBar(title: 'Oh snap', message: e.toString());
+    }
+  }
+
+  Future<void> githubSignIn(BuildContext context) async {
+    try {
+      //start loading
+      FullScreenLoader.openLoadingDialog('Loggin you in', TImages.bliguhloader);
+
+      //check internet connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
+
+      //Google Authentication
+      final UserCredential userCredentials =
+          await AuhenticationRepository.instance.signInWithGithub();
+
+      print('my github user ${userCredentials}');
+      //save user record
+      // await userController.saveUserRecord(userCredentials);
+
+      //Redirect
+      // AuhenticationRepository.instance.screenRedirect();
+
+      //Remove loaders
+      // FullScreenLoader.stopLoading();
     } catch (e) {
       FullScreenLoader.stopLoading();
       Loaders.errorSnackBar(title: 'Oh snap', message: e.toString());

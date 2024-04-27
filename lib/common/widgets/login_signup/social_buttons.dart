@@ -17,6 +17,7 @@ class SocialButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
+          padding: EdgeInsets.all(3),
           decoration: BoxDecoration(
             border: Border.all(color: TColors.grey),
             borderRadius: BorderRadius.circular(100),
@@ -24,23 +25,34 @@ class SocialButton extends StatelessWidget {
           child: IconButton(
             onPressed: () => controller.googleSignIn(),
             icon: const Image(
-                width: TSizes.iconMd,
-                height: TSizes.iconMd,
-                image: AssetImage(TImages.google)),
+                width: 33, height: 33, image: AssetImage(TImages.google)),
           ),
         ),
-        const SizedBox(width: TSizes.spaceBtwItems),
+        const SizedBox(width: 9),
         Container(
+          padding: EdgeInsets.all(3),
+          // padding: EdgeInsets.zero,
           decoration: BoxDecoration(
             border: Border.all(color: TColors.grey),
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () => controller.facebookSignIn(),
             icon: const Image(
-                width: TSizes.iconMd,
-                height: TSizes.iconMd,
-                image: AssetImage(TImages.facebook)),
+                width: 33, height: 33, image: AssetImage(TImages.facebook)),
+          ),
+        ),
+        const SizedBox(width: 9),
+        Container(
+          padding: EdgeInsets.all(3),
+          decoration: BoxDecoration(
+            border: Border.all(color: TColors.grey),
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: IconButton(
+            onPressed: () => controller.githubSignIn(context),
+            icon: const Image(
+                width: 33, height: 33, image: AssetImage(TImages.github)),
           ),
         ),
       ],

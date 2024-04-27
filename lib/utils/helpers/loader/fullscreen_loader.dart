@@ -16,7 +16,7 @@ class FullScreenLoader {
             child: Container(
               color: THelperFunctions.isDarkMode(Get.context!)
                   ? TColors.dark
-                  : TColors.white,
+                  : TColors.light.withOpacity(0.45),
               width: double.infinity,
               height: double.infinity,
               child: Column(

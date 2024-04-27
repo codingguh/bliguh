@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/loaders/loaders.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
+import 'package:ecommerce_firebase_getx/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -14,32 +16,52 @@ class NetworkManager extends GetxController {
 
   //Initialize the network manager and set up a stream to conntinually check the connecttion status
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
-    _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+    _connectivitySubscription = await _connectivity.onConnectivityChanged
+        .listen(_updateConnectionStatus);
   }
 
   //update connection status base on the changes in connectivity and show a relevant popup for no internet connection
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
-    _connectionStatus.value = result;
-    if (_connectionStatus.value == ConnectivityResult.none) {
-      //No internet connection
-      Loaders.customToast(message: 'No Internet connection');
-    }
+    final newResult = result;
+    _connectionStatus.value = newResult;
+    // print('ssfdg kontol ${_coRnnectionStatus.value}');
+
+    Future.delayed(Duration(seconds: 3), () {
+      // print('peraama ${newReSsult}');
+      // Loaders.warningSnackBar(
+      //     message: 'No Internet connection', title: 'No internet');
+
+      if (_connectionStatus.value == ConnectivityResult.none) {
+        //No internet connection
+        Loaders.customToast(message: 'No Internet connection');
+      }
+    });
   }
 
   //Check the internet connectionstatus
   //Returns true if connectd dalse otherwise
   Future<bool> isConnected() async {
     try {
+      print('isdasdasdasdsad');
+      // FullScreenLoader.openLoadingDialog('Oh snap', TImages.bliguhloader);
       final result = await _connectivity.checkConnectivity();
+      print('sdadada $result');
       if (result == ConnectivityResult.none) {
+        // FullScreenLoader.stopLoading();
+        Loaders.warningSnackBar(
+            title: 'Oh snap', message: 'No Internet connection');
         return false;
       } else {
+        // FullScreenLoader.stopLoading();
         return true;
       }
     } on PlatformException catch (_) {
+      // FullScreenLoader.stopLoading();
+      return false;
+    } catch (e) {
+      // FullScreenLoader.stopLoading();
       return false;
     }
   }

@@ -3,14 +3,13 @@
 /// This class contains all the App Images in String formats.
 class TImages {
   // -- App Logos
-  static const String darkAppLogo =
-      "assets/logos/t-store-splash-logo-black.png";
-  static const String lightAppLogo =
-      "assets/logos/t-store-splash-logo-white.png";
+  static const String darkAppLogo = "assets/logos/bliguh-vertical-dark.png";
+  static const String lightAppLogo = "assets/logos/bliguh-vertical-light.png";
   static const String freeShipping = "assets/images/products/gratis_ongkir.png";
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";
   static const String facebook = "assets/logos/facebook-icon.png";
+  static const String github = "assets/logos/github-icon.png";
 
   // -- Category Icons
   static const String sportIcon =
@@ -55,6 +54,10 @@ class TImages {
       "assets/images/animations/sammy-line-come-back-later.png";
   static const String deliveredEmailIllustration =
       "assets/images/animations/sammy-line-man-receives-a-mail.png";
+  static const String forgotpassword =
+      "assets/images/animations/forgorpassword.png";
+  static const String resetpassword =
+      "assets/images/animations/resetpassword.png";
   static const String verifyIllustration =
       "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
 
@@ -94,6 +97,10 @@ class TImages {
       "assets/images/animations/loader-animation.json";
   static const String loadingAnimation =
       "assets/images/animations/loading-animation.json";
+  static const String shoploader = "assets/images/animations/shoploader.json";
+  static const String authloader = "assets/images/animations/authloader.json";
+  static const String bliguhloader =
+      "assets/images/animations/bliguhloader.json";
 
   // -- Payments
   static const String bri = "assets/images/payments/bri.png";

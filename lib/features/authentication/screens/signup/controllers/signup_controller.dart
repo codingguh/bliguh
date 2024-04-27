@@ -29,11 +29,15 @@ class SignupController extends GetxController {
     try {
       //start loading
       FullScreenLoader.openLoadingDialog(
-          'We are preserving your information', TImages.loaderAnimation);
+          'We are preserving your information', TImages.bliguhloader);
 
       //check internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) return;
+      if (!isConnected) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
+      ;
 
       //Form validation
       if (!signUpFormKey.currentState!.validate()) {

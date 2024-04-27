@@ -23,16 +23,19 @@ class AnimationLoader extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Lottie.asset(animation,
-              width: MediaQuery.of(context).size.width * 0.8),
+          Text(
+            text,
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                color: TColors.primary,
+                fontWeight: FontWeight.bold,
+                fontSize: 17),
+            textAlign: TextAlign.center,
+          ),
           const SizedBox(
             height: TSizes.defaultSpace,
           ),
-          Text(
-            text,
-            style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.center,
-          ),
+          Lottie.asset(animation,
+              width: MediaQuery.of(context).size.width * 0.8),
           const SizedBox(
             height: TSizes.defaultSpace,
           ),

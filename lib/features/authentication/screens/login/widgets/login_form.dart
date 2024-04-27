@@ -19,7 +19,8 @@ class LoginForm extends StatelessWidget {
     return Form(
       key: controller.loginFormKey,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
+        padding: const EdgeInsets.only(
+            top: TSizes.spaceBtwSections, bottom: TSizes.spaceBtwItems),
         child: Column(
           children: [
             ///Email
@@ -85,7 +86,7 @@ class LoginForm extends StatelessWidget {
                 child: ElevatedButton(
                     onPressed: () => controller.emailAndPasswordSignIn(),
                     child: Text(TTexts.signIn))),
-            const SizedBox(height: TSizes.spaceBtwItems),
+            const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
             SizedBox(
                 width: double.infinity,

@@ -1,4 +1,6 @@
+import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/controllers/signup_controller.dart';
+import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
 import 'package:ecommerce_firebase_getx/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/widgets/signup_terms_and_conditions.dart';
@@ -102,14 +104,12 @@ class SignUpForm extends StatelessWidget {
                             : Iconsax.eye))),
               ),
             ),
-            const SizedBox(
-              height: TSizes.spaceBtwInputFields,
-            ),
+            const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
             ///Terms and cONDITION cHECKBOX
             TermsandConditions(dark: dark),
             const SizedBox(
-              height: TSizes.spaceBtwSections,
+              height: TSizes.spaceBtwItems,
             ),
 
             ///SignUp Button
@@ -119,6 +119,43 @@ class SignUpForm extends StatelessWidget {
                 onPressed: () => controller.signUp(),
                 child: Text(TTexts.createAccount),
               ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            InkWell(
+              onTap: () {
+                Get.offAll(() => LoginScreen());
+              },
+              child: SizedBox(
+                width: double.infinity,
+                child: Text.rich(
+                    textAlign: TextAlign.left,
+                    TextSpan(style: TextStyle(), children: [
+                      TextSpan(
+                          text: 'Do you want to login? ',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(fontSize: 12)),
+                      TextSpan(
+                          text: ' Login here',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(
+                                fontSize: 12.5,
+                                fontWeight: FontWeight.w800,
+                                color: dark ? TColors.white : TColors.primary,
+                                decoration: TextDecoration.underline,
+                                decorationColor:
+                                    dark ? TColors.white : TColors.primary,
+                              )),
+                    ])),
+              ),
+            ),
+            const SizedBox(
+              height: TSizes.spaceBtwItems / 1.5,
             ),
           ],
         ));
