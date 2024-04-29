@@ -3,7 +3,7 @@ name: Build and Release My Apps
 on:
   push:
     branches:
-      - release-ui
+      - release-firebase
 
 jobs:
   build:
