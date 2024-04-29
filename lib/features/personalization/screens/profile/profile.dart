@@ -1,8 +1,10 @@
 import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/images/ciruclar_image.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/controllers/user_controller.dart';
+import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/change_name.dart';
 import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/widgets/profile_menu.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
+import 'package:ecommerce_firebase_getx/navigation_menu.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
 import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -14,12 +16,14 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
         isCenter: true,
         onTap: () {
-          Get.to(() => const SettingsScreen());
+          Get.to(() => const NavigationMenu(),
+              transition: Transition.leftToRight);
         },
         title: Text('Profile'),
       ),
@@ -63,9 +67,9 @@ class ProfileScreen extends StatelessWidget {
                 height: TSizes.spaceBtwItems,
               ),
               ProfileMenu(
-                onPressed: () {},
-                title: 'Name',
-                value: 'Teguh Muhammad Harits',
+                onPressed: () => Get.to(() => ChangeName()),
+                title: 'Fullname',
+                value: controller.user.value.fullName,
               ),
               ProfileMenu(
                 onPressed: () {},
@@ -117,10 +121,13 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () => controller.deleteAccountWarningPopup(),
                     child: const Text(
                       'Close Account',
-                      style: TextStyle(color: Colors.red),
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w800),
                     )),
               ),
               SizedBox(

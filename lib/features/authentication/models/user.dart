@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_firebase_getx/utils/formatters/formatter.dart';
 
 class UserModel {
@@ -69,5 +70,22 @@ class UserModel {
       'PhoneNumber': phoneNumber,
       'ProfilePicture': profilePicture,
     };
+  }
+
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!;
+      return UserModel(
+          id: document.id,
+          firstName: data["FirstName"] ?? "",
+          lastName: data["LastName"] ?? "",
+          userName: data["userName"] ?? "",
+          email: data["email"] ?? "",
+          phoneNumber: data["PhoneNumber"] ?? "",
+          profilePicture: data["profilePicture"] ?? "");
+    } else {
+      return UserModel.empty();
+    }
   }
 }

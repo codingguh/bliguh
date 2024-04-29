@@ -8,7 +8,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController {
   /// Variables
@@ -91,9 +90,6 @@ class LoginController extends GetxController {
       if (!isConnected) {
         FullScreenLoader.stopLoading();
         return;
-        // Future.delayed(Duration(milliseconds: 800), () {
-
-        // });
       }
 
       //Google Authentication

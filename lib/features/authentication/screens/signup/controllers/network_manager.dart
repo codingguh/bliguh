@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:ecommerce_firebase_getx/common/widgets/loaders/loaders.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 

@@ -1,3 +1,4 @@
+import 'package:ecommerce_firebase_getx/data/repositories/user/user_repository.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/verify_email.dart';
@@ -19,6 +20,10 @@ class AuhenticationRepository extends GetxController {
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
   final GithubAuthProvider _githubProvider = GithubAuthProvider();
+  User? _authUser;
+
+  ///get authenticaiton user data
+  User? get authUser => _authUser;
 
   ///Called from man.dart on app launch
 
@@ -34,6 +39,7 @@ class AuhenticationRepository extends GetxController {
 
     if (user != null) {
       if (user.emailVerified) {
+        _authUser = user;
         Get.to(() => const NavigationMenu());
       } else {
         Get.offAll(() => VerifyEmailScreen(
@@ -244,7 +250,34 @@ class AuhenticationRepository extends GetxController {
     }
   }
 
-  ///[EmailAuthentication] Forget Password
+  ///[ReAuthEmailAndPassword] SIGNIN
+  Future<void> reAuthEmailAndPassword(String email, String password) async {
+    try {
+      //Create a credential
+      AuthCredential credential =
+          EmailAuthProvider.credential(email: email, password: password);
+      //Reauth
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on FirebaseException catch (e) {
+      print(e.message);
+      throw "exeption ${e.message.toString()}";
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on FormatException catch (e) {
+      print(e.message);
+      throw "format exeption ${e.message.toString()}";
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on PlatformException catch (e) {
+      print(e.message);
+      throw "platform exeption ${e.message.toString()}";
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } catch (e) {
+      throw "something went wrong ${e.toString()}";
+    }
+  }
+
   ///[EmailVerification] Forget Password
 
   Future<void> sendPasswordResetEmail(String email) async {
@@ -301,5 +334,30 @@ class AuhenticationRepository extends GetxController {
     }
   }
 
-  ///[DeleteUser] Remove user Auth and Firestore Account
+  ///[DeleteAccount] Remove user Auth and Firestore Account
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
+      Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      print(e.message);
+      throw TFirebaseAuthException(e.code).message;
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on FirebaseException catch (e) {
+      print(e.message);
+      throw TFirebaseException(e.code).message;
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on FormatException catch (e) {
+      print(e.message);
+      throw "format exeption ${e.message.toString()}";
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } on PlatformException catch (e) {
+      print(e.message);
+      throw "platform exeption ${e.message.toString()}";
+      // throw FirebaseAuthException(message: e.message, code: e.code).message;
+    } catch (e) {
+      throw "something went wrong ${e.toString()}";
+    }
+  }
 }
