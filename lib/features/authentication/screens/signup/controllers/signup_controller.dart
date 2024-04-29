@@ -69,20 +69,20 @@ class SignupController extends GetxController {
           email: email.text.trim(),
           phoneNumber: phoneNumber.text.trim(),
           profilePicture: '');
-
+      print("User new $newUser");
       final userRepository = Get.put(UserRepository());
-      await userRepository.saveUserRecord(newUser);
+      final userRepo = await userRepository.saveUserRecord(newUser);
 
-      FullScreenLoader.stopLoading();
-      //show success message
-      Loaders.successSnackBar(
-          title: 'Congrulatulations',
-          message: 'Your account has been created verify email to continue');
+      // FullScreenLoader.stopLoading();
+      // //show success message
+      // Loaders.successSnackBar(
+      //     title: 'Congrulatulations',
+      //     message: 'Your account has been created verify email to continue');
 
-      //move to verify email screen
-      Get.to(() => VerifyEmailScreen(
-            email: email.text.trim(),
-          ));
+      // //move to verify email screen
+      // Get.to(() => VerifyEmailScreen(
+      //       email: email.text.trim(),
+      //     ));
     } catch (e) {
       //Remove loader
       FullScreenLoader.stopLoading();

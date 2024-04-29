@@ -41,8 +41,8 @@ class ProfileScreen extends StatelessWidget {
                     CircularImage(
                       image: TImages.user,
                       isNetworkImage: false,
-                      width: 80,
-                      height: 80,
+                      width: 97,
+                      height: 97,
                     ),
                     TextButton(
                         onPressed: () {},

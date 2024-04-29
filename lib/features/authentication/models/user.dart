@@ -43,12 +43,12 @@ class UserModel {
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
         id: json["id"],
-        firstName: json["firstName"],
-        lastName: json["lastName"],
-        userName: json["userName"],
+        firstName: json["FirstName"],
+        lastName: json["LastName"],
+        userName: json["UserName"],
         email: json["email"],
-        phoneNumber: json["phoneNumber"],
-        profilePicture: json["profilePicture"]);
+        phoneNumber: json["PhoneNumber"],
+        profilePicture: json["ProfilePicture"]);
   }
 
   ///static function to create an empty user model
