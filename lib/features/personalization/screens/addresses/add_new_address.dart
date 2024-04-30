@@ -1,12 +1,12 @@
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_bottom_navigationbar.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/address_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/streename_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/addresses.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_input_card.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/checkbox_address.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/appbar/appbar.dart';
+import 'package:bliguh/common/widgets/buttons/button_bottom_navigationbar.dart';
+import 'package:bliguh/features/personalization/controllers/address_controller.dart';
+import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
+import 'package:bliguh/features/personalization/controllers/streename_controller.dart';
+import 'package:bliguh/features/personalization/screens/addresses/addresses.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/address_input_card.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/checkbox_address.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

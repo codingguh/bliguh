@@ -1,8 +1,8 @@
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/province_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/region_timeline_select.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/features/personalization/controllers/province_controller.dart';
+import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/region_timeline_select.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

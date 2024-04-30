@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/containers/RoundedContainer.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class SelectedTimeline extends StatelessWidget {

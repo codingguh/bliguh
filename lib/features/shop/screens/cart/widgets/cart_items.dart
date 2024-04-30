@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/common/widgets/products/cart/cart_item.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/products/cart/cart_item.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../common/widgets/products/cart/add_remove_button.dart';

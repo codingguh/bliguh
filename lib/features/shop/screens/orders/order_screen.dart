@@ -1,9 +1,9 @@
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/tabbar.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/orders/widgets/order_card.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/orders/widgets/orders_tab.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/common/widgets/appbar/appbar.dart';
+import 'package:bliguh/common/widgets/appbar/tabbar.dart';
+import 'package:bliguh/features/shop/screens/orders/widgets/order_card.dart';
+import 'package:bliguh/features/shop/screens/orders/widgets/orders_tab.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

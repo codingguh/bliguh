@@ -1,5 +1,5 @@
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/user_controller.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:bliguh/features/personalization/controllers/user_controller.dart';
+import 'package:bliguh/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class MyProfileName extends StatelessWidget {
@@ -28,9 +28,10 @@ class MyProfileName extends StatelessWidget {
             children: [
               Text(
                 'Customer',
-                style: Theme.of(context).textTheme.titleSmall!.apply(
-                      color: TColors.white,
-                    ),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall!
+                    .copyWith(color: TColors.white, fontSize: 13),
               ),
               SizedBox(
                 width: 7,

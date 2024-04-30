@@ -1,10 +1,10 @@
-import 'package:ecommerce_firebase_getx/common/widgets/loaders/loaders.dart';
-import 'package:ecommerce_firebase_getx/data/repositories/user/user_repository.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/controllers/network_manager.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/user_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/profile.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/loader/fullscreen_loader.dart';
+import 'package:bliguh/common/widgets/loaders/loaders.dart';
+import 'package:bliguh/data/repositories/user/user_repository.dart';
+import 'package:bliguh/features/authentication/screens/signup/controllers/network_manager.dart';
+import 'package:bliguh/features/personalization/controllers/user_controller.dart';
+import 'package:bliguh/features/personalization/screens/profile/profile.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

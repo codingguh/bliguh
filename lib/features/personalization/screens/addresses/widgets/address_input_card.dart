@@ -1,13 +1,13 @@
-import 'package:ecommerce_firebase_getx/common/widgets/text_form_fields/text_field_address.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/address_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/googlemap_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/streename_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/select_province.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_province_widgets.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/street_name_detail_screen.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/text_form_fields/text_field_address.dart';
+import 'package:bliguh/features/personalization/controllers/address_controller.dart';
+import 'package:bliguh/features/personalization/controllers/googlemap_controller.dart';
+import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
+import 'package:bliguh/features/personalization/controllers/streename_controller.dart';
+import 'package:bliguh/features/personalization/screens/addresses/select_province.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/address_province_widgets.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/molecules/street_name_detail_screen.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

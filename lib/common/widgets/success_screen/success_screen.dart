@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/common/styles/spacing_styles.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
+import 'package:bliguh/common/styles/spacing_styles.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

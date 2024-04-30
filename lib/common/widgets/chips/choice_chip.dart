@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/circular_container.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/common/widgets/custom_shapes/containers/circular_container.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class TChoiceChip extends StatelessWidget {

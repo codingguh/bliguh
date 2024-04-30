@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/cupertino.dart';
 
 class LabelOrderImageDesc extends StatelessWidget {

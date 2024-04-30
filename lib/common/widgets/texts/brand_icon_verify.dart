@@ -1,7 +1,7 @@
-import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/enums.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/texts/product_title_text.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/enums.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

@@ -1,7 +1,7 @@
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/product_reviews/widgets/read_more.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/containers/RoundedContainer.dart';
+import 'package:bliguh/features/shop/screens/product_reviews/widgets/read_more.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class ReplyReviewStore extends StatelessWidget {

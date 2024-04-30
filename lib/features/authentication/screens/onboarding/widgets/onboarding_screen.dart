@@ -1,5 +1,5 @@
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPage extends StatelessWidget {

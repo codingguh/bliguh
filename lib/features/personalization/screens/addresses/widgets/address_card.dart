@@ -1,9 +1,9 @@
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/badge_selected.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/title_card_address.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/common/widgets/containers/RoundedContainer.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/badge_selected.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/title_card_address.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

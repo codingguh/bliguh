@@ -1,5 +1,5 @@
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/province_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
+import 'package:bliguh/features/personalization/controllers/province_controller.dart';
+import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
 import 'package:flutter/material.dart';
 
 Widget renderList(

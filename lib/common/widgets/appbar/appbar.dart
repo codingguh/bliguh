@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/circular_container.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/device/device_utility.dart';
+import 'package:bliguh/common/widgets/custom_shapes/containers/circular_container.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

@@ -1,9 +1,9 @@
-import 'package:ecommerce_firebase_getx/features/authentication/controllers/signup/verify_email_controller.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/features/authentication/controllers/signup/verify_email_controller.dart';
+import 'package:bliguh/features/authentication/screens/login/login.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/constants/text_strings.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

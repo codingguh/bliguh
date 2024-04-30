@@ -1,9 +1,9 @@
-import 'package:ecommerce_firebase_getx/common/widgets/login_signup/form_divider.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/login_signup/social_buttons.dart';
+import 'package:bliguh/common/widgets/login_signup/form_divider.dart';
+import 'package:bliguh/common/widgets/login_signup/social_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/widgets/signup_form.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
+import 'package:bliguh/features/authentication/screens/signup/widgets/signup_form.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/constants/text_strings.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

@@ -1,10 +1,10 @@
-import 'package:ecommerce_firebase_getx/features/personalization/screens/settings/settings.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/favourite.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/home/home.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/store/store.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/voucher/voucher_screen.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/features/personalization/screens/settings/settings.dart';
+import 'package:bliguh/features/shop/screens/favourite/favourite.dart';
+import 'package:bliguh/features/shop/screens/home/home.dart';
+import 'package:bliguh/features/shop/screens/store/store.dart';
+import 'package:bliguh/features/shop/screens/voucher/voucher_screen.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

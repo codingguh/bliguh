@@ -1,10 +1,10 @@
-import 'package:ecommerce_firebase_getx/common/styles/spacing_styles.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/login_signup/form_divider.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/login_signup/social_buttons.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/login/widgets/login_form.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/login/widgets/login_header.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
+import 'package:bliguh/common/styles/spacing_styles.dart';
+import 'package:bliguh/common/widgets/login_signup/form_divider.dart';
+import 'package:bliguh/common/widgets/login_signup/social_buttons.dart';
+import 'package:bliguh/features/authentication/screens/login/widgets/login_form.dart';
+import 'package:bliguh/features/authentication/screens/login/widgets/login_header.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

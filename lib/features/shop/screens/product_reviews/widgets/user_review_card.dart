@@ -1,8 +1,8 @@
-import 'package:ecommerce_firebase_getx/common/widgets/products/ratings/rating_indicator.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/product_reviews/widgets/read_more.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/product_reviews/widgets/reply_review.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/common/widgets/products/ratings/rating_indicator.dart';
+import 'package:bliguh/features/shop/screens/product_reviews/widgets/read_more.dart';
+import 'package:bliguh/features/shop/screens/product_reviews/widgets/reply_review.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class UserReviewCard extends StatelessWidget {

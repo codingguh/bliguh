@@ -1,7 +1,7 @@
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/circular_container.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import 'package:bliguh/common/widgets/custom_shapes/containers/circular_container.dart';
+import 'package:bliguh/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryHeaderContainer extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginHeader extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/common/widgets/layouts/grid_layout.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/search_products/widgets/box_filters.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/layouts/grid_layout.dart';
+import 'package:bliguh/features/shop/screens/search_products/widgets/box_filters.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class FilterByRating extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/device/device_utility.dart';
+import 'package:bliguh/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingSkip extends StatelessWidget {

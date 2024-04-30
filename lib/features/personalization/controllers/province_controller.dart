@@ -1,4 +1,4 @@
-import 'package:ecommerce_firebase_getx/features/personalization/models/province_model.dart';
+import 'package:bliguh/features/personalization/models/province_model.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';

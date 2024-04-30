@@ -1,14 +1,14 @@
-import 'package:ecommerce_firebase_getx/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/device/device_utility.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:bliguh/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/device/device_utility.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/onboarding/widgets/onboarding_screen.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/text_strings.dart';
+import 'package:bliguh/features/authentication/screens/onboarding/widgets/onboarding_screen.dart';
+import 'package:bliguh/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 

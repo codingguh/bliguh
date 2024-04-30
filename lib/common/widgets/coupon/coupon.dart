@@ -1,8 +1,8 @@
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/controller/coupon_controller.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/coupon_painter.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/model/coupon_model.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/widgets/content_coupon.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/widgets/image_coupon.dart';
+import 'package:bliguh/common/widgets/coupon/controller/coupon_controller.dart';
+import 'package:bliguh/common/widgets/coupon/coupon_painter.dart';
+import 'package:bliguh/common/widgets/coupon/model/coupon_model.dart';
+import 'package:bliguh/common/widgets/coupon/widgets/content_coupon.dart';
+import 'package:bliguh/common/widgets/coupon/widgets/image_coupon.dart';
 import 'package:flutter/material.dart';
 
 class Coupon extends StatelessWidget {

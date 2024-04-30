@@ -1,4 +1,4 @@
-import 'package:ecommerce_firebase_getx/common/widgets/images_text_widget/custom_image_text.dart';
+import 'package:bliguh/common/widgets/images_text_widget/custom_image_text.dart';
 import 'package:flutter/material.dart';
 
 class HomeCategories extends StatelessWidget {

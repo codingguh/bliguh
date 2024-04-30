@@ -1,9 +1,9 @@
-import 'package:ecommerce_firebase_getx/common/widgets/images/ciruclar_image.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/user_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/widgets/my_profile_name.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/profile/widgets/my_profile_photo.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
+import 'package:bliguh/common/widgets/images/ciruclar_image.dart';
+import 'package:bliguh/features/personalization/controllers/user_controller.dart';
+import 'package:bliguh/features/personalization/screens/profile/widgets/my_profile_name.dart';
+import 'package:bliguh/features/personalization/screens/profile/widgets/my_profile_photo.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -11,7 +11,7 @@ class MyProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
   // @override
   // Size get preferredSize => Size.fromHeight(kToolbarHeight);
   @override
-  Size get preferredSize => Size.fromHeight(148);
+  Size get preferredSize => Size.fromHeight(175);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class MyProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           Container(
             color: TColors.primary,
-            height: 207,
+            height: 190,
             width: double.infinity,
             child: Container(
               width: MediaQuery.of(context).size.width * 0.6,

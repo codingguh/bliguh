@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/circular_container.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
-import 'package:ecommerce_firebase_getx/features/shop/controllers/home_controller.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/custom_shapes/containers/circular_container.dart';
+import 'package:bliguh/common/widgets/images/rounded_image.dart';
+import 'package:bliguh/features/shop/controllers/home_controller.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

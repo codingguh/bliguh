@@ -1,7 +1,7 @@
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/province_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/province_list.dart';
+import 'package:bliguh/features/personalization/controllers/province_controller.dart';
+import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
+import 'package:bliguh/features/personalization/screens/addresses/add_new_address.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/province_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

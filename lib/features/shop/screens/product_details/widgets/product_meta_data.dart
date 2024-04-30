@@ -1,15 +1,15 @@
-import 'package:ecommerce_firebase_getx/common/widgets/badge/badge.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/images/ciruclar_image.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/brand_icon_verify.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text_discount.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/enums.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/formatters/idr_formatter.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/common/widgets/badge/badge.dart';
+import 'package:bliguh/common/widgets/images/ciruclar_image.dart';
+import 'package:bliguh/common/widgets/texts/brand_icon_verify.dart';
+import 'package:bliguh/common/widgets/texts/price_text.dart';
+import 'package:bliguh/common/widgets/texts/price_text_discount.dart';
+import 'package:bliguh/common/widgets/texts/product_title_text.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/enums.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/formatters/idr_formatter.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class ProductMetaData extends StatelessWidget {

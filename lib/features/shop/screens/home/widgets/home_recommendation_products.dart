@@ -1,7 +1,7 @@
-import 'package:ecommerce_firebase_getx/common/widgets/layouts/grid_layout.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/products/product_cards/product_card_vertical.dart';
-import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/favourite/controllers/favourite_controller.dart';
+import 'package:bliguh/common/widgets/layouts/grid_layout.dart';
+import 'package:bliguh/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:bliguh/data/dummy_data.dart';
+import 'package:bliguh/features/shop/screens/favourite/controllers/favourite_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

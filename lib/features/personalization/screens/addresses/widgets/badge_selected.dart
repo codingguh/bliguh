@@ -1,5 +1,5 @@
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:bliguh/common/widgets/containers/RoundedContainer.dart';
+import 'package:bliguh/utils/constants/colors.dart';
 import 'package:flutter/cupertino.dart';
 
 class BadgeSelected extends StatelessWidget {

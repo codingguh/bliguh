@@ -1,10 +1,10 @@
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/province_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/region_select_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/atoms/active_list_tile_district%20copy.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/atoms/active_list_tile_district.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/atoms/active_list_tile_province.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/atoms/active_list_tile_region.dart';
+import 'package:bliguh/features/personalization/controllers/province_controller.dart';
+import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
+import 'package:bliguh/features/personalization/screens/addresses/add_new_address.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/atoms/active_list_tile_district%20copy.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/atoms/active_list_tile_district.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/atoms/active_list_tile_province.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/atoms/active_list_tile_region.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

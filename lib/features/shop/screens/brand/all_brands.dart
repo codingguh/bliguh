@@ -1,10 +1,10 @@
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/layouts/grid_layout.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/brand/brand_products.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/store/widgets/featured_brands.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/appbar/appbar.dart';
+import 'package:bliguh/common/widgets/layouts/grid_layout.dart';
+import 'package:bliguh/common/widgets/texts/section_heading.dart';
+import 'package:bliguh/features/shop/screens/brand/brand_products.dart';
+import 'package:bliguh/features/shop/screens/store/widgets/featured_brands.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,8 +1,8 @@
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_bottom_navigationbar.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/payment/widgets/payment_list_card.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/appbar/appbar.dart';
+import 'package:bliguh/common/widgets/buttons/button_bottom_navigationbar.dart';
+import 'package:bliguh/features/shop/screens/payment/widgets/payment_list_card.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

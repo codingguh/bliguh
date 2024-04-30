@@ -1,5 +1,5 @@
-import 'package:ecommerce_firebase_getx/common/widgets/coupon/model/coupon_model.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:bliguh/common/widgets/coupon/model/coupon_model.dart';
+import 'package:bliguh/utils/constants/colors.dart';
 import 'package:get/get.dart';
 
 class CouponController extends GetxController {

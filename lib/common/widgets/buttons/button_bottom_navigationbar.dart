@@ -1,5 +1,5 @@
-import 'package:ecommerce_firebase_getx/common/widgets/buttons/custom_button.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/buttons/custom_button.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class ButtonBottomNavigationbar extends StatelessWidget {

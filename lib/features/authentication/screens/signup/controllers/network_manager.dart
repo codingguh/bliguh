@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/loaders/loaders.dart';
+import 'package:bliguh/common/widgets/loaders/loaders.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 

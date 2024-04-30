@@ -1,9 +1,9 @@
-import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/brand_icon_verify.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/common/widgets/images/rounded_image.dart';
+import 'package:bliguh/common/widgets/texts/brand_icon_verify.dart';
+import 'package:bliguh/common/widgets/texts/product_title_text.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class CartItem extends StatelessWidget {

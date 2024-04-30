@@ -1,7 +1,7 @@
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/addresses.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/orders/order_screen.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
+import 'package:bliguh/features/personalization/screens/addresses/addresses.dart';
+import 'package:bliguh/features/shop/screens/orders/order_screen.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

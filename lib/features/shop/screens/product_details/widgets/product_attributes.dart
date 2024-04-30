@@ -1,12 +1,12 @@
-import 'package:ecommerce_firebase_getx/common/widgets/chips/choice_chip.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/containers/RoundedContainer.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/price_text_discount.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/product_title_text.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/common/widgets/chips/choice_chip.dart';
+import 'package:bliguh/common/widgets/containers/RoundedContainer.dart';
+import 'package:bliguh/common/widgets/texts/price_text.dart';
+import 'package:bliguh/common/widgets/texts/price_text_discount.dart';
+import 'package:bliguh/common/widgets/texts/product_title_text.dart';
+import 'package:bliguh/common/widgets/texts/section_heading.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class ProductAttributes extends StatelessWidget {

@@ -1,4 +1,4 @@
-package com.teguhharits.ecommerce_firebase_getx
+package com.teguhharits.bliguh
 
 import io.flutter.embedding.android.FlutterActivity
 

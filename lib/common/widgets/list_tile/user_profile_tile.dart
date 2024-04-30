@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/common/widgets/images/ciruclar_image.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
+import 'package:bliguh/common/widgets/images/ciruclar_image.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

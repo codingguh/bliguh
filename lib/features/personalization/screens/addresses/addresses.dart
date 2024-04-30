@@ -1,8 +1,8 @@
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/address_card.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/appbar/appbar.dart';
+import 'package:bliguh/features/personalization/screens/addresses/add_new_address.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/address_card.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

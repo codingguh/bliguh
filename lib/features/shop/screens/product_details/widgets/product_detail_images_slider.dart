@@ -1,14 +1,14 @@
-import 'package:ecommerce_firebase_getx/utils/helpers/helper_functions.dart';
+import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/icons/circular_icon.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/images/rounded_image.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/appbar/appbar.dart';
+import 'package:bliguh/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import 'package:bliguh/common/widgets/icons/circular_icon.dart';
+import 'package:bliguh/common/widgets/images/rounded_image.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 
 class ProductImageSlider extends StatelessWidget {
   const ProductImageSlider({

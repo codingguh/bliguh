@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/features/shop/screens/search_products/widgets/filter_by_rating.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/features/shop/screens/search_products/widgets/filter_by_rating.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class DrawerWidget extends StatelessWidget {

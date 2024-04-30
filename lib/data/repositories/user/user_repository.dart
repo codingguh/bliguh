@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_firebase_getx/data/repositories/authentications/authentication_repository.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/models/user.dart';
+import 'package:bliguh/data/repositories/authentications/authentication_repository.dart';
+import 'package:bliguh/features/authentication/models/user.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 

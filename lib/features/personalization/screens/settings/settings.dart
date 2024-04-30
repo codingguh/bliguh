@@ -1,11 +1,11 @@
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/myprofile_appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/list_tile/settings_menu_tile.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
-import 'package:ecommerce_firebase_getx/data/repositories/authentications/authentication_repository.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/settings_controller.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/appbar/myprofile_appbar.dart';
+import 'package:bliguh/common/widgets/list_tile/settings_menu_tile.dart';
+import 'package:bliguh/common/widgets/texts/section_heading.dart';
+import 'package:bliguh/data/dummy_data.dart';
+import 'package:bliguh/data/repositories/authentications/authentication_repository.dart';
+import 'package:bliguh/features/personalization/controllers/settings_controller.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

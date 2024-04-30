@@ -1,4 +1,4 @@
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class BadgeLabel extends StatelessWidget {

@@ -1,14 +1,14 @@
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_firebase_getx/data/dummy_data.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/frame_slider.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_categories.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_recommendation_products.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_recommendation_text.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:bliguh/common/widgets/texts/section_heading.dart';
+import 'package:bliguh/data/dummy_data.dart';
+import 'package:bliguh/features/shop/screens/home/widgets/frame_slider.dart';
+import 'package:bliguh/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:bliguh/features/shop/screens/home/widgets/home_recommendation_products.dart';
+import 'package:bliguh/features/shop/screens/home/widgets/home_recommendation_text.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_firebase_getx/features/shop/screens/home/widgets/home_appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:bliguh/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:bliguh/common/widgets/custom_shapes/containers/primary_header_container.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

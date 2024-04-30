@@ -1,4 +1,4 @@
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:flutter/widgets.dart';
 
 class ImageCoupon extends StatelessWidget {

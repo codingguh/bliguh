@@ -1,10 +1,10 @@
-import 'package:ecommerce_firebase_getx/data/repositories/user/user_repository.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/login/login.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/onboarding/onboarding.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/signup/verify_email.dart';
-import 'package:ecommerce_firebase_getx/navigation_menu.dart';
-import 'package:ecommerce_firebase_getx/utils/exceptions/firebase_exceptions.dart';
-import 'package:ecommerce_firebase_getx/utils/exceptions/platform_exceptions.dart';
+import 'package:bliguh/data/repositories/user/user_repository.dart';
+import 'package:bliguh/features/authentication/screens/login/login.dart';
+import 'package:bliguh/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:bliguh/features/authentication/screens/signup/verify_email.dart';
+import 'package:bliguh/navigation_menu.dart';
+import 'package:bliguh/utils/exceptions/firebase_exceptions.dart';
+import 'package:bliguh/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';

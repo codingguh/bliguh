@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/bindings/general_bindings.dart';
-import 'package:ecommerce_firebase_getx/features/authentication/screens/onboarding/onboarding.dart';
-import 'package:ecommerce_firebase_getx/utils/theme/theme.dart';
+import 'package:bliguh/bindings/general_bindings.dart';
+import 'package:bliguh/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:bliguh/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

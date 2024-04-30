@@ -1,11 +1,11 @@
-import 'package:ecommerce_firebase_getx/common/widgets/appbar/appbar.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/buttons/button_bottom_navigationbar.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/controllers/googlemap_controller.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/add_new_address.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/box_street_address.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/google_map_address.dart';
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/molecules/street_name_detail_screen.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
+import 'package:bliguh/common/widgets/appbar/appbar.dart';
+import 'package:bliguh/common/widgets/buttons/button_bottom_navigationbar.dart';
+import 'package:bliguh/features/personalization/controllers/googlemap_controller.dart';
+import 'package:bliguh/features/personalization/screens/addresses/add_new_address.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/molecules/box_street_address.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/molecules/google_map_address.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/molecules/street_name_detail_screen.dart';
+import 'package:bliguh/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -44,7 +44,7 @@ class GoogleMapAddress extends StatelessWidget {
               children: [
                 Obx(
                   () => Container(
-                    height: 735,
+                    height: 700,
                     child: controller.isLoading.value
                         ? Center(
                             child: LoadingAnimationWidget.prograssiveDots(
@@ -60,9 +60,9 @@ class GoogleMapAddress extends StatelessWidget {
             address: address,
           ),
           Positioned(
-              bottom: 30,
+              bottom: 10,
               child: ButtonBottomNavigationbar(
-                containerHeight: 70,
+                containerHeight: 100,
                 buttonHeight: 50,
                 text: 'Confirm',
                 color: Colors.transparent,

@@ -1,9 +1,9 @@
-import 'package:ecommerce_firebase_getx/common/widgets/layouts/grid_layout.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/login_signup/form_divider.dart';
-import 'package:ecommerce_firebase_getx/common/widgets/products/product_cards/product_card_vertical.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/image_strings.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/common/widgets/layouts/grid_layout.dart';
+import 'package:bliguh/common/widgets/login_signup/form_divider.dart';
+import 'package:bliguh/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class OrderTab extends StatelessWidget {

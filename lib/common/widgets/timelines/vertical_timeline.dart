@@ -1,6 +1,6 @@
-import 'package:ecommerce_firebase_getx/features/personalization/screens/addresses/widgets/selected_timeline.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/colors.dart';
-import 'package:ecommerce_firebase_getx/utils/constants/sizes.dart';
+import 'package:bliguh/features/personalization/screens/addresses/widgets/selected_timeline.dart';
+import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
