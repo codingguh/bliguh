@@ -39,10 +39,10 @@ Widget renderProvinceList(ProvinceController provinceController,
           InkWell(
             onTap: () {
               listTiles.clear();
-              if (regionController.listRegion.length <= 1) {
-                // if (regionController.listRegion.length > 1 &&
-                //     regionController.listRegion.length < 2) {
-                //   regionController.listRegion.removeRange(1, 2);
+              // if (regionController.listRegion.length > 0) {
+              if (regionController.listRegion.length > 1 &&
+                  regionController.listRegion.length < 2) {
+                // regionController.listRegion.removeRange(1, 2);
                 // }
                 regionController.listRegion[0] = province.province;
                 regionController.listRegion[1] = 'Select Regency dari propinsi';
@@ -88,7 +88,7 @@ Widget renderProvinceList(ProvinceController provinceController,
           InkWell(
             onTap: () {
               listTiles.clear();
-              if (regionController.listRegion.length <= 1) {
+              if (regionController.listRegion.length > 0) {
                 regionController.listRegion[0] = province.province;
                 regionController.listRegion[1] = 'Select Regency aku';
 
@@ -102,7 +102,7 @@ Widget renderProvinceList(ProvinceController provinceController,
               } else {
                 listTiles.clear();
                 regionController.listRegion.add(province.province);
-                regionController.listRegion.add('Select Regency');
+                regionController.listRegion.add('Select /');
                 regionController
                     .setActiveIndex(regionController.listRegion.length - 1);
                 provinceController
@@ -206,7 +206,8 @@ Widget renderRegencyList(ProvinceController provinceController,
               print(city.city);
               listTiles.clear();
               if (regionController.listRegion.length <= 2) {
-                regionController.listRegion.add(city.city);
+                regionController.listRegion.add('District');
+                regionController.listRegion[1] = city.city;
                 // regionController.listRegion.add('Select District koi');
                 regionController
                     .setActiveIndex(regionController.listRegion.length - 1);
@@ -432,8 +433,8 @@ Widget renderSubDistrictList(ProvinceController provinceController,
               print(subdistrict.name);
               listTiles.clear();
               if (regionController.listRegion.length <= 4) {
-                regionController.listRegion.add(subdistrict.name);
-
+                // regionController.listRegion.add(subdistrict.name);
+                regionController.listRegion[3] = subdistrict.name;
                 regionController
                     .setActiveIndex(regionController.listRegion.length - 1);
                 provinceController

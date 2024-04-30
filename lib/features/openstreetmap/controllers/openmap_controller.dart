@@ -15,7 +15,6 @@ class OpenMapController extends GetxController {
   final StreetNoController streetNoController = Get.put(StreetNoController());
 
   Rx<bool> isLoading = false.obs;
-  Rx<String> addressText = 'Bandung'.obs;
 
   @override
   void onInit() {
@@ -28,8 +27,9 @@ class OpenMapController extends GetxController {
     try {
       print('refersh map========================');
       isLoading.value = true;
-      addressText.update;
-      final location = await getLocationFromAddress(addressText.value);
+
+      final location = await getLocationFromAddress(
+          streetNoController.streetNoController.text);
       final latitude = location['latitude'];
 
       final longitude = location['longitude'];

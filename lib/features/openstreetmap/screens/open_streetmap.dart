@@ -28,8 +28,7 @@ class OpenStreetMapAddress extends StatelessWidget {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       controller.refreshMap();
     });
-    print(
-        'sasfafas ${controller.addressText} - ${controller.markerPosition.value}');
+    print('sasfafas ${address} - ${controller.markerPosition.value}');
     return Scaffold(
         appBar: TAppBar(
           showBackArrow: true,
@@ -51,49 +50,53 @@ class OpenStreetMapAddress extends StatelessWidget {
                   width: double.infinity,
                   height: 700,
                   child: Obx(
-                    () => controller.isLoading.value
-                        ? Center(
-                            child: LoadingAnimationWidget.prograssiveDots(
-                                color: TColors.primary, size: 60),
-                          )
-                        : FlutterMap(
-                            // mapController: controller.mapController,
-                            options: MapOptions(
-                                initialZoom: 18,
-                                initialCenter: controller.markerPosition.value,
-                                onPositionChanged: (position, hasGesture) {
-                                  print('position ${position.center}');
-                                  controller.onMarkerDragEnd(position.center!);
-                                }),
-                            children: [
-                              TileLayer(
-                                urlTemplate:
-                                    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                                userAgentPackageName: 'com.example.app',
-                              ),
-                              DragMarkers(
-                                markers: [
-                                  DragMarker(
-                                    key: controller.marker,
-                                    size: const Size.square(50),
-                                    onDragStart: (details, point) =>
-                                        debugPrint("Start point $point"),
-                                    onDragEnd: (details, point) =>
-                                        debugPrint("End point $point"),
-                                    point: controller.markerPosition.value,
-                                    offset: const Offset(0.0, -8.0),
-                                    onDragUpdate: (details, latLng) =>
-                                        print(latLng),
-                                    builder: (_, __, ___) => const Icon(
-                                      Icons.location_on,
-                                      size: 50,
-                                      color: TColors.primary,
-                                    ),
+                    () => address != ''
+                        ? controller.isLoading.value
+                            ? Center(
+                                child: LoadingAnimationWidget.prograssiveDots(
+                                    color: TColors.primary, size: 60),
+                              )
+                            : FlutterMap(
+                                // mapController: controller.mapController,
+                                options: MapOptions(
+                                    initialZoom: 18,
+                                    initialCenter:
+                                        controller.markerPosition.value,
+                                    onPositionChanged: (position, hasGesture) {
+                                      print('position ${position.center}');
+                                      controller
+                                          .onMarkerDragEnd(position.center!);
+                                    }),
+                                children: [
+                                  TileLayer(
+                                    urlTemplate:
+                                        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                                    userAgentPackageName: 'com.example.app',
+                                  ),
+                                  DragMarkers(
+                                    markers: [
+                                      DragMarker(
+                                        key: controller.marker,
+                                        size: const Size.square(50),
+                                        onDragStart: (details, point) =>
+                                            debugPrint("Start point $point"),
+                                        onDragEnd: (details, point) =>
+                                            debugPrint("End point $point"),
+                                        point: controller.markerPosition.value,
+                                        offset: const Offset(0.0, -8.0),
+                                        onDragUpdate: (details, latLng) =>
+                                            print(latLng),
+                                        builder: (_, __, ___) => const Icon(
+                                          Icons.location_on,
+                                          size: 50,
+                                          color: TColors.primary,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
-                              ),
-                            ],
-                          ),
+                              )
+                        : Text('kosong $address'),
                   ),
                 ),
               ],
