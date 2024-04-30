@@ -3,7 +3,6 @@ import 'package:bliguh/features/authentication/screens/onboarding/widgets/onboar
 import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:bliguh/utils/device/device_utility.dart';
-import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:bliguh/features/authentication/screens/onboarding/widgets/onboarding_screen.dart';
 import 'package:bliguh/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
@@ -55,15 +54,13 @@ class OnBoardingNextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Positioned(
         right: TSizes.defaultSpace,
         bottom: TDeviceUtils.getBottomNavigationBarHeight(),
         child: ElevatedButton(
           onPressed: () => OnBoardingController.instance.nextPage(),
           style: ElevatedButton.styleFrom(
-              shape: const CircleBorder(),
-              backgroundColor: dark ? TColors.primary : Colors.black),
+              shape: const CircleBorder(), backgroundColor: TColors.primary),
           child: const Icon(Iconsax.arrow_right_3),
         ));
   }

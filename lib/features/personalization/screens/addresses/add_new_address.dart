@@ -35,7 +35,7 @@ class AddNewAddresses extends StatelessWidget {
       appBar: TAppBar(
         showBackArrow: true,
         onTap: () {
-          Get.to(
+          Get.off(
             () => UserAddressScreen(),
             transition: Transition.leftToRight,
           );

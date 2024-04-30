@@ -5,7 +5,10 @@ keytool -genkeypair -v -keystore /path/to/your/custom_keystore_name.keystore -ke
 
 keytool -genkeypair -v -keystore ./bliguh.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias bliguh_keystore
 
-keytool -list -v -keystore ./bliguh.keystore -alias bliguh_keystore
+cd android && keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+generate SHA 1 && 256
+cd android && ./gradlew app:signingReport
 
 Firebase Syntax
 flutterfire configure

@@ -1,6 +1,7 @@
 import 'package:bliguh/common/widgets/appbar/appbar.dart';
 import 'package:bliguh/common/widgets/buttons/button_bottom_navigationbar.dart';
 import 'package:bliguh/common/widgets/text_form_fields/text_field_address.dart';
+import 'package:bliguh/features/openstreetmap/screens/open_streetmap.dart';
 import 'package:bliguh/features/personalization/controllers/address_controller.dart';
 import 'package:bliguh/features/personalization/controllers/googlemap_controller.dart';
 import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
@@ -41,10 +42,11 @@ class StreetNameDetailScreen extends StatelessWidget {
         buttonHeight: 50,
         text: 'Next',
         onTap: () {
+          print('alamat mu ${streetNoController.streetNoController.text}');
           addressMap.addressText.value =
               streetNoController.streetNoController.text;
           Get.to(
-              () => GoogleMapAddress(
+              () => OpenStreetMapAddress(
                     address: streetNoController.streetNoController.text,
                   ),
               transition: Transition.downToUp);
@@ -91,10 +93,12 @@ class StreetNameDetailScreen extends StatelessWidget {
               if (streetNoController.isFocused.value)
                 Obx(
                   () => regionController.isLoading.value
-                      ? Lottie.asset(TImages.loadingAnimation,
-                          repeat: true,
-                          animate: true,
-                          alignment: Alignment.center)
+                      ? SingleChildScrollView(
+                          child: Lottie.asset(TImages.loadingAnimation,
+                              repeat: true,
+                              animate: true,
+                              alignment: Alignment.center),
+                        )
                       : Expanded(
                           child: FutureBuilder<List<String>>(
                             future: fetchPlaceName(
@@ -102,13 +106,16 @@ class StreetNameDetailScreen extends StatelessWidget {
                             builder: (context, snapshot) {
                               if (snapshot.connectionState ==
                                   ConnectionState.waiting) {
-                                return Center(
-                                  child: Lottie.asset(TImages.loadingAnimation,
-                                      width: 120,
-                                      height: 120,
-                                      repeat: true,
-                                      animate: true,
-                                      alignment: Alignment.center),
+                                return SingleChildScrollView(
+                                  child: Center(
+                                    child: Lottie.asset(
+                                        TImages.loadingAnimation,
+                                        width: 120,
+                                        height: 120,
+                                        repeat: true,
+                                        animate: true,
+                                        alignment: Alignment.center),
+                                  ),
                                 );
                               } else if (snapshot.hasError) {
                                 return Text('Error: ${snapshot.error}');
@@ -129,8 +136,10 @@ class StreetNameDetailScreen extends StatelessWidget {
                                             "Mity ${streetNoController.streetNoController.text}");
                                         print("Mity ${addressMap.addressText}");
                                       },
-                                      child: ListTile(
-                                        title: Text(placeNames[index]),
+                                      child: SingleChildScrollView(
+                                        child: ListTile(
+                                          title: Text(placeNames[index]),
+                                        ),
                                       ),
                                     );
                                   },
@@ -211,6 +220,7 @@ Future<List<String>> fetchPlaceName(SelectionController regionController,
       return feature['place_name'] as String;
     }).toList();
     customMapController.isLoading.value = false;
+    print("$placeNames");
     return placeNames;
   }
   customMapController.isLoading.value = false;

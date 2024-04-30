@@ -25,17 +25,16 @@ class NetworkManager extends GetxController {
     final newResult = result;
     _connectionStatus.value = newResult;
     // print('ssfdg kontol ${_coRnnectionStatus.value}');
+    if (_connectionStatus.value == ConnectivityResult.none) {
+      //No internet connection
+      Loaders.customToast(message: 'No Internet connection');
+    }
+    // Future.delayed(Duration(seconds: 3), () {
+    //   // print('peraama ${newReSsult}');
+    //   // Loaders.warningSnackBar(
+    //   //     message: 'No Internet connection', title: 'No internet');
 
-    Future.delayed(Duration(seconds: 3), () {
-      // print('peraama ${newReSsult}');
-      // Loaders.warningSnackBar(
-      //     message: 'No Internet connection', title: 'No internet');
-
-      if (_connectionStatus.value == ConnectivityResult.none) {
-        //No internet connection
-        Loaders.customToast(message: 'No Internet connection');
-      }
-    });
+    // });
   }
 
   //Check the internet connectionstatus

@@ -2,6 +2,7 @@ import 'package:bliguh/common/widgets/appbar/appbar.dart';
 import 'package:bliguh/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:bliguh/features/personalization/controllers/province_controller.dart';
 import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
+import 'package:bliguh/features/personalization/screens/addresses/add_new_address.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/current_location.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/province_list.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/regions_widget.dart';
@@ -19,6 +20,10 @@ class SelectProvinceScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: TAppBar(
+        showBackArrow: true,
+        onTap: () {
+          Get.to(() => AddNewAddresses());
+        },
         title: SearchContainer(
           text: 'Search City ',
           fullWidth: true,
@@ -38,7 +43,7 @@ class SelectProvinceScreen extends StatelessWidget {
           ),
           Obx(
             () {
-              print("List yang render ${provinceController.renderList.value}");
+              // print("List yang render ${provinceController.renderList.value}");
               if (provinceController.provinces.isEmpty) {
                 return Center(child: CircularProgressIndicator());
               } else {

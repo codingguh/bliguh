@@ -3,13 +3,13 @@
 <plist version="1.0">
 	<dict>
 		<key>FLTEnableImpeller</key>
-		<false />
+		<false/>
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>GIDClientID</key>
 		<string>666503216611-i7g3hboiesihci92u614ilhcn8dasanb.apps.googleusercontent.com</string>
 		<key>CFBundleDisplayName</key>
-		<string>Ecommerce Firebase Getx</string>
+		<string>Bliguh</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
@@ -52,7 +52,7 @@
 		<key>UIStatusBarHidden</key>
 		<false/>
 		<!-- Put me in the [my_project]/ios/Runner/Info.plist file -->
-	<!-- Google Sign-in Section -->
+		<!-- Google Sign-in Section -->
 		<key>CFBundleURLTypes</key>
 		<array>
 			<dict>
@@ -84,5 +84,5 @@
 			<string>fbauth2</string>
 			<string>fbshareextension</string>
 		</array>
-		</dict>
+	</dict>
 </plist>

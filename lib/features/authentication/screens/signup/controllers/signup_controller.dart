@@ -3,7 +3,6 @@ import 'package:bliguh/data/repositories/authentications/authentication_reposito
 import 'package:bliguh/data/repositories/user/user_repository.dart';
 import 'package:bliguh/features/authentication/models/user.dart';
 import 'package:bliguh/features/authentication/screens/signup/controllers/network_manager.dart';
-import 'package:bliguh/features/authentication/screens/signup/verify_email.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';
 

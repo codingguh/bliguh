@@ -1,6 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- Allows the application to access approximate location using network-based methods -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- Allows the application to access precise location using GPS -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- Allows the application to access location in the background -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Allows the application to run foreground services -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:label="bliguh"
         android:name="${applicationName}"
@@ -17,6 +27,8 @@
                  the Android process has started. This theme is visible to the user
                  while the Flutter UI initializes. After that, this theme continues
                  to determine the Window background behind the Flutter UI. -->
+            <meta-data android:name="com.google.android.geo.API_KEY"
+              android:value="AIzaSyA1MgLuZuyqR_OGY3ob3M52N46TDBRI_9k"/>
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"

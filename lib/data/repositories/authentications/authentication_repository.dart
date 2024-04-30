@@ -3,8 +3,10 @@ import 'package:bliguh/features/authentication/screens/login/login.dart';
 import 'package:bliguh/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:bliguh/features/authentication/screens/signup/verify_email.dart';
 import 'package:bliguh/navigation_menu.dart';
+import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:bliguh/utils/exceptions/firebase_exceptions.dart';
 import 'package:bliguh/utils/exceptions/platform_exceptions.dart';
+import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
@@ -35,22 +37,28 @@ class AuhenticationRepository extends GetxController {
 
   ///Function to show Relevant screen
   screenRedirect() async {
+    FullScreenLoader.openLoadingDialog(
+        'Logging you in... ', TImages.bliguhloader);
     final user = await _auth.currentUser;
 
     if (user != null) {
       if (user.emailVerified) {
         _authUser = user;
+        FullScreenLoader.stopLoading();
         Get.to(() => const NavigationMenu());
       } else {
+        FullScreenLoader.stopLoading();
         Get.offAll(() => VerifyEmailScreen(
               email: _auth.currentUser?.email,
             ));
       }
     } else {
       //Local Storage
+      // FullScreenLoader.stopLoading();
       deviceStorage.writeIfNull('isFirstTime', true);
       //check if it's the first time launching the app
-      deviceStorage.read('iisFirstTime') != true
+      FullScreenLoader.stopLoading();
+      deviceStorage.read('isFirstTime') != true
           ? Get.offAll(() => const LoginScreen())
           : Get.offAll(() => const OnBoardingScreen());
     }

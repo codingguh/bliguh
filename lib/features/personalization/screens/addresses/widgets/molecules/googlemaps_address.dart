@@ -48,7 +48,7 @@ class GoogleMapAddress extends StatelessWidget {
                     child: controller.isLoading.value
                         ? Center(
                             child: LoadingAnimationWidget.prograssiveDots(
-                                color: TColors.primary, size: 90),
+                                color: TColors.primary, size: 60),
                           )
                         : GoogleMapAddressWidget(controller: controller),
                   ),

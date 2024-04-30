@@ -3,6 +3,7 @@ import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:bliguh/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class TermsandConditions extends StatelessWidget {
@@ -41,28 +42,34 @@ class TermsandConditions extends StatelessWidget {
         const SizedBox(
           width: TSizes.spaceBtwItems,
         ),
-        Text.rich(TextSpan(children: [
-          TextSpan(
-              text: '${TTexts.iAgreeTo} ',
-              style: Theme.of(context).textTheme.bodySmall),
-          TextSpan(
-              text: TTexts.privacyPolicy,
-              style: Theme.of(context).textTheme.bodyMedium!.apply(
-                    color: dark ? TColors.white : TColors.black,
-                    decoration: TextDecoration.underline,
-                    decorationColor: dark ? TColors.white : TColors.black,
-                  )),
-          TextSpan(
-              text: ' ${TTexts.and} ',
-              style: Theme.of(context).textTheme.bodySmall),
-          TextSpan(
-              text: TTexts.termsOfUse,
-              style: Theme.of(context).textTheme.bodyMedium!.apply(
-                    color: dark ? TColors.white : TColors.primary,
-                    decoration: TextDecoration.underline,
-                    decorationColor: dark ? TColors.white : TColors.primary,
-                  )),
-        ]))
+        Expanded(
+          child: Text.rich(
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              TextSpan(children: [
+                TextSpan(
+                    text: '${TTexts.iAgreeTo} ',
+                    style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(
+                    text: TTexts.privacyPolicy,
+                    style: Theme.of(context).textTheme.bodyMedium!.apply(
+                          color: dark ? TColors.white : TColors.black,
+                          decoration: TextDecoration.underline,
+                          decorationColor: dark ? TColors.white : TColors.black,
+                        )),
+                TextSpan(
+                    text: ' ${TTexts.and} ',
+                    style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(
+                    text: TTexts.termsOfUse,
+                    style: Theme.of(context).textTheme.bodyMedium!.apply(
+                          color: dark ? TColors.white : TColors.primary,
+                          decoration: TextDecoration.underline,
+                          decorationColor:
+                              dark ? TColors.white : TColors.primary,
+                        )),
+              ])),
+        )
       ],
     );
   }

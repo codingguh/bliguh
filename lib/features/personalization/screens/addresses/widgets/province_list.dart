@@ -16,6 +16,8 @@ Widget renderProvinceList(ProvinceController provinceController,
   } else if (provinceController.provinces.isEmpty) {
     return Center(child: CircularProgressIndicator());
   } else {
+    // print('panjang ${regionController.listRegion.length}');
+    // print('panjang ${regionController.listRegion}');
     // Sort the list of provinces alphabetically
     provinceController.provinces
         .sort((a, b) => a.province.compareTo(b.province));
@@ -37,13 +39,14 @@ Widget renderProvinceList(ProvinceController provinceController,
           InkWell(
             onTap: () {
               listTiles.clear();
-              if (regionController.listRegion.length > 1) {
+              if (regionController.listRegion.length <= 1) {
                 // if (regionController.listRegion.length > 1 &&
                 //     regionController.listRegion.length < 2) {
                 //   regionController.listRegion.removeRange(1, 2);
                 // }
                 regionController.listRegion[0] = province.province;
-                regionController.listRegion[1] = 'Select Regency';
+                regionController.listRegion[1] = 'Select Regency dari propinsi';
+
                 provinceController.updateRenderList('regencies');
                 provinceController
                     .getRegencies(province.provinceId); // Fetch cities
@@ -85,7 +88,7 @@ Widget renderProvinceList(ProvinceController provinceController,
           InkWell(
             onTap: () {
               listTiles.clear();
-              if (regionController.listRegion.length > 1) {
+              if (regionController.listRegion.length <= 1) {
                 regionController.listRegion[0] = province.province;
                 regionController.listRegion[1] = 'Select Regency aku';
 
@@ -143,6 +146,8 @@ Widget renderRegencyList(ProvinceController provinceController,
 
     for (final city in provinceController.regencies) {
       final currentLetter = city.city.substring(5, 6);
+      print('panjang ${regionController.listRegion.length}');
+      print('panjang ${regionController.listRegion}');
       if (firstLetter != currentLetter) {
         listTiles.add(
           InkWell(
@@ -200,20 +205,23 @@ Widget renderRegencyList(ProvinceController provinceController,
             onTap: () {
               print(city.city);
               listTiles.clear();
-              if (regionController.listRegion.length < 2) {
+              if (regionController.listRegion.length <= 2) {
                 regionController.listRegion.add(city.city);
                 // regionController.listRegion.add('Select District koi');
                 regionController
                     .setActiveIndex(regionController.listRegion.length - 1);
                 provinceController.getDistrict(city.cityId); // Fetch cities
                 provinceController.updateRenderList('districts');
+                print("1111 ${regionController.listRegion.toString()}");
               } else {
                 regionController.listRegion[1] = city.city;
                 provinceController.updateRenderList('districts');
                 provinceController.getDistrict(city.cityId);
                 // regionController.listRegion.add('Select District koi');
-                regionController.setActiveIndex(2);
+
                 regionController.listRegion[2] = 'Select District hh';
+                regionController.setActiveIndex(2);
+                print(" dfsdf ${regionController.listRegion.toString()}");
               }
             },
             child: Obx(
@@ -241,6 +249,8 @@ Widget renderRegencyList(ProvinceController provinceController,
 
 Widget renderDistrictList(ProvinceController provinceController,
     SelectionController regionController) {
+  print('panjang ${regionController.listRegion.length}');
+  print('panjang ${regionController.listRegion}');
   if (provinceController.isLoading.value) {
     // Show loading indicator while data is being fetched
     return Center(child: CircularProgressIndicator());
@@ -258,7 +268,7 @@ Widget renderDistrictList(ProvinceController provinceController,
           InkWell(
             onTap: () {
               listTiles.clear();
-              if (regionController.listRegion.length < 3) {
+              if (regionController.listRegion.length <= 3) {
                 regionController.listRegion[2] = district.name;
 
                 regionController.listRegion.add('Select SubDistrict');
@@ -319,7 +329,7 @@ Widget renderDistrictList(ProvinceController provinceController,
             onTap: () {
               print(district.name);
               listTiles.clear();
-              if (regionController.listRegion.length < 3) {
+              if (regionController.listRegion.length <= 3) {
                 regionController.listRegion.add(district.name);
                 regionController.listRegion.add('Select Subsistrict 0');
                 regionController.setActiveIndex(3);
@@ -371,7 +381,7 @@ Widget renderSubDistrictList(ProvinceController provinceController,
           InkWell(
             onTap: () {
               listTiles.clear();
-              if (regionController.listRegion.length < 4) {
+              if (regionController.listRegion.length <= 4) {
                 regionController.listRegion[3] = subdistrict.name;
 
                 regionController.listRegion.add('Select SubDistrict koe');
@@ -421,7 +431,7 @@ Widget renderSubDistrictList(ProvinceController provinceController,
             onTap: () {
               print(subdistrict.name);
               listTiles.clear();
-              if (regionController.listRegion.length < 4) {
+              if (regionController.listRegion.length <= 4) {
                 regionController.listRegion.add(subdistrict.name);
 
                 regionController

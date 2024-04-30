@@ -1,9 +1,7 @@
-import 'package:bliguh/common/widgets/images/ciruclar_image.dart';
 import 'package:bliguh/features/personalization/controllers/user_controller.dart';
 import 'package:bliguh/features/personalization/screens/profile/widgets/my_profile_name.dart';
 import 'package:bliguh/features/personalization/screens/profile/widgets/my_profile_photo.dart';
 import 'package:bliguh/utils/constants/colors.dart';
-import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

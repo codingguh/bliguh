@@ -1,4 +1,5 @@
 import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,7 @@ class Loaders {
         duration: const Duration(seconds: 5),
         backgroundColor: Colors.transparent,
         content: Container(
-          padding: EdgeInsets.all(12.0),
+          padding: EdgeInsets.all(TSizes.defaultSpace),
           margin: EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),

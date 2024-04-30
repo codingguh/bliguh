@@ -5,7 +5,6 @@ import 'package:bliguh/features/authentication/models/user.dart';
 import 'package:bliguh/features/authentication/screens/login/login.dart';
 import 'package:bliguh/features/authentication/screens/signup/controllers/network_manager.dart';
 import 'package:bliguh/features/personalization/screens/profile/reauth_login_form.dart';
-import 'package:bliguh/utils/constants/enums.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';

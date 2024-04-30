@@ -1,5 +1,6 @@
 import 'package:bliguh/common/widgets/loaders/animation_loader.dart';
 import 'package:bliguh/utils/constants/colors.dart';
+import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:bliguh/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,7 @@ class FullScreenLoader {
         builder: (_) => PopScope(
             canPop: false,
             child: Container(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
               color: THelperFunctions.isDarkMode(Get.context!)
                   ? TColors.dark
                   : TColors.light.withOpacity(0.45),
