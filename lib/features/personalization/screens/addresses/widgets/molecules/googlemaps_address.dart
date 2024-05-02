@@ -30,7 +30,10 @@ class GoogleMapAddress extends StatelessWidget {
         isCenter: true,
         showBackArrow: true,
         onTap: () {
-          Get.off(() => StreetNameDetailScreen(),
+          Get.off(
+              () => StreetNameDetailScreen(
+                    address: address,
+                  ),
               transition: Transition.upToDown,
               duration: Duration(microseconds: 250));
         },

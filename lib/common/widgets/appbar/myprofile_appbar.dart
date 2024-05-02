@@ -3,6 +3,7 @@ import 'package:bliguh/features/personalization/screens/profile/widgets/my_profi
 import 'package:bliguh/features/personalization/screens/profile/widgets/my_profile_photo.dart';
 import 'package:bliguh/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class MyProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -13,7 +14,7 @@ class MyProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.instance;
+    final controller = Get.put(UserController());
     return PreferredSize(
       preferredSize: preferredSize,
       child: Column(

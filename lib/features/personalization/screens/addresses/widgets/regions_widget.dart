@@ -28,8 +28,9 @@ class RegionWidgets extends StatelessWidget {
                 style: TextStyle(fontSize: 11.25, color: Colors.grey),
               ),
               InkWell(
-                onTap: () {
+                onTap: () async {
                   regionController.clearListRegion();
+                  await controller.fetchData();
                   controller.updateRenderList('provinces');
                 },
                 child: Text(

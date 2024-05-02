@@ -1,13 +1,13 @@
 flutter_native_splash:
+  android: true,
+  ios: true,
   color: "#FFFFFF"
   color_dark: "#000000"
-  background_image: assets/logos/splash_screen.png
   image: assets/logos/bliguh.png
 
   android_12:
     color: "#FFFFFF"
     color_dark: "#000000"
-    background_image: assets/logos/splash_screen.png
     image: assets/logos/bliguh.png
 
   web: false

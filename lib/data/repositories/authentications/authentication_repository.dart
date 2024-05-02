@@ -53,6 +53,11 @@ class AuhenticationRepository extends GetxController {
             ));
       }
     } else {
+      FullScreenLoader.openLoadingDialog(
+        'Logging you in... ',
+        TImages.bliguhloader,
+      );
+
       //Local Storage
       // FullScreenLoader.stopLoading();
       deviceStorage.writeIfNull('isFirstTime', true);

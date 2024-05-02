@@ -26,7 +26,7 @@ class ProvinceController extends GetxController {
       'f1c259fb2e4208d3daf69d39cc0b27a0ac94890c802262488f617c7d457b8f45';
   final String URL_BYNDER = 'https://api.binderbyte.com/wilayah';
   //Bynder Bytes
-  Future<void> fetchData() async {
+  Future<List<Province>> fetchData() async {
     try {
       isLoading.value = true;
       final url = '${URL_BYNDER}/provinsi?api_key=${API_KEY_BINDER}';
@@ -37,7 +37,7 @@ class ProvinceController extends GetxController {
 
         final results = jsonResponse['value'] as List;
 
-        provinces.value =
+        return provinces.value =
             results.map((data) => Province.fromJson(data)).toList();
       } else {
         throw Exception('Failed to load data');
@@ -49,7 +49,7 @@ class ProvinceController extends GetxController {
     }
   }
 
-  Future<void> getRegencies(String provinceId) async {
+  Future<List<Regencies>> getRegencies(String provinceId) async {
     try {
       isLoading.value = true;
       final url =
@@ -60,7 +60,7 @@ class ProvinceController extends GetxController {
         final jsonResponse = json.decode(response.body);
 
         final results = jsonResponse['value'] as List;
-        regencies.value =
+        return regencies.value =
             results.map((data) => Regencies.fromJson(data)).toList();
       } else {
         throw Exception('Failed to load data');
@@ -72,7 +72,7 @@ class ProvinceController extends GetxController {
     }
   }
 
-  Future<void> getDistrict(String regencyId) async {
+  Future<List<Districts>> getDistrict(String regencyId) async {
     try {
       isLoading.value = true;
       final url =
@@ -83,7 +83,7 @@ class ProvinceController extends GetxController {
         final jsonResponse = json.decode(response.body);
 
         final results = jsonResponse['value'] as List;
-        districts.value =
+        return districts.value =
             results.map((data) => Districts.fromJson(data)).toList();
       } else {
         throw Exception('Failed to load data');
@@ -93,6 +93,15 @@ class ProvinceController extends GetxController {
     } finally {
       isLoading.value = false;
     }
+  }
+
+  String getIdFromName(String name) {
+    for (var province in provinces) {
+      if (province.province == name) {
+        return province.provinceId;
+      }
+    }
+    return ''; // Return empty string if no match is found
   }
 
   Future<void> getSubDistrict(String districtId) async {

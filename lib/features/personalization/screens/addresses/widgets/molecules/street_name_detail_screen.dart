@@ -18,7 +18,10 @@ import 'dart:convert';
 class StreetNameDetailScreen extends StatelessWidget {
   const StreetNameDetailScreen({
     super.key,
+    required this.address,
   });
+
+  final String address;
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +48,7 @@ class StreetNameDetailScreen extends StatelessWidget {
           print('alamat mu ${streetNoController.streetNoController.text}');
           addressMap.addressText.value =
               streetNoController.streetNoController.text;
-          Get.to(
-              () => OpenStreetMapAddress(
-                    address: streetNoController.streetNoController.text,
-                  ),
-              transition: Transition.downToUp);
+          Get.to(() => OpenStreetMapAddress(), transition: Transition.downToUp);
         },
       ),
       body: Obx(

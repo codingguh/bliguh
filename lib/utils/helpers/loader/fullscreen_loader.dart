@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FullScreenLoader {
-  static void openLoadingDialog(String text, String animation) {
+  static void openLoadingDialog(
+    String text,
+    String animation,
+  ) {
     //ope a ful screen dialog with a given text amd animation
     //this method does'nt return anything
 

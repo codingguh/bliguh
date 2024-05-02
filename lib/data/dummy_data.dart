@@ -135,7 +135,8 @@ List<Map<String, dynamic>> settingsList = [
     'subTitle': 'Set shopping delivery address',
     'onPressed': () {
       // Add your logic for My Account onPressed
-      Get.to(() => const UserAddressScreen());
+      Get.to(() => const UserAddressScreen(),
+          transition: Transition.rightToLeft);
     },
   },
   {

@@ -32,72 +32,67 @@ class AddressInputCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CustomMapController mapController = Get.put(CustomMapController());
-    return Container(
-      color: TColors.grey,
+    return Form(
+        child: Container(
+      color: Colors.white,
       child: Padding(
-        padding: EdgeInsets.only(bottom: TSizes.md),
-        child: Form(
-            child: Container(
-          color: Colors.white,
-          child: Padding(
-            padding: EdgeInsets.all(TSizes.defaultSpace / 1.2),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Address',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                TextFieldAddress(
-                    textController: addressController.addressController,
-                    showClearIcon: addressController.isFocused,
-                    hintText: 'Fullname',
-                    isFocused: addressController.isFocused,
-                    focuesNode: addressController.addressFocusNode),
-                TextFieldAddress(
-                  textController: phoneNoController.phoneNoController,
-                  showClearIcon: phoneNoController.isFocused,
-                  hintText: 'Phone Number',
-                  isFocused: phoneNoController.isFocused,
-                  focuesNode: phoneNoController.phoneNoFocusNode,
-                ),
-                AddressSelectProvince(
-                  showBold:
-                      regionController.listRegion.length > 1 ? true : false,
-                  onTap: () {
-                    Get.offAll(() => SelectProvinceScreen(),
-                        transition: Transition.downToUp,
-                        duration: Duration(milliseconds: 400),
-                        curve: Curves.ease
-                        // curve: Curves.easeInOut
-                        );
-                  },
-                  title: regionController.listRegion.isEmpty
-                      ? 'Province, District, City, Postal Code'
-                      : regionController.listRegion.length > 1
-                          ? regionController.listRegion
-                              .take(regionController.listRegion.length - 1)
-                              .join(', ')
-                          : regionController.listRegion
-                              .take(regionController.listRegion.length)
-                              .join(', '),
-                ),
-                InkWell(
-                    onTap: () {
-                      Get.to(() => StreetNameDetailScreen());
-                    },
-                    child: mapController.addressText != ''
-                        ? AddressSelectProvince(
-                            showBold: true,
-                            title: streetNoController.streetNoController.text)
-                        : AddressSelectProvince(
-                            showBold: false,
-                            title: 'Street Name , Building , House No.')),
-              ],
+        padding: EdgeInsets.all(TSizes.defaultSpace / 1.2),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Address',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-          ),
-        )),
+            TextFieldAddress(
+                textController: addressController.addressController,
+                showClearIcon: addressController.isFocused,
+                hintText: 'Fullname',
+                isFocused: addressController.isFocused,
+                focuesNode: addressController.addressFocusNode),
+            TextFieldAddress(
+              textController: phoneNoController.phoneNoController,
+              showClearIcon: phoneNoController.isFocused,
+              hintText: 'Phone Number',
+              isFocused: phoneNoController.isFocused,
+              focuesNode: phoneNoController.phoneNoFocusNode,
+            ),
+            AddressSelectProvince(
+              showBold: regionController.listRegion.length > 1 ? true : false,
+              onTap: () {
+                Get.offAll(() => SelectProvinceScreen(),
+                    transition: Transition.downToUp,
+                    duration: Duration(milliseconds: 400),
+                    curve: Curves.ease
+                    // curve: Curves.easeInOut
+                    );
+              },
+              title: regionController.listRegion.isEmpty
+                  ? 'Province, District, City, Postal Code'
+                  : regionController.listRegion.length > 1
+                      ? regionController.listRegion
+                          .take(regionController.listRegion.length - 1)
+                          .join(', ')
+                      : regionController.listRegion
+                          .take(regionController.listRegion.length)
+                          .join(', '),
+            ),
+            InkWell(
+                onTap: () {
+                  Get.to(() => StreetNameDetailScreen(
+                        address: streetNoController.streetNoController.text,
+                      ));
+                },
+                child: mapController.addressText != ''
+                    ? AddressSelectProvince(
+                        showBold: true,
+                        title: streetNoController.streetNoController.text)
+                    : AddressSelectProvince(
+                        showBold: false,
+                        title: 'Street Name , Building , House No.')),
+          ],
+        ),
       ),
-    );
+    ));
   }
 }

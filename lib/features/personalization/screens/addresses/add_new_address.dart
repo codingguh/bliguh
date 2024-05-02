@@ -1,11 +1,13 @@
 import 'package:bliguh/common/widgets/appbar/appbar.dart';
 import 'package:bliguh/common/widgets/buttons/button_bottom_navigationbar.dart';
+import 'package:bliguh/features/openstreetmap/screens/map_marker_address.dart';
 import 'package:bliguh/features/personalization/controllers/address_controller.dart';
 import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
 import 'package:bliguh/features/personalization/controllers/streename_controller.dart';
 import 'package:bliguh/features/personalization/screens/addresses/addresses.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/address_input_card.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/checkbox_address.dart';
+import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -49,13 +51,22 @@ class AddNewAddresses extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            AddressInputCard(
-              addressController: addressController,
-              phoneNoController: phoneNoController,
-              regionController: regionController,
-              streetNameController: streetNameController,
-              streetNoController: streetNoController,
-              otherDetailController: otherDetailController,
+            Container(
+              padding: EdgeInsets.only(bottom: 6),
+              color: TColors.softGrey,
+              child: Column(
+                children: [
+                  AddressInputCard(
+                    addressController: addressController,
+                    phoneNoController: phoneNoController,
+                    regionController: regionController,
+                    streetNameController: streetNameController,
+                    streetNoController: streetNoController,
+                    otherDetailController: otherDetailController,
+                  ),
+                  MapMarkerAddress(),
+                ],
+              ),
             ),
             Form(
               child: Container(

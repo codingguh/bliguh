@@ -3,6 +3,7 @@ import 'package:bliguh/data/repositories/authentications/authentication_reposito
 import 'package:bliguh/features/authentication/models/user.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
@@ -98,4 +99,16 @@ class UserRepository extends GetxController {
       throw "shomething error here ${e.toString()}";
     }
   }
+
+  // Future<String> uploadImage(String path, XFile image) async {
+  //   try {} on FirebaseException catch (e) {
+  //     throw "firebase exceptions ${e.message.toString()}";
+  //   } on FormatException catch (e) {
+  //     throw "format exceptions ${e.message.toString()}";
+  //   } on PlatformException catch (e) {
+  //     throw "platform ecception ${e.message.toString()}";
+  //   } catch (e) {
+  //     throw "shomething error here ${e.toString()}";
+  //   }
+  // }
 }

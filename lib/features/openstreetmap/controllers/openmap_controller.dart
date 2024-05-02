@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:bliguh/features/personalization/controllers/address_controller.dart';
+import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
 import 'package:bliguh/utils/constants/api_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -10,9 +11,11 @@ import 'package:http/http.dart' as http;
 
 class OpenMapController extends GetxController {
   final marker = GlobalKey<DragMarkerWidgetState>();
+  Rx<double> sizeMarker = 66.0.obs;
+  Rx<bool> showTooltip = true.obs;
   late MapController mapController;
   Rx<LatLng> markerPosition = LatLng(-6.1944491, 106.8229198).obs;
-  final StreetNoController streetNoController = Get.put(StreetNoController());
+  final SelectionController regionController = Get.put(SelectionController());
 
   Rx<bool> isLoading = false.obs;
 
@@ -21,24 +24,26 @@ class OpenMapController extends GetxController {
     super.onInit();
 
     refreshMap();
+    refresh();
   }
 
-  void refreshMap() async {
+  Future<void> refreshMap() async {
     try {
-      print('refersh map========================');
       isLoading.value = true;
 
-      final location = await getLocationFromAddress(
-          streetNoController.streetNoController.text);
+      final location =
+          await getLocationFromAddress(regionController.listRegion[3]);
       final latitude = location['latitude'];
 
       final longitude = location['longitude'];
 
-      // initialCameraPosition = LatLng(latitude!, longitude!);
+      print("aaagggfsfsdgdghtykyk1212121212fsdgsdgdglat $latitude $longitude");
+
       markerPosition.value = LatLng(latitude!, longitude!);
       markerPosition.update;
       isLoading.value = false;
     } catch (e) {
+      isLoading.value = false;
       print('Error initializing marker position: $e');
     }
   }

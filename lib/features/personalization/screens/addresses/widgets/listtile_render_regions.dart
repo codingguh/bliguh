@@ -25,7 +25,7 @@ class ListRenderRegions extends StatelessWidget {
       } else {
         if (provinceController.renderList.value == 'provinces') {
           return renderProvinceList(provinceController, regionController);
-        } else if (provinceController.renderList.value == 'regencis') {
+        } else if (provinceController.renderList.value == 'regencies') {
           return renderRegencyList(provinceController, regionController);
         } else {
           return SizedBox(

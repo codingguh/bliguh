@@ -8,13 +8,13 @@ class ActiveListTileProvince extends StatelessWidget {
     required this.province,
   });
 
-  final Province province;
+  final String province;
 
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Text(
-        province.province,
+        province,
         style: TextStyle(fontWeight: FontWeight.w600, color: TColors.primary),
       ),
       Icon(
