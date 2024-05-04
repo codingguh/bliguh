@@ -80,10 +80,10 @@ class UserModel {
           id: document.id,
           firstName: data["FirstName"] ?? "",
           lastName: data["LastName"] ?? "",
-          userName: data["userName"] ?? "",
+          userName: data["UserName"] ?? "",
           email: data["email"] ?? "",
           phoneNumber: data["PhoneNumber"] ?? "",
-          profilePicture: data["profilePicture"] ?? "");
+          profilePicture: data["ProfilePicture"] ?? "");
     } else {
       return UserModel.empty();
     }

@@ -6,7 +6,6 @@ import 'package:bliguh/features/personalization/controllers/streename_controller
 import 'package:bliguh/features/personalization/screens/addresses/select_province.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/address_province_widgets.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/molecules/street_name_detail_screen.dart';
-import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

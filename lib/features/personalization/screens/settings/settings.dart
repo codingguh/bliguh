@@ -17,6 +17,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SettingsController());
+    final settingsController = AuhenticationRepository.instance;
     return Scaffold(
       appBar: MyProfileAppBar(),
       body: RefreshIndicator(
@@ -25,47 +26,18 @@ class SettingsScreen extends StatelessWidget {
 
         onRefresh: () async {
           controller.isRefreshing(true);
-          print("${controller.isRefreshing.value}");
           await Future.delayed(Duration(milliseconds: 1500));
           controller.isRefreshing(false);
-          print("${controller.isRefreshing.value}");
         },
         triggerMode: RefreshIndicatorTriggerMode.anywhere,
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [
-              // PrimaryHeaderContainer(
-              //     child: Column(
-              //   children: [
-              //     TAppBar(
-              //         isCenter: true,
-              //         title: Text(
-              //           'My Account',
-              //           style: Theme.of(context).textTheme.headlineMedium!.apply(
-              //                 color: TColors.white,
-              //               ),
-              //         )),
-              //     const SizedBox(
-              //       height: TSizes.spaceBtwSections,
-              //     ),
-
-              //     ///User Profile card
-              //     UserProfileTile(
-              //       onPressed: () {
-              //         Get.to(() => const ProfileScreen());
-              //       },
-              //     ),
-              //     const SizedBox(
-              //       height: TSizes.spaceBtwSections,
-              //     ),
-              //   ],
-              // )),
-
               ///--Body
               Obx(() => controller.isRefreshing.value
                   ? Center(
-                      child: Text('kontol'),
+                      child: Text('Refreshing'),
                     )
                   : SizedBox()),
               Padding(
@@ -114,7 +86,7 @@ class SettingsScreen extends StatelessWidget {
                       width: double.infinity,
                       child: OutlinedButton(
                           onPressed: () async {
-                            await AuhenticationRepository.instance.logout();
+                            await settingsController.logout();
                           },
                           child: const Text(
                             'Logout',
@@ -127,7 +99,7 @@ class SettingsScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

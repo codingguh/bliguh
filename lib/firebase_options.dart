@@ -50,23 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAgIWrSEOX_6fuZezZUyTWxGiq24J-Fgic',
-    appId: '1:666503216611:android:05050ad98929299de634d6',
-    messagingSenderId: '666503216611',
-    projectId: 'modular-robot-416001',
-    databaseURL: 'https://modular-robot-416001-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'modular-robot-416001.appspot.com',
+    apiKey: 'AIzaSyDd7YRJoNPTfqf60_ryifU2W46WI5jB2Fc',
+    appId: '1:416059263512:android:f16d54036c3e90d417916d',
+    messagingSenderId: '416059263512',
+    projectId: 'bliguh',
+    storageBucket: 'bliguh.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB9q9pe3c27w5qEU9cdqKMURacF8ZxEFr0',
-    appId: '1:666503216611:ios:9b266ac3a9389dc0e634d6',
-    messagingSenderId: '666503216611',
-    projectId: 'modular-robot-416001',
-    databaseURL: 'https://modular-robot-416001-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'modular-robot-416001.appspot.com',
-    androidClientId: '666503216611-odvmk3egmqs7ej4m33dc9ooh7q5fshpf.apps.googleusercontent.com',
-    iosClientId: '666503216611-lrgs93faojimqe1bvinekkdaeh321r3v.apps.googleusercontent.com',
+    apiKey: 'AIzaSyB0CTtDGWb3S89TkqDe6J5Y4MJcqKI8O98',
+    appId: '1:416059263512:ios:985974eaa219758917916d',
+    messagingSenderId: '416059263512',
+    projectId: 'bliguh',
+    storageBucket: 'bliguh.appspot.com',
+    androidClientId: '416059263512-h3hnh3s44e36vvpak9g653ksla48bhna.apps.googleusercontent.com',
+    iosClientId: '416059263512-fdpv5aogock81djri3skaaefctig7e1a.apps.googleusercontent.com',
     iosBundleId: 'com.teguhharits.bliguh',
   );
 }

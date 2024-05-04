@@ -15,6 +15,7 @@ class MyProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(UserController());
+
     return PreferredSize(
       preferredSize: preferredSize,
       child: Column(

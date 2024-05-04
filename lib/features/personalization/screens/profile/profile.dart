@@ -1,5 +1,6 @@
 import 'package:bliguh/common/widgets/appbar/appbar.dart';
 import 'package:bliguh/common/widgets/images/ciruclar_image.dart';
+import 'package:bliguh/common/widgets/shimmer/shimmer_effect.dart';
 import 'package:bliguh/common/widgets/texts/section_heading.dart';
 import 'package:bliguh/features/personalization/controllers/user_controller.dart';
 import 'package:bliguh/features/personalization/screens/profile/change_name.dart';
@@ -9,7 +10,9 @@ import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,13 +20,17 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = UserController.instance;
+    final userId = controller.user.value.id;
+    final storage = GetStorage();
+    final photo = storage.read('photoProfile');
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
         isCenter: true,
         onTap: () {
-          Get.to(() => const NavigationMenu(),
-              transition: Transition.leftToRight);
+          Get.to(() => NavigationMenu(),
+              duration: Duration(milliseconds: 400),
+              transition: Transition.leftToRightWithFade);
         },
         title: Text('Profile'),
       ),
@@ -38,14 +45,66 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    CircularImage(
-                      image: TImages.user,
-                      isNetworkImage: false,
-                      width: 97,
-                      height: 97,
-                    ),
+                    Obx(() {
+                      final networkImage = controller.user.value.profilePicture;
+                      final image = photo != null
+                          ? photo
+                          : networkImage.isNotEmpty
+                              ? networkImage
+                              : TImages.teguh;
+
+                      return controller.imageUploading.value
+                          ? ShimmerEffect(width: 80, height: 80, radius: 80)
+                          : GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (_) => SizedBox(
+                                    child: AlertDialog(
+                                      backgroundColor: Colors.transparent,
+                                      content: Container(
+                                        width: 300,
+                                        height: 250,
+                                        child: CircularImage(
+                                          radius: 0,
+                                          image: image,
+                                          isNetworkImage:
+                                              networkImage.isNotEmpty ||
+                                                  photo != null,
+                                          backgroundColor: Colors.transparent,
+                                        ),
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(
+                                                context); // Close the dialog
+                                          },
+                                          child: Text('Close'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: CircularImage(
+                                image: image,
+                                isNetworkImage:
+                                    networkImage.isNotEmpty || photo != null,
+                                width: 97,
+                                height: 97,
+                                fit: BoxFit.contain,
+                              ),
+                            );
+                    }),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          if (controller.permissionStatus.value.isGranted) {
+                            controller.showImageSourceBottomSheet(userId);
+                          } else {
+                            controller.requestPermission();
+                          }
+                        },
                         child: const Text('Change Profile Screen'))
                   ],
                 ),

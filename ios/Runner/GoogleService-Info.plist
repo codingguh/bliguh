@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>666503216611-lrgs93faojimqe1bvinekkdaeh321r3v.apps.googleusercontent.com</string>
+	<string>416059263512-fdpv5aogock81djri3skaaefctig7e1a.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.666503216611-lrgs93faojimqe1bvinekkdaeh321r3v</string>
+	<string>com.googleusercontent.apps.416059263512-fdpv5aogock81djri3skaaefctig7e1a</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>416059263512-h3hnh3s44e36vvpak9g653ksla48bhna.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB9q9pe3c27w5qEU9cdqKMURacF8ZxEFr0</string>
+	<string>AIzaSyB0CTtDGWb3S89TkqDe6J5Y4MJcqKI8O98</string>
 	<key>GCM_SENDER_ID</key>
-	<string>666503216611</string>
+	<string>416059263512</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.teguhharits.bliguh</string>
 	<key>PROJECT_ID</key>
-	<string>modular-robot-416001</string>
+	<string>bliguh</string>
 	<key>STORAGE_BUCKET</key>
-	<string>modular-robot-416001.appspot.com</string>
+	<string>bliguh.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:666503216611:ios:9b266ac3a9389dc0e634d6</string>
-	<key>DATABASE_URL</key>
-	<string>https://modular-robot-416001-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+	<string>1:416059263512:ios:985974eaa219758917916d</string>
 </dict>
 </plist>

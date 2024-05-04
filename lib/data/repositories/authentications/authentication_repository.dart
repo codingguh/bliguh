@@ -1,11 +1,13 @@
 import 'package:bliguh/data/repositories/user/user_repository.dart';
+import 'package:bliguh/features/authentication/models/user.dart';
 import 'package:bliguh/features/authentication/screens/login/login.dart';
 import 'package:bliguh/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:bliguh/features/authentication/screens/signup/verify_email.dart';
+import 'package:bliguh/features/personalization/controllers/user_controller.dart';
 import 'package:bliguh/navigation_menu.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/exceptions/firebase_auth_exception.dart';
 import 'package:bliguh/utils/exceptions/firebase_exceptions.dart';
-import 'package:bliguh/utils/exceptions/platform_exceptions.dart';
 import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -145,16 +147,12 @@ class AuhenticationRepository extends GetxController {
   Future<UserCredential> signInWithGithub() async {
     try {
       final GithubAuthProvider githubAuthProvider = GithubAuthProvider();
-      print("USER CREDENTIALS github $githubAuthProvider");
+
       final result =
           FirebaseAuth.instance.signInWithProvider(githubAuthProvider);
       UserCredential token = await _auth.signInWithProvider(githubAuthProvider);
-
-      print("Token $token");
-      print("result ${result}");
       var provider = OAuthProvider("github.com");
 
-      print("Provider ${provider.credential()}");
       final Map<String, String> params = {"allow_signup": "false"};
       final List<String> scope = ["user:email"];
       provider.setCustomParameters(params);
@@ -325,6 +323,9 @@ class AuhenticationRepository extends GetxController {
   ///[LogoutUser] Valid for authentication
   Future<void> logout() async {
     try {
+      deviceStorage.remove('photoProfile');
+      final userController = Get.put(UserController());
+      userController.user.value = UserModel.empty();
       await GoogleSignIn().signOut();
       await FirebaseAuth.instance.signOut();
       Get.offAll(() => const LoginScreen());

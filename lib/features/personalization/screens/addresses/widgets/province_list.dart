@@ -16,8 +16,6 @@ Widget renderProvinceList(ProvinceController provinceController,
   } else if (provinceController.provinces.isEmpty) {
     return Center(child: CircularProgressIndicator());
   } else {
-    // print('panjang ${regionController.listRegion}');
-    // Sort the list of provinces alphabetically
     provinceController.provinces
         .sort((a, b) => a.province.compareTo(b.province));
 
@@ -111,7 +109,6 @@ Widget renderProvinceList(ProvinceController provinceController,
                 regionController.listRegion.add('sdh');
                 regionController.listRegion[1] = 'regions';
                 provinceController.updateRenderList('regencies');
-                print('nama 7676 ${province.province}');
               }
               regionController.setActiveIndex(1);
               listTiles.clear();

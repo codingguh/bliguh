@@ -46,7 +46,6 @@ class CurrentLocationController extends GetxController {
       return position;
     } catch (e) {
       provinceController.isLoading.value = false;
-      print('Error getting location: $e');
       rethrow; // Rethrow the exception for handling at the caller's level
     }
   }
@@ -102,8 +101,6 @@ class CurrentLocationController extends GetxController {
 
         regionController.listRegion.add(provinsi);
         regionController.activeIndex(0);
-
-        print("sfsfsdf ${myRegency.cityId}--id regency");
 
         final myDistricts =
             await provinceController.getDistrict(myRegency.cityId);

@@ -98,17 +98,14 @@ class LoginController extends GetxController {
 
       //save user record
       await userController.saveUserRecord(userCredentials);
-
       //Redirect
       AuhenticationRepository.instance.screenRedirect();
 
       //Remove loaders
       FullScreenLoader.stopLoading();
     } catch (e) {
-      Future.delayed(Duration(microseconds: 900), () {
-        FullScreenLoader.stopLoading();
-        Loaders.errorSnackBar(title: 'Oh snap', message: e.toString());
-      });
+      FullScreenLoader.stopLoading();
+      Loaders.errorSnackBar(title: 'Oh snap', message: e.toString());
     }
   }
 

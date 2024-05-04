@@ -19,7 +19,6 @@ class GitHubSignIn2 {
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
-      print('kontol');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Could not launch $url'),
@@ -49,7 +48,6 @@ class GitHubSignIn2 {
         'redirect_uri': redirectUrl,
         'scope': 'public_repo%20read:user%20user:email',
       });
-      print(authUrl);
 
       // Step 2: Redirect the user to the GitHub OAuth URL
       // This step should be handled by your UI layer

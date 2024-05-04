@@ -1,7 +1,6 @@
 import 'package:bliguh/common/widgets/appbar/appbar.dart';
 import 'package:bliguh/features/personalization/screens/addresses/add_new_address.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/address_card.dart';
-import 'package:bliguh/features/personalization/screens/settings/settings.dart';
 import 'package:bliguh/navigation_menu.dart';
 import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';

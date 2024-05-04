@@ -22,14 +22,6 @@
           }
         },
         {
-          "client_id": "416059263512-mbrp7939d253pg95lad37eht995eg2om.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.teguhharits.bliguh",
-            "certificate_hash": "960262b330a616a39fb437f7d12d6969a61f09ea"
-          }
-        },
-        {
           "client_id": "416059263512-4dq9i1qf59oigbb34q2m7c7ni3m6pv18.apps.googleusercontent.com",
           "client_type": 3
         }

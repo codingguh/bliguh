@@ -1,6 +1,8 @@
+import 'package:bliguh/common/widgets/shimmer/shimmer_effect.dart';
 import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:bliguh/utils/helpers/helper_functions.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CircularImage extends StatelessWidget {
@@ -13,6 +15,7 @@ class CircularImage extends StatelessWidget {
     this.backgroundColor,
     this.width = 50,
     this.height = 50,
+    this.radius = 100,
     this.padding = TSizes.sm,
   });
 
@@ -20,7 +23,7 @@ class CircularImage extends StatelessWidget {
   final String image;
   final bool isNetworkImage;
   final Color? overlayColor, backgroundColor;
-  final double width, height, padding;
+  final double width, height, padding, radius;
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +36,24 @@ class CircularImage extends StatelessWidget {
           color: dark ? TColors.black : TColors.white,
           // color: TColors.primary,
           // color: dark ? TColors.black : TColors.white,
-          borderRadius: BorderRadius.circular(100)),
-      child: Image(
-        image: isNetworkImage
-            ? NetworkImage(image)
-            : AssetImage(image) as ImageProvider,
-        color: overlayColor,
+          borderRadius: BorderRadius.circular(radius)),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: Center(
+          child: isNetworkImage
+              ? CachedNetworkImage(
+                  imageUrl: image,
+                  color: overlayColor,
+                  fit: BoxFit.fill,
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      ShimmerEffect(width: 55, height: 55),
+                )
+              : Image(
+                  image: AssetImage(image),
+                  color: overlayColor,
+                  fit: fit,
+                ),
+        ),
       ),
     );
   }
