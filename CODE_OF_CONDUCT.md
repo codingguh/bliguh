@@ -21,3 +21,19 @@ flutter run --dart-define ACCESS_TOKEN=pk.eyJ1IjoidGVndWhhcml0cyIsImEiOiJjbHV2cD
 
 flutterfire configure --project=modular-robot-416001
 flutterfire configure --project=modular-robot-416001
+
+Generate KEYSTORE
+keytool -genkeypair -v -keystore /Users/haimac/Movies/CODE/bliguh/keys/bliguh_dev.keystore -alias bliguh_dev -keyalg RSA -keysize 2048 -validity 10000
+
+GENERATE SHA-1 pada MAC 2019
+keytool -list -v -keystore /Users/haimac/Movies/CODE/bliguh/keys/bliguh_dev.keystore -alias bliguh_dev
+
+Melihat Key tool nya
+keytool -keystore /Users/haimac/Movies/CODE/bliguh/keys/bliguh.keystore -list -v
+
+VERSI DEVELOPMENT
+keytool -genkeypair -v -keystore /Users/haimac/Movies/CODE/bliguh/keys/bliguh_dev.keystore -alias bliguh_dev -keyalg RSA -keysize 2048 -validity 10000
+
+keytool -keystore /Users/haimac/Movies/CODE/bliguh/keys/bliguh_dev.keystore -list -v
+
+keytool -keystore /Users/haimac/Movies/CODE/bliguh/keys/bliguh_dev.keystore -list -v

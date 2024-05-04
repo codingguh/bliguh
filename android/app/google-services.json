@@ -1,35 +1,49 @@
 {
   "project_info": {
-    "project_number": "666503216611",
-    "firebase_url": "https://modular-robot-416001-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "modular-robot-416001",
-    "storage_bucket": "modular-robot-416001.appspot.com"
+    "project_number": "416059263512",
+    "project_id": "bliguh",
+    "storage_bucket": "bliguh.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:666503216611:android:05050ad98929299de634d6",
+        "mobilesdk_app_id": "1:416059263512:android:f16d54036c3e90d417916d",
         "android_client_info": {
           "package_name": "com.teguhharits.bliguh"
         }
       },
       "oauth_client": [
         {
-          "client_id": "666503216611-35068bevm9kl89lbd9hjmiuu7hb773bj.apps.googleusercontent.com",
+          "client_id": "416059263512-h3hnh3s44e36vvpak9g653ksla48bhna.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teguhharits.bliguh",
+            "certificate_hash": "3c0c42df9c6f8a551079d343f56331a84f2e7a5d"
+          }
+        },
+        {
+          "client_id": "416059263512-4dq9i1qf59oigbb34q2m7c7ni3m6pv18.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAgIWrSEOX_6fuZezZUyTWxGiq24J-Fgic"
+          "current_key": "AIzaSyDd7YRJoNPTfqf60_ryifU2W46WI5jB2Fc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "666503216611-35068bevm9kl89lbd9hjmiuu7hb773bj.apps.googleusercontent.com",
+              "client_id": "416059263512-4dq9i1qf59oigbb34q2m7c7ni3m6pv18.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "416059263512-fdpv5aogock81djri3skaaefctig7e1a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.teguhharits.bliguh"
+              }
             }
           ]
         }

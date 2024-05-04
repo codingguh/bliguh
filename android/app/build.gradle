@@ -66,18 +66,18 @@ flutter {
 }
 
 dependencies {
-    // Import the BoM for the Firebase platform
-    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
-    // Add the dependency for the App Check library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation("com.google.firebase:firebase-appcheck")
+    // // Import the BoM for the Firebase platform
+    // implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    // // Add the dependency for the App Check library
+    // // When using the BoM, you don't specify versions in Firebase library dependencies
+    // implementation("com.google.firebase:firebase-appcheck")
 
-    // Add the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.firebase:firebase-firestore")
+    // // Add the dependency for the Firebase Authentication library
+    // // When using the BoM, you don't specify versions in Firebase library dependencies
+    // implementation("com.google.firebase:firebase-auth")
+    // implementation("com.google.firebase:firebase-firestore")
 
-    // Also add the dependency for the Google Play services library and specify its version
-    implementation("com.google.android.gms:play-services-auth:21.1.1")
+    // // Also add the dependency for the Google Play services library and specify its version
+    // implementation("com.google.android.gms:play-services-auth:21.1.1")
   
 }
