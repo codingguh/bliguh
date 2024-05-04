@@ -23,6 +23,8 @@ class LoginController extends GetxController {
   void onInit() {
     email.text = localStorage.read('REMEMBER_ME_EMAIL') ?? '';
     password.text = localStorage.read('REMEMBER_ME_PASSWORD') ?? '';
+    rememberMe.value =
+        localStorage.read('REMEMBER_ME_EMAIL') != null ? true : false;
     _checkLoggedIn();
     super.onInit();
   }
@@ -57,6 +59,7 @@ class LoginController extends GetxController {
       //Save Data if Remember Me is selected
       if (rememberMe.value) {
         localStorage.write('REMEMBER_ME_EMAIL', email.text.trim());
+
         localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
       }
 
@@ -100,7 +103,7 @@ class LoginController extends GetxController {
       await userController.saveUserRecord(userCredentials);
 
       //Redirect
-      AuhenticationRepository.instance.screenRedirect();
+      await AuhenticationRepository.instance.screenRedirect();
 
       //Remove loaders
       FullScreenLoader.stopLoading();

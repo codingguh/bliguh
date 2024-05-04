@@ -1,3 +1,5 @@
+import 'package:bliguh/data/firebase/dummy_data.dart';
+import 'package:bliguh/data/repositories/categories/category.repository.dart';
 import 'package:bliguh/features/personalization/screens/addresses/addresses.dart';
 import 'package:bliguh/features/shop/screens/orders/order_screen.dart';
 import 'package:bliguh/utils/constants/colors.dart';
@@ -6,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+final _categoryRepository = Get.put(CategoryRepository());
+final category = FirebaseDummyData.categories;
 final List<String> banners = [
   TImages.banner1,
   TImages.banner3,
@@ -206,6 +210,7 @@ List<Map<String, dynamic>> settingsAppMenu = [
     'subTitle': 'Upload your document',
     'onPressed': () {
       // Add your logic for My Account onPressed
+      _categoryRepository.uploadDumyDataCategory(category);
     },
   },
   {

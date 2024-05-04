@@ -27,6 +27,7 @@ class VerticalTimeline extends StatelessWidget {
         ? SelectedTimeline(
             text: text,
             onTap: onTap,
+            // isSelected: isSelected,
           )
         : GestureDetector(
             onTap: onTap,

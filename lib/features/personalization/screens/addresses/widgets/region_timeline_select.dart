@@ -23,30 +23,26 @@ class RegionTimelineSelect extends StatelessWidget {
               children: List.generate(listRegion.length, (index) {
             final isActive = selectionController.activeIndex.value == index;
 
-            return AnimatedContainer(
-              duration: Duration(seconds: 1), // Adjust duration as needed
-              curve: Curves.easeInOut, // Adjust curve as needed
-              child: VerticalTimeline(
-                index: index,
-                isFirst: index == 0,
-                isLast: index == listRegion.length - 1,
-                isPass: true, // You can set this based on your logic
-                text: listRegion[index],
-                isSelected: isActive,
-                onTap: () {
-                  selectionController.setActiveIndex(index);
-                  if (selectionController.activeIndex == 0) {
-                    regionController.updateRenderList('provinces');
-                  } else if (selectionController.activeIndex == 1) {
-                    regionController.updateRenderList('regencies');
-                  } else if (index == 2) {
-                    regionController.updateRenderList('districts');
-                  } else {
-                    print(
-                        "coba ${selectionController.activeIndex} ${regionController.renderList}");
-                  }
-                },
-              ),
+            return VerticalTimeline(
+              index: index,
+              isFirst: index == 0,
+              isLast: index == listRegion.length - 1,
+              isPass: true, // You can set this based on your logic
+              text: listRegion[index],
+              isSelected: isActive,
+              onTap: () {
+                selectionController.setActiveIndex(index);
+                if (selectionController.activeIndex == 0) {
+                  regionController.updateRenderList('provinces');
+                } else if (selectionController.activeIndex == 1) {
+                  regionController.updateRenderList('regencies');
+                } else if (index == 2) {
+                  regionController.updateRenderList('districts');
+                } else {
+                  print(
+                      "coba ${selectionController.activeIndex} ${regionController.renderList}");
+                }
+              },
             );
           }))),
     );

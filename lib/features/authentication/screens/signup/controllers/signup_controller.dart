@@ -1,7 +1,7 @@
 import 'package:bliguh/common/widgets/loaders/loaders.dart';
 import 'package:bliguh/data/repositories/authentications/authentication_repository.dart';
 import 'package:bliguh/data/repositories/user/user_repository.dart';
-import 'package:bliguh/features/authentication/models/user.dart';
+import 'package:bliguh/features/authentication/models/user_model.dart';
 import 'package:bliguh/features/authentication/screens/signup/controllers/network_manager.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';
@@ -74,9 +74,9 @@ class SignupController extends GetxController {
 
       // FullScreenLoader.stopLoading();
       // //show success message
-      // Loaders.successSnackBar(
-      //     title: 'Congrulatulations',
-      //     message: 'Your account has been created verify email to continue');
+      Loaders.successSnackBar(
+          title: 'Congrulatulations',
+          message: 'Your account has been created verify email to continue');
 
       // //move to verify email screen
       // Get.to(() => VerifyEmailScreen(

@@ -4,8 +4,8 @@ import 'package:bliguh/features/authentication/screens/onboarding/onboarding.dar
 import 'package:bliguh/features/authentication/screens/signup/verify_email.dart';
 import 'package:bliguh/navigation_menu.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:bliguh/utils/exceptions/firebase_exceptions.dart';
-import 'package:bliguh/utils/exceptions/platform_exceptions.dart';
 import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -23,6 +23,7 @@ class AuhenticationRepository extends GetxController {
   final _auth = FirebaseAuth.instance;
   final GithubAuthProvider _githubProvider = GithubAuthProvider();
   User? _authUser;
+  Rx<bool> authLoading = false.obs;
 
   ///get authenticaiton user data
   User? get authUser => _authUser;
@@ -86,7 +87,9 @@ class AuhenticationRepository extends GetxController {
           accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
 
       //once sign in return the userCredential
-      return await _auth.signInWithCredential(credential);
+      final result = await _auth.signInWithCredential(credential);
+      _authUser = result.user;
+      return await FirebaseAuth.instance.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
       // throw FirebaseAuthException(message: e.message, code: e.code).message;
@@ -189,8 +192,10 @@ class AuhenticationRepository extends GetxController {
   Future<UserCredential> loginWithEmailAndPassword(
       String email, String password) async {
     try {
-      return await _auth.signInWithEmailAndPassword(
+      final result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
+      _authUser = result.user;
+      return result;
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
       // throw FirebaseAuthException(message: e.message, code: e.code).message;
@@ -325,6 +330,11 @@ class AuhenticationRepository extends GetxController {
   ///[LogoutUser] Valid for authentication
   Future<void> logout() async {
     try {
+      authLoading.value = true;
+      // final storage = GetStorage();
+      final storage = GetStorage();
+      await storage.remove('user');
+      print('signout ${storage.read('user')}');
       await GoogleSignIn().signOut();
       await FirebaseAuth.instance.signOut();
       Get.offAll(() => const LoginScreen());
@@ -346,6 +356,8 @@ class AuhenticationRepository extends GetxController {
       // throw FirebaseAuthException(message: e.message, code: e.code).message;
     } catch (e) {
       throw "something went wrong ${e.toString()}";
+    } finally {
+      authLoading.value = false;
     }
   }
 

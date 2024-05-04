@@ -16,6 +16,7 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController());
+
     return Form(
       key: controller.loginFormKey,
       child: Padding(
@@ -68,7 +69,10 @@ class LoginForm extends StatelessWidget {
                           onChanged: (value) => controller.rememberMe.value =
                               !controller.rememberMe.value),
                     ),
-                    Text(TTexts.rememberMe)
+                    InkWell(
+                        onTap: () => controller.rememberMe.value =
+                            !controller.rememberMe.value,
+                        child: Text(TTexts.rememberMe))
                   ],
                 ),
 

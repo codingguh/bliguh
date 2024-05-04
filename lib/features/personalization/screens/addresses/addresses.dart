@@ -1,7 +1,6 @@
 import 'package:bliguh/common/widgets/appbar/appbar.dart';
 import 'package:bliguh/features/personalization/screens/addresses/add_new_address.dart';
 import 'package:bliguh/features/personalization/screens/addresses/widgets/address_card.dart';
-import 'package:bliguh/features/personalization/screens/settings/settings.dart';
 import 'package:bliguh/navigation_menu.dart';
 import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
@@ -14,6 +13,7 @@ class UserAddressScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    NavigationController controller = NavigationController();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: TColors.primary,
@@ -28,6 +28,8 @@ class UserAddressScreen extends StatelessWidget {
       appBar: TAppBar(
         showBackArrow: true,
         onTap: () {
+          controller.selectedIndex.value = 2;
+          print("menu ${controller.selectedIndex.value}");
           Get.off(() => const NavigationMenu(),
               transition: Transition.leftToRight);
         },

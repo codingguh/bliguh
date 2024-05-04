@@ -11,6 +11,7 @@ class SelectedTimeline extends StatelessWidget {
   });
 
   final String text;
+
   final Function()? onTap;
 
   @override
@@ -32,7 +33,6 @@ class SelectedTimeline extends StatelessWidget {
               width: 20,
               height: 20,
               padding: EdgeInsets.all(3),
-              borderColor: TColors.primary,
               child: RoundedContainer(
                 backgroundColor: TColors.primary,
               ),
@@ -42,8 +42,7 @@ class SelectedTimeline extends StatelessWidget {
             ),
             Text(
               text,
-              style: TextStyle(
-                  color: TColors.primary, fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ],
         ),

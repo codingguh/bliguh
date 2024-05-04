@@ -15,15 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "666503216611-odvmk3egmqs7ej4m33dc9ooh7q5fshpf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.teguhharits.bliguh",
-            "certificate_hash": "960262b330a616a39fb437f7d12d6969a61f09ea"
-          }
-        },
-        {
-          "client_id": "666503216611-gq6ribqclqtiisjnk6he23j69kdm6ur1.apps.googleusercontent.com",
+          "client_id": "666503216611-35068bevm9kl89lbd9hjmiuu7hb773bj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -36,15 +28,8 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "666503216611-e334mfchg6n6gt63psa5k28ctgfir1jn.apps.googleusercontent.com",
+              "client_id": "666503216611-35068bevm9kl89lbd9hjmiuu7hb773bj.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "666503216611-i7g3hboiesihci92u614ilhcn8dasanb.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.teguhharits.ecommerceFirebaseGetx"
-              }
             }
           ]
         }

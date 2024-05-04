@@ -1,5 +1,6 @@
 import 'package:bliguh/common/widgets/appbar/appbar.dart';
 import 'package:bliguh/common/widgets/images/ciruclar_image.dart';
+import 'package:bliguh/common/widgets/shimmer/shimmer_effect.dart';
 import 'package:bliguh/common/widgets/texts/section_heading.dart';
 import 'package:bliguh/features/personalization/controllers/user_controller.dart';
 import 'package:bliguh/features/personalization/screens/profile/change_name.dart';
@@ -7,9 +8,12 @@ import 'package:bliguh/features/personalization/screens/profile/widgets/profile_
 import 'package:bliguh/navigation_menu.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,6 +21,9 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = UserController.instance;
+    final userId = controller.user.value.id;
+
+    print('USER ID ${GetStorage().read('user')}--${GetStorage().read('user')}');
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
@@ -38,14 +45,75 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    CircularImage(
-                      image: TImages.user,
-                      isNetworkImage: false,
-                      width: 97,
-                      height: 97,
-                    ),
+                    Obx(() {
+                      final networkImage = controller.user.value.profilePicture;
+                      // final localImage = controller.storage.read('photo');
+                      final image = networkImage.isNotEmpty
+                          ? networkImage
+                          : TImages.teguh;
+
+                      return controller.imageUploading.value
+                          ? ShimmerEffect(width: 80, height: 80, radius: 80)
+                          : GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (_) => SizedBox(
+                                    // width: 200,
+                                    // height: 420,
+                                    child: AlertDialog(
+                                      backgroundColor: Colors.transparent,
+                                      content: Container(
+                                        width: 300,
+                                        height: 250,
+                                        child: CachedNetworkImage(
+                                          imageUrl: image,
+
+                                          height:
+                                              300, // Set image height to 300
+                                          fit: BoxFit.cover,
+                                          placeholder: (context, url) =>
+                                              CircularProgressIndicator(), // Placeholder while loading
+                                          errorWidget: (context, url, error) =>
+                                              Icon(Icons
+                                                  .error), // Error widget if loading fails
+                                        ),
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(
+                                                context); // Close the dialog
+                                          },
+                                          child: Text('Close'),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: CircularImage(
+                                image: image,
+                                isNetworkImage: networkImage.isNotEmpty,
+                                width: 97,
+                                height: 97,
+                                fit: BoxFit.contain,
+                              ),
+                            );
+                    }),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          PermissionStatus cameraStatus =
+                              await Permission.camera.status;
+                          // PermissionStatus photosStatus =
+                          //     await Permission.photos.status;
+
+                          if (cameraStatus.isGranted) {
+                            controller.showImageSourceBottomSheet(userId);
+                          } else {
+                            openAppSettings();
+                          }
+                        },
                         child: const Text('Change Profile Screen'))
                   ],
                 ),

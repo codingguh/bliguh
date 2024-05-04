@@ -83,7 +83,7 @@ class UserModel {
           userName: data["userName"] ?? "",
           email: data["email"] ?? "",
           phoneNumber: data["PhoneNumber"] ?? "",
-          profilePicture: data["profilePicture"] ?? "");
+          profilePicture: data["ProfilePicture"] ?? "");
     } else {
       return UserModel.empty();
     }

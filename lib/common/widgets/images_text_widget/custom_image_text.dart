@@ -1,6 +1,7 @@
 import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:bliguh/utils/helpers/helper_functions.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class VerticalImageText extends StatelessWidget {
@@ -8,12 +9,14 @@ class VerticalImageText extends StatelessWidget {
     super.key,
     required this.image,
     required this.title,
+    this.isNetworkImage = false,
     this.textColor = TColors.white,
     this.backgroundColor = TColors.white,
     this.onTap,
   });
 
   final String image, title;
+  final bool isNetworkImage;
   final Color textColor;
   final Color? backgroundColor;
   final void Function()? onTap;
@@ -37,13 +40,17 @@ class VerticalImageText extends StatelessWidget {
                           : TColors.white),
                   borderRadius: BorderRadius.circular(100)),
               child: Center(
-                child: Image(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
-                  color: THelperFunctions.isDarkMode(context)
-                      ? TColors.white
-                      : TColors.dark,
-                ),
+                child: isNetworkImage
+                    ? CachedNetworkImage(
+                        imageUrl: image,
+                      )
+                    : Image(
+                        image: AssetImage(image),
+                        fit: BoxFit.cover,
+                        color: THelperFunctions.isDarkMode(context)
+                            ? TColors.white
+                            : TColors.dark,
+                      ),
               ),
             ),
             SizedBox(

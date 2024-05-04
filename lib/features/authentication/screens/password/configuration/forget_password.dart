@@ -16,57 +16,59 @@ class ForgetPassword extends StatelessWidget {
     final controller = Get.put(ForgetPasswordController());
     return Scaffold(
       appBar: AppBar(),
-      body: Padding(
-        padding: EdgeInsets.all(TSizes.defaultSpace),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image(
-              image: AssetImage(TImages.forgotpassword),
-              width: THelperFunctions.screenWidth() * 0.6,
-            ),
-
-            ///Headings
-            Text(TTexts.forgetPasswordTitle,
-                style: Theme.of(context).textTheme.headlineMedium),
-            const SizedBox(
-              height: TSizes.spaceBtwItems,
-            ),
-            Text(
-              TTexts.forgetPasswordSubTitle,
-              style: Theme.of(context).textTheme.labelMedium,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(
-              height: TSizes.spaceBtwSections * 2,
-            ),
-
-            ///TextField
-            Form(
-              key: controller.forgetPasswordFormKey,
-              child: TextFormField(
-                controller: controller.email,
-                validator: TValidator.validateEmail,
-                decoration: InputDecoration(
-                    labelText: TTexts.email,
-                    prefixIcon: Icon(Iconsax.direct_right)),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image(
+                image: AssetImage(TImages.forgotpassword),
+                width: THelperFunctions.screenWidth() * 0.6,
               ),
-            ),
 
-            const SizedBox(
-              height: TSizes.spaceBtwSections,
-            ),
+              ///Headings
+              Text(TTexts.forgetPasswordTitle,
+                  style: Theme.of(context).textTheme.headlineMedium),
+              const SizedBox(
+                height: TSizes.spaceBtwItems,
+              ),
+              Text(
+                TTexts.forgetPasswordSubTitle,
+                style: Theme.of(context).textTheme.labelMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: TSizes.spaceBtwSections * 2,
+              ),
 
-            SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                    onPressed: () {
-                      controller.sendPasswordResetEmail();
-                    },
-                    child: const Text(TTexts.submit)))
+              ///TextField
+              Form(
+                key: controller.forgetPasswordFormKey,
+                child: TextFormField(
+                  controller: controller.email,
+                  validator: TValidator.validateEmail,
+                  decoration: InputDecoration(
+                      labelText: TTexts.email,
+                      prefixIcon: Icon(Iconsax.direct_right)),
+                ),
+              ),
 
-            ///Submit Button
-          ],
+              const SizedBox(
+                height: TSizes.spaceBtwSections,
+              ),
+
+              SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        controller.sendPasswordResetEmail();
+                      },
+                      child: const Text(TTexts.submit)))
+
+              ///Submit Button
+            ],
+          ),
         ),
       ),
     );

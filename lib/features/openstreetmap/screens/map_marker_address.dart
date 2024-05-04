@@ -1,14 +1,9 @@
-import 'dart:math';
 
 import 'package:bliguh/features/openstreetmap/screens/open_streetmap.dart';
 import 'package:bliguh/utils/constants/colors.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:latlong2/latlong.dart';
 
 class MapMarkerAddress extends StatelessWidget {

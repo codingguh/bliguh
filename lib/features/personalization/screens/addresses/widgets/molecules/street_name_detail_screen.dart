@@ -6,7 +6,6 @@ import 'package:bliguh/features/personalization/controllers/address_controller.d
 import 'package:bliguh/features/personalization/controllers/googlemap_controller.dart';
 import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
 import 'package:bliguh/features/personalization/screens/addresses/add_new_address.dart';
-import 'package:bliguh/features/personalization/screens/addresses/widgets/molecules/googlemaps_address.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';

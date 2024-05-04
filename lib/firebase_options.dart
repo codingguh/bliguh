@@ -65,8 +65,6 @@ class DefaultFirebaseOptions {
     projectId: 'modular-robot-416001',
     databaseURL: 'https://modular-robot-416001-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'modular-robot-416001.appspot.com',
-    androidClientId: '666503216611-odvmk3egmqs7ej4m33dc9ooh7q5fshpf.apps.googleusercontent.com',
-    iosClientId: '666503216611-lrgs93faojimqe1bvinekkdaeh321r3v.apps.googleusercontent.com',
     iosBundleId: 'com.teguhharits.bliguh',
   );
 }

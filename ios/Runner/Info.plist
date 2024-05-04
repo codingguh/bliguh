@@ -45,6 +45,8 @@
 			<string>UIInterfaceOrientationLandscapeLeft</string>
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
+		<key>NSCameraUsageDescription</key>
+		<string>Allow access to camera for taking photos</string>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
 		<true/>
 		<key>UIApplicationSupportsIndirectInputEvents</key>
@@ -58,12 +60,15 @@
 			<dict>
 				<key>CFBundleTypeRole</key>
 				<string>Editor</string>
+				<key>CFBundleURLName</key>
+        		<string>Google</string>
 				<key>CFBundleURLSchemes</key>
 				<array>
 					<!-- TODO Replace this value: -->
 					<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
-					<string>com.googleusercontent.apps.666503216611-i7g3hboiesihci92u614ilhcn8dasanb</string>
+					<!-- <string>com.googleusercontent.apps.666503216611-i7g3hboiesihci92u614ilhcn8dasanb</string> -->
 					<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+					 <string>com.googleusercontent.apps.666503216611-lrgs93faojimqe1bvinekkdaeh321r3v</string>
 					<string>fb662132346042380</string>
 					<string>https</string>
 				</array>

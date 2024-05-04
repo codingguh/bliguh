@@ -274,6 +274,7 @@ class TImages {
       "assets/images/reviews/review_profile_image_2.jpeg";
   static const String userProfileImage3 =
       "assets/images/reviews/review_profile_image_3.jpeg";
+  static const String teguh = "assets/images/content/teguh.jpeg";
 
   //Banners
   static const String promoBanner1 =

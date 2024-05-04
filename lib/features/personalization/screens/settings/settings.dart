@@ -8,6 +8,7 @@ import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 List<Widget> settingsTiles = [];
 
@@ -17,6 +18,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SettingsController());
+    final settingsController = AuhenticationRepository.instance;
     return Scaffold(
       appBar: MyProfileAppBar(),
       body: RefreshIndicator(
@@ -68,65 +70,73 @@ class SettingsScreen extends StatelessWidget {
                       child: Text('kontol'),
                     )
                   : SizedBox()),
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace - 12),
-                child: Column(
-                  children: [
-                    SectionHeading(
-                      title: 'Account Settings',
-                      showActionButton: false,
-                    ),
-                    const SizedBox(
-                      height: TSizes.spaceBtwSections,
-                    ),
+              Obx(
+                () => settingsController.authLoading.value
+                    ? Center(
+                        child: LoadingAnimationWidget.prograssiveDots(
+                            color: TColors.primary, size: 60),
+                      )
+                    : Padding(
+                        padding: const EdgeInsets.all(TSizes.defaultSpace - 12),
+                        child: Column(
+                          children: [
+                            SectionHeading(
+                              title: 'Account Settings',
+                              showActionButton: false,
+                            ),
+                            const SizedBox(
+                              height: TSizes.spaceBtwSections,
+                            ),
 
-                    for (int i = 0; i < settingsList.length; i++)
-                      SettingsMenuTile(
-                        icon: settingsList[i]['icon'],
-                        title: settingsList[i]['title'],
-                        subTitle: settingsList[i]['subTitle'],
-                        onTap: settingsList[i]['onPressed'],
-                      ),
+                            for (int i = 0; i < settingsList.length; i++)
+                              SettingsMenuTile(
+                                icon: settingsList[i]['icon'],
+                                title: settingsList[i]['title'],
+                                subTitle: settingsList[i]['subTitle'],
+                                onTap: settingsList[i]['onPressed'],
+                              ),
 
-                    ///--Appsettings
-                    SizedBox(
-                      height: TSizes.spaceBtwSections,
-                    ),
-                    SectionHeading(
-                      title: 'App Settings',
-                      showActionButton: false,
-                    ),
-                    SizedBox(
-                      height: TSizes.spaceBtwItems,
-                    ),
-                    for (int i = 0; i < settingsAppMenu.length; i++)
-                      SettingsMenuTile(
-                        icon: settingsAppMenu[i]['icon'],
-                        title: settingsAppMenu[i]['title'],
-                        subTitle: settingsAppMenu[i]['subTitle'],
-                        onTap: settingsAppMenu[i]['onPressed'],
-                        trailing: settingsAppMenu[i]['trailing'],
+                            ///--Appsettings
+                            SizedBox(
+                              height: TSizes.spaceBtwSections,
+                            ),
+                            SectionHeading(
+                              title: 'App Settings',
+                              showActionButton: false,
+                            ),
+                            SizedBox(
+                              height: TSizes.spaceBtwItems,
+                            ),
+                            for (int i = 0; i < settingsAppMenu.length; i++)
+                              SettingsMenuTile(
+                                icon: settingsAppMenu[i]['icon'],
+                                title: settingsAppMenu[i]['title'],
+                                subTitle: settingsAppMenu[i]['subTitle'],
+                                onTap: settingsAppMenu[i]['onPressed'],
+                                trailing: settingsAppMenu[i]['trailing'],
+                              ),
+                            SizedBox(
+                              height: TSizes.spaceBtwSections,
+                            ),
+                            SizedBox(
+                              width: double.infinity,
+                              child: OutlinedButton(
+                                  onPressed: () async {
+                                    await settingsController.logout();
+                                  },
+                                  child: const Text(
+                                    'Logout',
+                                    style: TextStyle(
+                                        color: Colors.red,
+                                        fontWeight: FontWeight.w800),
+                                  )),
+                            ),
+                            SizedBox(
+                              height: TSizes.spaceBtwSections * 2.5,
+                            ),
+                          ],
+                        ),
                       ),
-                    SizedBox(
-                      height: TSizes.spaceBtwSections,
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                          onPressed: () async {
-                            await AuhenticationRepository.instance.logout();
-                          },
-                          child: const Text(
-                            'Logout',
-                            style: TextStyle(
-                                color: Colors.red, fontWeight: FontWeight.w800),
-                          )),
-                    ),
-                    SizedBox(
-                      height: TSizes.spaceBtwSections * 2.5,
-                    ),
-                  ],
-                ),
               )
             ],
           ),

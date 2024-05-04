@@ -1,6 +1,8 @@
+import 'package:bliguh/common/widgets/shimmer/shimmer_effect.dart';
 import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
 import 'package:bliguh/utils/helpers/helper_functions.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CircularImage extends StatelessWidget {
@@ -34,11 +36,23 @@ class CircularImage extends StatelessWidget {
           // color: TColors.primary,
           // color: dark ? TColors.black : TColors.white,
           borderRadius: BorderRadius.circular(100)),
-      child: Image(
-        image: isNetworkImage
-            ? NetworkImage(image)
-            : AssetImage(image) as ImageProvider,
-        color: overlayColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Center(
+          child: isNetworkImage
+              ? CachedNetworkImage(
+                  imageUrl: image,
+                  color: overlayColor,
+                  fit: BoxFit.fill,
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      ShimmerEffect(width: 55, height: 55),
+                )
+              : Image(
+                  image: AssetImage(image),
+                  color: overlayColor,
+                  fit: fit,
+                ),
+        ),
       ),
     );
   }

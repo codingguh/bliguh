@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:bliguh/data/repositories/authentications/authentication_repository.dart';
-import 'package:bliguh/features/authentication/models/user.dart';
+import 'package:bliguh/features/authentication/models/user_model.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -70,7 +73,7 @@ class UserRepository extends GetxController {
   //Function to save user data to firestore
   Future<void> updateSingleField(Map<String, dynamic> json) async {
     try {
-      await _db
+      return await _db
           .collection("Users")
           .doc(AuhenticationRepository.instance.authUser?.uid)
           .update(json);
@@ -85,7 +88,7 @@ class UserRepository extends GetxController {
     }
   }
 
-  //Function to save user data to firestore
+  //Function to save remove data to firestore
   Future<void> removeUserRecord(String userId) async {
     try {
       await _db.collection("Users").doc(userId).delete();
@@ -100,15 +103,20 @@ class UserRepository extends GetxController {
     }
   }
 
-  // Future<String> uploadImage(String path, XFile image) async {
-  //   try {} on FirebaseException catch (e) {
-  //     throw "firebase exceptions ${e.message.toString()}";
-  //   } on FormatException catch (e) {
-  //     throw "format exceptions ${e.message.toString()}";
-  //   } on PlatformException catch (e) {
-  //     throw "platform ecception ${e.message.toString()}";
-  //   } catch (e) {
-  //     throw "shomething error here ${e.toString()}";
-  //   }
-  // }
+  Future<String> uploadImage(String path, XFile image) async {
+    try {
+      final ref = FirebaseStorage.instance.ref(path).child(image.name);
+      await ref.putFile(File(image.path));
+      final url = await ref.getDownloadURL();
+      return url;
+    } on FirebaseException catch (e) {
+      throw "firebase exceptions ${e.message.toString()}";
+    } on FormatException catch (e) {
+      throw "format exceptions ${e.message.toString()}";
+    } on PlatformException catch (e) {
+      throw "platform ecception ${e.message.toString()}";
+    } catch (e) {
+      throw "shomething error here ${e.toString()}";
+    }
+  }
 }

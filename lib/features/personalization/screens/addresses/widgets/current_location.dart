@@ -1,10 +1,7 @@
 import 'package:bliguh/features/openstreetmap/controllers/current_location_controller.dart';
 import 'package:bliguh/features/personalization/controllers/province_controller.dart';
-import 'package:bliguh/features/personalization/controllers/region_select_controller.dart';
-import 'package:bliguh/features/personalization/screens/addresses/widgets/regions_widget.dart';
 import 'package:bliguh/utils/constants/colors.dart';
 import 'package:bliguh/utils/constants/sizes.dart';
-import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
