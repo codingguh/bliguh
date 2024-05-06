@@ -46,14 +46,14 @@ class Loaders {
         ));
   }
 
-  static successSnackBar({required title, message = "", duration = 3}) {
+  static successSnackBar({required title, message = ""}) {
     Get.snackbar(title, message,
         isDismissible: true,
         shouldIconPulse: true,
         colorText: Colors.white,
         backgroundColor: TColors.primary,
         snackPosition: SnackPosition.BOTTOM,
-        duration: Duration(seconds: duration),
+        duration: Duration(seconds: 3),
         margin: const EdgeInsets.all(10),
         icon: const Icon(
           Iconsax.check,
@@ -61,7 +61,7 @@ class Loaders {
         ));
   }
 
-  static errorSnackBar({required title, message = "", duration = 3}) {
+  static errorSnackBar({required title, message = ""}) {
     Get.snackbar(title, message,
         isDismissible: true,
         shouldIconPulse: true,
@@ -69,7 +69,7 @@ class Loaders {
         backgroundColor: Colors.red.shade600,
         snackPosition: SnackPosition.BOTTOM,
         margin: const EdgeInsets.all(10),
-        duration: Duration(seconds: duration),
+        duration: Duration(seconds: 3),
         icon: const Icon(
           Iconsax.warning_2,
           color: TColors.white,

@@ -1,5 +1,5 @@
 import 'package:bliguh/common/widgets/loaders/loaders.dart';
-import 'package:bliguh/data/categories/category_repository.dart';
+import 'package:bliguh/data/repositories/categories/category_repository.dart';
 import 'package:bliguh/features/shop/models/category_model.dart';
 import 'package:get/get.dart';
 
@@ -24,12 +24,10 @@ class CategoryController extends GetxController {
       // fetch categories from data source (FirestoremAPI,etc)
       final categories = await _categoryRepository.getAllCategories();
 
-      featuredCategories.value = categories;
-
       allCategories.assignAll(categories);
 
-      // featuredCategories
-      //     .assignAll(allCategories.where((category) => category.isFeatured));
+      featuredCategories.assignAll(allCategories.where(
+          (category) => category.isFeatured && category.parentId.isEmpty));
     } catch (e) {
       Loaders.errorSnackBar(title: 'Oh snap', message: e.toString);
     } finally {

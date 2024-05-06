@@ -46,7 +46,15 @@ class TFirebaseStorageService extends GetxController {
       final url = await ref.getDownloadURL();
       return url;
     } catch (e) {
-      throw 'error upload image data $e';
+      if (e is FirebaseException) {
+        throw 'Firebae exception ${e.message}';
+      } else if (e is SocketException) {
+        throw 'Network Error ${e.message}';
+      } else if (e is PlatformException) {
+        throw 'Platform exceptiom ${e.message}';
+      } else {
+        throw '${e.toString()}';
+      }
     }
   }
 }

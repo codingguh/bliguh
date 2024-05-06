@@ -198,6 +198,18 @@ List<Map<String, dynamic>> settingsList = [
   // Add more items as needed
 ];
 
+List<Map<String, dynamic>> settingsAppRecords = [
+  {
+    'id': 1,
+    'icon': Iconsax.document_upload,
+    'title': 'Upload  Categories',
+    'subTitle': 'Upload your document',
+    'onPressed': () {
+      // Add your logic for My Account onPressed
+    },
+  },
+];
+
 List<Map<String, dynamic>> settingsAppMenu = [
   {
     'id': 1,

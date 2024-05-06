@@ -8,6 +8,7 @@ import 'package:bliguh/navigation_menu.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
 import 'package:bliguh/utils/exceptions/firebase_auth_exception.dart';
 import 'package:bliguh/utils/exceptions/firebase_exceptions.dart';
+import 'package:bliguh/utils/exceptions/platform_exceptions.dart';
 import 'package:bliguh/utils/helpers/loader/fullscreen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -93,15 +94,12 @@ class AuhenticationRepository extends GetxController {
       throw TFirebaseAuthException(e.code).message;
       // throw FirebaseAuthException(message: e.message, code: e.code).message;
     } on FirebaseException catch (e) {
-      print(e.message);
       throw "exeption ${e.message.toString()}";
       // throw FirebaseAuthException(message: e.message, code: e.code).message;
     } on FormatException catch (e) {
-      print(e.message);
       throw "format exeption ${e.message.toString()}";
       // throw FirebaseAuthException(message: e.message, code: e.code).message;
     } on PlatformException catch (e) {
-      print(e.message);
       throw "platform exeption ${e.message.toString()}";
       // throw FirebaseAuthException(message: e.message, code: e.code).message;
     } catch (e) {

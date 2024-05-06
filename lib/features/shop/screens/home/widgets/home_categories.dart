@@ -1,6 +1,7 @@
 import 'package:bliguh/common/widgets/images_text_widget/custom_image_text.dart';
 import 'package:bliguh/common/widgets/shimmer/category_shimmer.dart';
 import 'package:bliguh/features/shop/controllers/category_controller.dart';
+import 'package:bliguh/features/shop/screens/sub_category/sub_categories.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,9 +45,7 @@ class HomeCategories extends StatelessWidget {
                   .featuredCategories[index].image, // Access image from the map
               title: categoryController
                   .featuredCategories[index].name, // Access title from the map
-              onTap: () {
-                // Handle onTap event
-              },
+              onTap: () => Get.to(() => const SubCategories()),
             );
           },
         ),

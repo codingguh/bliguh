@@ -1,9 +1,37 @@
+import 'package:bliguh/features/shop/models/banner_model.dart';
 import 'package:bliguh/features/shop/models/category_model.dart';
 import 'package:bliguh/utils/constants/image_strings.dart';
+import 'package:bliguh/routes/routes.dart';
 
 class FirebaseDummyData {
+  /// -- Banners
+  static final List<BannerModel> dummyBanners = [
+    BannerModel(
+        imageUrl: TImages.banner1, targetScreen: TRoutes.order, active: false),
+    BannerModel(
+        imageUrl: TImages.banner2, targetScreen: TRoutes.cart, active: true),
+    BannerModel(
+        imageUrl: TImages.banner3,
+        targetScreen: TRoutes.favourites,
+        active: true),
+    BannerModel(
+        imageUrl: TImages.banner4, targetScreen: TRoutes.search, active: true),
+    BannerModel(
+        imageUrl: TImages.banner5,
+        targetScreen: TRoutes.settings,
+        active: true),
+    BannerModel(
+        imageUrl: TImages.banner6,
+        targetScreen: TRoutes.userAddresss,
+        active: true),
+    BannerModel(
+        imageUrl: TImages.banner8,
+        targetScreen: TRoutes.checkout,
+        active: false),
+  ];
+
+  ///List of all categories
   static final List<CategoryModel> categories = [
-    ///List of all categories
     CategoryModel(
         id: '1', image: TImages.sportIcon, name: 'Sports', isFeatured: true),
     CategoryModel(

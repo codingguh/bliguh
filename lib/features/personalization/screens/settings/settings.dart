@@ -82,6 +82,21 @@ class SettingsScreen extends StatelessWidget {
                     SizedBox(
                       height: TSizes.spaceBtwSections,
                     ),
+                    SectionHeading(
+                      title: 'App Records',
+                      showActionButton: false,
+                    ),
+                    SizedBox(
+                      height: TSizes.spaceBtwItems,
+                    ),
+                    for (int i = 0; i < settingsAppRecords.length; i++)
+                      SettingsMenuTile(
+                        icon: settingsAppRecords[i]['icon'],
+                        title: settingsAppRecords[i]['title'],
+                        subTitle: settingsAppRecords[i]['subTitle'],
+                        onTap: settingsAppRecords[i]['onPressed'],
+                        trailing: settingsAppRecords[i]['trailing'],
+                      ),
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton(
